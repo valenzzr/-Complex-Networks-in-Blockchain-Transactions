@@ -1,21 +1,21 @@
 # -Complex-Networks-in-Blockchain-Transactions
 > *Author: Zhang Zhirui*
 >
-> *Description: PC5253 final project *
->
-> 内容包括：
->
-> 项目简介（你们在做什么，研究问题是什么）
->
-> 环境配置（Python 版本、依赖、虚拟环境）
->
-> Etherscan API_KEY 配置方法
->
-> 脚本怎么跑、会输出什么文件
->
-> 每个输出文件的意义（CSV / PNG / GEXF）
->
-> 代码结构分章节解释（数据获取 / 建图 / 指标分析 / 时间演化 / 异常检测 / 可视化）
+> *Description: PC5253 final project* 
+
+**内容包括：**
+
+1.项目简介（你们在做什么，研究问题是什么）
+
+2.环境配置（Python 版本、依赖、虚拟环境）
+
+3.Etherscan API_KEY 配置方法
+
+4.脚本怎么跑、会输出什么文件
+
+5.每个输出文件的意义（CSV / PNG / GEXF）
+
+6.代码结构分章节解释（数据获取 / 建图 / 指标分析 / 时间演化 / 异常检测 / 可视化）
 
 ------
 
