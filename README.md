@@ -68,6 +68,7 @@ Final Project – Complexity Science
 - `tqdm`（进度条显示）
 - `powerlaw`（可选，用于拟合幂律分布。如果没安装会自动跳过）
 - （可选）`gephi` 不是 Python 包，是一个桌面应用，我们导出的 `.gexf` 文件会在 Gephi 里打开
+- `torch torch_geometric torch_geometric_temporal` （可选，用于训练时序 GNN 预测下一时刻 PageRank）
 
 ### 2.2 创建虚拟环境示例（Conda）
 
@@ -75,6 +76,7 @@ Final Project – Complexity Science
 conda create -n ethnet python=3.10 -y
 conda activate ethnet
 pip install requests pandas numpy networkx matplotlib scikit-learn tqdm powerlaw
+pip install torch torch_geometric torch_geometric_temporal
 ```
 
 如果安装 `powerlaw` 出错，可以暂时不装，它只影响幂律拟合那一步；脚本会自动忽略。
@@ -122,6 +124,7 @@ API_KEY = "YOUR_API_KEY_HERE"
 ```bash
 python final_run.py
 ```
+当前完整脚本文件为run1.py，而GNN.py则是单独的GNN模块，可以用于测试当前你的虚拟环境内能否运行GNN图神经网络来进行训练。
 
 脚本会依次完成：
 
@@ -130,9 +133,10 @@ python final_run.py
 3. 构建交易网络（NetworkX）
 4. 计算网络指标与中心化指标
 5. 时间演化分析
-6. 异常检测（IsolationForest）
-7. 画图并保存
-8. 导出给 Gephi 的 `.gexf` 文件
+6. 基于 IsolationForest 做异常点检测
+7. 时序滑窗计算动态指标并绘图
+8. 训练时序 GNN 预测下一时刻 PageRank（可选）
+9. 画图并导出图像/CSV/GEXF/JSON 等结果
 
 ------
 
@@ -163,23 +167,27 @@ ethereum_transactions_YYYYMMDD_HHMMSS.csv
 
 脚本会生成多张图，常见包括：
 
-- `figure_degree_distribution.png`
+- `outputs/figure_degree_distribution.png`
    节点度分布（log 纵轴）。显示是不是 heavy-tailed / scale-free 风格。
-- `figure_powerlaw_fit.png`（如果安装了 powerlaw）
+- `outputs/figure_powerlaw_fit.png`（如果安装了 powerlaw）
    用 powerlaw 包拟合度分布，给出幂律指数 α。可以用来支持“长尾分布，说明有极少数超级枢纽”。
-- `figure_temporal_activity.png`
+- `outputs/figure_temporal_activity.png`
    纵轴：每天交易数 / 每天活跃唯一地址数。
    可以观察链上活动是高爆发的，而不是均匀的（典型 ICO、空投、清算日）。
-- `figure_giant_component_over_time.png`
+- `outputs/figure_giant_component_over_time.png`
    x 轴是时间，y 轴是 giant component fraction（巨型连通分量占全图节点的比例）。
    解释“以太坊资金流随着时间变得越来越凝聚，几乎所有地址都被同一批中心化枢纽连到一起”。
-- `figure_subgraph_random.png`
+- `outputs/figure_subgraph_random.png`
    我们随机抽 ~200 个节点画出来的小子图。
    通常会发现这些节点几乎彼此不连，体现“绝大多数地址只是叶子”，并不是互相之间转来转去。
-- `figure_hub_ego_network.png`
+- `outputs/figure_hub_ego_network.png`
    把 PageRank 最高的那个超级枢纽节点（通常是交易所热钱包/路由合约）作为中心，画它和所有一跳邻居的 ego network。
    这图往往是一颗“放射状大太阳”：中心是巨型hub，周围是一圈一圈向它连的地址。
    这个图极其适合放在 PPT 里当“中心化证据”。
+- `outputs/figure_powerlaw_pdf.png,  outputs/figure_powerlaw_ccdf.png`
+   含义：对度分布进行幂律拟合的 PDF/CCDF 可视化；并在日志/摘要中给出幂律参数（α、xmin）与和对数正态的似然比比较。  
+   报告用法：支撑“长尾分布→中心化/寡头现象”的统计学证据。
+
 
 这些图基本就是你的“结果章节”。
 
@@ -200,6 +208,71 @@ ethereum_network.gexf
   - 导出高分辨率可视化图（PNG / SVG / PDF）
 
 这张 Gephi 图是展示“资金流骨干网络”的最直观方式，适合放报告封面或者最后一页。
+
+### 5.4 节点与边的指标表（CSV）
+
+```
+outputs/nodes_metrics.csv
+outputs/edges_metrics.csv
+```
+
+**nodes_metrics.csv 列示例：**
+- `address, degree, in_degree, out_degree, pagerank, core, hub, authority, betweenness, value_in, value_out, value_net`
+  - 含核心结构指标（度、PR、k-core、HITS、介数）与**价值流**指标（`value_in/out/net`）。
+
+**edges_metrics.csv 列示例：**
+- `source, target, weight, count`
+  - `weight` 为边累计 ETH，`count` 为交易次数。
+
+**用途：**
+- 可直接用于 **表格统计/回归/可视化二次分析**。
+- 可以在报告中列出 **Top-N 节点**（按 PR、介数、value_in/out 等）作为**中心化证据**或**关键枢纽识别**。
+
+### 5.5 时序滑窗产物（动态指标）
+
+> 通过 `WINDOW_DAYS` 与 `STEP_DAYS` 生成多个时间窗快照，计算**动态中心性**并输出图表与数据。
+
+**时序数据表：**  outputs/temporal/dynamic_centrality_timeseries.csv
+- 含义：**节点 × 时间** 的时序指标汇总表，包含在每个快照上计算的 PR、介数（采样）、k-core、度、入/出额、交易数等。
+
+**时序曲线图（按节点 PR 均值选取 Top-K 绘制）：**  outputs/timeseries_pagerank.png, outputs/timeseries_betweenness.png, outputs/timeseries_kcore.png
+- 含义：展示**关键节点**在不同时间窗上的指标变化轨迹，用于**发现结构地位的爬升/衰退**与**异常波动**。
+
+**PR 峰值（突变）检测：**  outputs/pagerank_spikes.json
+- 含义：用简单阈值（如 `ΔPR > μ + 3σ`）记录**可疑突增时刻**与节点列表，便于交叉核对链上事件。
+
+
+### 5.6 （可选）时序 GNN 基线产物
+
+> 若环境安装了 `torch_geometric_temporal` 等依赖且快照数量充足，脚本会训练一个 **GConvGRU** 基线模型，用于**预测下一快照 PageRank**。
+
+**训练曲线：**  outputs/temporal_gnn_loss.png
+
+- 含义：训练/验证损失随迭代变化，评估时序模型是否收敛、是否过拟合。
+
+**最后快照的预测对比：**  outputs/temporal_gnn_last_snapshot_prediction.csv
+
+- 列示例：`node, y_true_pagerank, y_pred_pagerank`  
+- 含义：对最后一个可预测快照上各节点 PR 的 **真值 vs 预测值** 对照，可直接做误差统计或绘制散点。
+
+> 注意：若依赖缺失或快照不足，本小节会**自动跳过**，不影响其它产物的生成。
+
+
+### 5.7 运行摘要（JSON）
+
+```
+outputs/summary.json
+```
+
+**内容要点：**
+- **图规模与基本统计**：节点数、边数、平均度、平均聚类系数、最大连通分量占比
+- **同配系数**：无向皮尔逊、有向 out→in
+- **中心化结果**：Gini、Top-10% 占比、跨社区流量占比、社区数量
+- **幂律拟合**（如有）：α、xmin、KS、与对数正态比较摘要
+- **时序产物路径**：时序 CSV、曲线图、峰值 JSON
+- **时序 GNN 摘要**（如启用）：训练曲线与预测文件路径
+- **Top-PR 列表与异常样本**：便于在报告/PPT 直接引用
+
 
 ------
 
@@ -315,7 +388,7 @@ clustering = nx.clustering(G.to_undirected())
 
 这些是经典复杂网络指标，能支持“结构是否中心化”“系统是否被少数节点绑定在一起”等论点。
 
-### 6.6 中心化度量（Gini 系数）
+### 6.6 中心化度量（Gini 系数）（扩展）
 
 ```python
 def gini(x):
@@ -330,6 +403,52 @@ Gini ~0.51 非常高，表示极强不平等：
 > 绝大多数地址没什么连接度，资金全在少数超级节点之间流动。
 
 这是你们在报告里可以当作“定量证明中心化”的关键数字。
+
+1) 基础结构特征
+```python
+deg_total = dict(G.degree())
+deg_in    = dict(G.in_degree())
+deg_out   = dict(G.out_degree())
+pagerank  = nx.pagerank(G, alpha=0.85)                    # 资金流枢纽
+kcore     = nx.core_number(G.to_undirected())             # 节点“骨干层级”
+assort    = nx.degree_assortativity_coefficient(G)        # 同配性（是否“门当户对”）
+```
+
+
+2) 集中度（不平等）度量
+```python
+def gini(x):
+    x = np.sort(np.asarray(x, dtype=float))
+    if x.size == 0: return np.nan
+    n = x.size
+    return (2*np.arange(1, n+1) - n - 1).dot(x) / (n * x.sum())
+
+gini_deg   = gini(list(deg_total.values()))
+top10_share= (np.sum(sorted(deg_total.values())[-10:]) / (np.sum(list(deg_total.values())) + 1e-9))
+```
+
+3) 幂律检验（规范做法，需 powerlaw）
+
+4) 社区/团簇与 motifs
+我们测：
+
+基础结构：总度/入度/出度、PageRank、k-core、同配性
+
+集中度：Gini 系数、Top-10 占比（“少数钱包是否把流量/连接握在手里”）
+
+幂律：估计 𝛼, $x_min$ 并与 lognormal 等进行对照检验（R,p），避免“看到直线就说幂律”的偏差
+
+群落/团簇/三角形：揭示中观结构与潜在业务子生态
+
+这些指标支持你们在报告中对中心化、去中心化、异质性与中观结构的定量论证与可视化。
+
+幂律拟合与可视化（PDF/CCDF）:
+PDF：整体分布形态（是否“长尾”）
+CCDF（log-log）：幂律在大值区的线性段更清晰，避免噪声误导
+
+中心化度量（Gini 与 Top-K 占比）
+Gini ~ 0.5+ 往往意味着极强不平等（多数地址连接稀少，少数“超级节点”吸走连边/流量）
+Top-10 占比定量呈现“头部玩家”的绝对控制力
 
 ### 6.7 异常检测（IsolationForest）
 
@@ -360,7 +479,64 @@ IsolationForest 会把“过于极端”的点标成异常（-1）。
 
 我们不是在做合规审查；我们是在说明：**极端结构位置 = 系统性重要性**。
 
-### 6.8 时间演化分析
+我们做：
+
+用滑动窗口 + 步长组织时间片，避免日级噪声
+在每个时间片上重算中心性，得到动态演化曲线
+聚焦 Top-K 节点，观察枢纽更替与事件性波动
+
+峰值检测（以 PageRank 为例）：
+定位异常窗口与可疑事件段（峰值高度/显著性可调）
+与链上事件/新闻对齐做质性解释（手工或自动化都可）
+
+
+### 6.8 Temporal GNN（GConvGRU 基线）——中文说明
+
+**目的**  
+用上一时间片的网络结构 + 边权，预测下一时间片的指标（本项目默认为 PageRank），作为**时序预测的轻量基线**，验证“结构信号是否对未来有解释力”。
+
+**输入与构造（按时间顺序）**  
+- **滑动窗口切片**：`WINDOW_DAYS`（窗宽） + `STEP_DAYS`（步长）生成时间片。  
+- **特征 `X_t`（N×F）**：对每个时间片、每个节点计算并堆叠  
+  - `degree, in_degree, out_degree, pagerank`（F=4）。  
+- **边集 `edge_index_t`（2×E）**：窗口内所有转账形成的有向边；  
+- **边权 `edge_weight_t`（E）**：可选，默认用窗口内该边累计金额；  
+- **目标 `y_t`（N）**：**下一窗口**的 PageRank（对齐为 `X[0..T-2] → y[1..T-1]`）。  
+- 使用 `DynamicGraphTemporalSignal(edge_indices, edge_weights, features, targets)` 组织为时序样本。
+
+**模型与训练**  
+- **模型**：`GConvGRU`（切比雪夫 K=2）作为时序图 RNN，后接线性层输出标量（回归）；  
+- **损失**：L1（MAE）；**划分**：前 70% 时间片训练、后 30% 验证（保持时间因果）；  
+- **设备**：CPU/GPU 自适应；**学习率**：默认 1e-3，可在脚本顶部修改。  
+
+**产出**  
+- `outputs/temporal/temporal_gnn_loss.png`：训练/验证损失曲线；  
+- `outputs/temporal/temporal_gnn_last_snapshot_prediction.csv`：最后验证时间片各节点的**预测 vs 真实**；  
+- 以上路径也汇总入 `summary.json -> temporal -> temporal_gnn`，便于复用/下游可视化。
+
+**何时认为“有效”**  
+- 验证集 L1 明显低于简单基线（如“预测=上一窗值”）；  
+- Top-K 节点预测排序与真实排序相关性较高（可额外计算 Spearman 相关）；  
+- 峰值/上升拐点附近能提前给出信号（肉眼对比时序曲线 + 误差曲线）。
+
+**常见坑与规约**  
+- **形状**：`X_t` 必须是 `(N,4)`，`y_t` 必须是 `(N,)`；  
+- **类型**：`features/edge_*` 为 `torch.Tensor(float32/long)`；`targets` 为 `numpy.ndarray(float32)`；  
+- **设备**：用 `torch.as_tensor(numpy, device=...)` 而不是对 numpy 直接 `.to(device)`；  
+- **可选边权**：`edge_weight_t` 可以为 `None`；模型前向需接收 `edge_weight` 参数；  
+- **对齐**：目标是**下一窗口**，不要把 `y_t` 和 `X_t` 放在同一时间片；  
+- **依赖缺失**：若 `torch_geometric_temporal` 或相关扩展导入失败，脚本自动跳过 GNN，其他流程不受影响。
+
+**可调参数（影响效果）**  
+- 滑窗参数：`WINDOW_DAYS / STEP_DAYS`（越大越平滑，越小越敏感）；  
+- 特征集合：在默认 4 维基础上可加入 `k-core、betweenness、余额变动、合约标识` 等；  
+- 监督目标：除 PageRank 外，也可尝试预测 `in_degree、金额流入/流出` 或二分类的“是否异常”；  
+- 模型超参：`hidden` 维度、K 阶、优化器、正则项、early stopping 等。
+
+> 定位：这是**教学/探索**用的时序图基线，目标是快速验证“结构-未来”的可学性；若需要更强性能，可换用更丰富特征、更细致标签与更强的时序图架构。
+
+
+### 6.9 时间演化分析
 
 我们按照日期滚动构建子图，记录巨型连通分量（giant component）占整个图的比例随时间怎么变。
 
@@ -371,7 +547,7 @@ IsolationForest 会把“过于极端”的点标成异常（-1）。
 
 对应的图 `figure_giant_component_over_time.png` 就是你们的“系统逐渐集中化”证据图。
 
-### 6.9 可视化输出
+### 6.10 可视化输出
 
 我们做了两个特别有解释力的视角：
 
