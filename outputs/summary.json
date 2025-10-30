@@ -1,0 +1,111 @@
+{
+  "graph": {
+    "nodes": 19814,
+    "edges": 20412,
+    "avg_degree": 2.060361360654083,
+    "avg_clustering": 0.010418443158552226,
+    "giant_component_fraction": 1.0
+  },
+  "assortativity": {
+    "undirected_degree_pearson": -0.6482295295953172,
+    "directed_out_in": -0.5698286584763458
+  },
+  "centralization_value": {
+    "gini_in": 0.9997067542438892,
+    "gini_out": 0.9996842879068245,
+    "gini_abs_net": 0.9989923419890383,
+    "top10_share_in": 0.9999605294389127,
+    "top10_share_out": 0.9998741330085417,
+    "cross_community_flow_share": 0.8006667066707526,
+    "n_communities": 16
+  },
+  "powerlaw": {
+    "n_samples": 19814,
+    "alpha": 2.060483950510164,
+    "xmin": 361,
+    "KS_statistic": 0.17213462331616614,
+    "LR_powerlaw_vs_lognormal": -0.4743986970536751,
+    "p_value": 0.581218250032894,
+    "interpretation": "R>0 & p<0.05 → 更支持幂律；否则需谨慎解读。"
+  },
+  "temporal": {
+    "window_days": 30,
+    "step_days": 7,
+    "timeseries_csv": "outputs\\temporal\\dynamic_centrality_timeseries.csv",
+    "topk_plots": {
+      "pagerank": "outputs\\temporal\\timeseries_pagerank.png",
+      "betweenness": "outputs\\temporal\\timeseries_betweenness.png",
+      "kcore": "outputs\\temporal\\timeseries_kcore.png"
+    },
+    "pr_spikes_json": "outputs\\temporal\\pagerank_spikes.json",
+    "temporal_gnn": {
+      "enabled": true,
+      "loss_curve": "outputs\\temporal\\temporal_gnn_loss.png",
+      "last_snapshot_pred": "outputs\\temporal\\temporal_gnn_last_snapshot_prediction.csv"
+    }
+  },
+  "top_pagerank": [
+    [
+      "0x876eabf441b2ee5b5b0554fd502a8e0600950cfa",
+      0.19247205150446398
+    ],
+    [
+      "0x742d35cc6634c0532925a3b844bc454e4438f44e",
+      0.15626684931067372
+    ],
+    [
+      "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      0.04101096546872432
+    ],
+    [
+      "0xe592427a0aece92de3edee1f18e0157c05861564",
+      0.027511410892394818
+    ],
+    [
+      "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      0.026691517995227468
+    ],
+    [
+      "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
+      0.016345058406428865
+    ],
+    [
+      "0xab5801a7d398351b8be11c439e05c5b3259aec9b",
+      0.01577577436317925
+    ],
+    [
+      "0x8e160c8e949967d6b797cdf2a2f38f6344a5c95f",
+      0.009367864297273416
+    ],
+    [
+      "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7",
+      0.00702290798494387
+    ],
+    [
+      "0xaa1a6e3e6ef20068f7f8d8c835d2d22fd5116444",
+      0.0051121546458229635
+    ]
+  ],
+  "anomalies_sample": [
+    "0x742d35cc6634c0532925a3b844bc454e4438f44e",
+    "0xd26114cd6ee289accf82350c8d8487fedb8a0c07",
+    "0x876eabf441b2ee5b5b0554fd502a8e0600950cfa",
+    "0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0",
+    "0x618e75ac90b12c6049ba3b27f5d5f8651b0037f6",
+    "0x9281b23353b9028a94f182bac94c48aaa82a799f",
+    "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
+    "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "",
+    "0x6acc9a6876739e9190d06463196e27b6d37405c6",
+    "0xce7fb4c38949d7c09bd95197c3981ec8bb0638e5",
+    "0xd654bdd32fc99471455e86c2e7f7d7b6437e9179",
+    "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7",
+    "0xbb9bc244d798123fde783fcc1c72d3bb8c189413",
+    "0x32be343b94f860124dc4fee278fdcbd38c102d88",
+    "0xaa1a6e3e6ef20068f7f8d8c835d2d22fd5116444",
+    "0xab5801a7d398351b8be11c439e05c5b3259aec9b",
+    "0xfbe0678db305a280820d02194c94d450d0755883",
+    "0x6090a6e47849629b7245dfa1ca21d94cd15878ef"
+  ]
+}
