@@ -106,11 +106,7 @@ pip install requests pandas numpy networkx matplotlib scikit-learn tqdm powerlaw
 API_KEY = "YOUR_API_KEY_HERE"
 ```
 
-请把 `"YOUR_API_KEY_HERE"` 替换成你自己的真实 key，例如：
-
-```python
-API_KEY = "GEAB5WHJYW76B5SFUUVGQR2FE85755BYUH"
-```
+请把 `"YOUR_API_KEY_HERE"` 替换成你自己的真实 key.
 
 ⚠️ 注意：
 
