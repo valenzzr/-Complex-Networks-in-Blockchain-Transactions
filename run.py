@@ -18,7 +18,7 @@ from datetime import datetime
 # 0. CONFIGURATION
 # =========================
 
-API_KEY = "GEAB5WHJYW76B5SFUUVGQR2FE85755BYUH"  # <--- 换成你自己的 Etherscan API key
+API_KEY = "API_KEY"  # <--- 换成你自己的 Etherscan API key
 
 # 高活跃/高可见度的已知钱包地址，交易丰富（公开信息）
 seed_addresses_level1 = [
