@@ -7,7 +7,7 @@
     "giant_component_fraction": 1.0
   },
   "assortativity": {
-    "undirected_degree_pearson": -0.6482295295953172,
+    "undirected_degree_pearson": -0.6482295295953171,
     "directed_out_in": -0.5698286584763458
   },
   "centralization_value": {
@@ -26,7 +26,7 @@
     "KS_statistic": 0.17213462331616614,
     "LR_powerlaw_vs_lognormal": -0.4743986970536751,
     "p_value": 0.581218250032894,
-    "interpretation": "R>0 & p<0.05 → 更支持幂律；否则需谨慎解读。"
+    "interpretation": "R>0 & p<0.05 → power-law better; R<0 & p<0.05 → lognormal better; else inconclusive"
   },
   "temporal": {
     "window_days": 30,
@@ -37,12 +37,7 @@
       "betweenness": "outputs\\temporal\\timeseries_betweenness.png",
       "kcore": "outputs\\temporal\\timeseries_kcore.png"
     },
-    "pr_spikes_json": "outputs\\temporal\\pagerank_spikes.json",
-    "temporal_gnn": {
-      "enabled": true,
-      "loss_curve": "outputs\\temporal\\temporal_gnn_loss.png",
-      "last_snapshot_pred": "outputs\\temporal\\temporal_gnn_last_snapshot_prediction.csv"
-    }
+    "pr_spikes_json": "outputs\\temporal\\pagerank_spikes.json"
   },
   "top_pagerank": [
     [
