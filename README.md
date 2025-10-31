@@ -122,7 +122,8 @@ API_KEY = os.getenv("ETHERSCAN_API_KEY", "7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS")
 ```bash
 python run1.py
 ```
-而GNN.py则是单独的GNN模块，可以用于测试当前你的虚拟环境内能否运行GNN图神经网络来进行训练。
+当前完整脚本文件为run1.py，运行该文件即可得到完整运行的结果。
+GNN.py则是单独的GNN模块，run0.py是完整的运行脚本去除掉GNN模块以外的部分，可以进行单独测试，而GNN.py可以用于测试当前你的虚拟环境内能否运行GNN图神经网络来进行训练。
 
 脚本会依次完成：
 
