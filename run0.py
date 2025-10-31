@@ -131,14 +131,33 @@ def fetch_transactions_for_address(address, api_key, max_tx=MAX_TX):
     if data.get("status") == "1" and "result" in data:
         df = pd.DataFrame(data["result"])
         if df.empty:
-            return pd.DataFrame(columns=["from", "to", "value", "timeStamp", "hash"])
-        keep_cols = ["from", "to", "value", "timeStamp", "hash"]
+            return pd.DataFrame(columns=["from","to","value","timeStamp","hash","contractAddress"])
+
+        keep_cols = ["from","to","value","timeStamp","hash","contractAddress"]
+        for c in keep_cols:
+            if c not in df.columns: df[c] = None
         df = df[keep_cols].copy()
-        # wei -> ETH
+
+        # 统一清洗
         df["value"] = pd.to_numeric(df["value"], errors="coerce").fillna(0.0) / 1e18
-        # timestamp -> datetime
         df["timeStamp"] = pd.to_datetime(pd.to_numeric(df["timeStamp"], errors="coerce"), unit="s", errors="coerce")
-        df = df.dropna(subset=["from", "to", "timeStamp"])
+        for c in ("from","to","contractAddress"):
+            df[c] = df[c].astype(str).str.strip()
+
+        # 合约创建：to=="" 用 contractAddress 回填
+        mask_create = (df["to"] == "") & df["contractAddress"].str.match(r"^0x[0-9a-fA-F]{40}$", na=False)
+        df.loc[mask_create, "to"] = df.loc[mask_create, "contractAddress"]
+
+        # 显式把 "" 变 NaN 后再丢弃
+        df.replace({"": np.nan}, inplace=True)
+        df = df.dropna(subset=["from","to","timeStamp"])
+
+        # 强校验：只保留合法 42 字符地址
+        addr_ok = r"^0x[0-9a-fA-F]{40}$"
+        df = df[df["from"].str.match(addr_ok, na=False) & df["to"].str.match(addr_ok, na=False)]
+
+        # 最后裁列
+        df = df[["from","to","value","timeStamp","hash"]]
         return df
     return pd.DataFrame(columns=["from", "to", "value", "timeStamp", "hash"])
 
@@ -245,18 +264,44 @@ except Exception:
 try:
     hubs, authorities = nx.hits(G, max_iter=1000, normalized=True)
 except Exception:
-    hubs, authorities = ({n: float("nan") for n in G.nodes()},
-                         {n: float("nan") for n in G.nodes()})
+    hubs, authorities = ({n: 0.0 for n in G.nodes()},
+                         {n: 0.0 for n in G.nodes()})
 
-if G.number_of_nodes() <= BETWEENNESS_MAX_NODES:
-    print("Computing betweenness centrality (this may take time)...")
-    try:
-        betweenness = nx.betweenness_centrality(G, k=BETWEENNESS_K_SAMPLE, normalized=True, weight=None, endpoints=False, seed=0)
-    except Exception:
-        betweenness = {n: float("nan") for n in G.nodes()}
+# ---- Betweenness: k-sampling on medium/large graphs ----
+N = G.number_of_nodes()
+M = G.number_of_edges()
+BETWEENNESS_AVAILABLE = False
+betweenness = {}
+
+if N == 0:
+    pass
 else:
-    print(f"Skip betweenness (nodes>{BETWEENNESS_MAX_NODES}); set BETWEENNESS_MAX_NODES or use sampling k.")
-    betweenness = {n: float("nan") for n in G.nodes()}
+    # 自动选择 k（你也可以手动改）
+    if N <= 5000:
+        k_for_btw = None               # 精确
+    elif N <= 30000:
+        k_for_btw = min(1000, int(np.ceil(0.05 * N)))
+    else:
+        k_for_btw = min(2000, int(np.ceil(0.03 * N)))
+
+    print(f"Betweenness centrality: N={N}, M={M}, k={k_for_btw if k_for_btw is not None else 'exact'}")
+    try:
+        betweenness = nx.betweenness_centrality(
+            G,
+            k=k_for_btw,           # None=精确；整数=采样
+            normalized=True,
+            weight=None,
+            endpoints=False,
+            seed=0 if k_for_btw is not None else None
+        )
+        # 数值清洗（确保都是有限数）
+        for n in list(betweenness.keys()):
+            v = betweenness[n]
+            betweenness[n] = float(v) if np.isfinite(v) else 0.0
+        BETWEENNESS_AVAILABLE = True
+    except Exception as e:
+        print(f"[warn] betweenness failed ({type(e).__name__}): {e}. Will skip exporting this field.")
+        betweenness = {}   # 留空，表示不可用
 
 print(f"Assortativity (UG, degree Pearson): {assort_undirected:.4f}")
 print(f"Assortativity (DiGraph, out→in):   {assort_out_in:.4f}")

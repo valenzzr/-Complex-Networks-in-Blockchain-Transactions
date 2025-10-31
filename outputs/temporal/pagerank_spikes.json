@@ -1,11 +1,11 @@
 [
   {
     "node": "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
-    "from_index": 103,
-    "to_index": 104,
-    "from_end": "2017-10-02",
-    "to_end": "2017-10-09",
-    "delta_pr": 0.2404689173687382
+    "from_index": 104,
+    "to_index": 105,
+    "from_end": "2017-10-09",
+    "to_end": "2017-10-16",
+    "delta_pr": 0.3517658519182504
   },
   {
     "node": "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
@@ -45,7 +45,7 @@
     "to_index": 21,
     "from_end": "2015-12-07",
     "to_end": "2016-03-07",
-    "delta_pr": 0.19944103732775584
+    "delta_pr": 0.1948533517520403
   },
   {
     "node": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
@@ -80,28 +80,68 @@
     "delta_pr": 0.35074614755477124
   },
   {
-    "node": "",
-    "from_index": 70,
-    "to_index": 71,
-    "from_end": "2017-02-13",
-    "to_end": "2017-02-20",
-    "delta_pr": 0.16501631369339656
-  },
-  {
     "node": "0x5ed8cee6b63b1c6afce3ad7c92f4fd7e1b8fad9f",
     "from_index": 51,
     "to_index": 82,
     "from_end": "2016-10-03",
     "to_end": "2017-05-08",
-    "delta_pr": 0.12543779360721208
+    "delta_pr": 0.12676927466078372
   },
   {
-    "node": "0xc66ea802717bfb9833400264dd12c2bceaa34a6d",
-    "from_index": 114,
-    "to_index": 132,
-    "from_end": "2017-12-18",
-    "to_end": "2018-04-23",
-    "delta_pr": 0.04655019975318705
+    "node": "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-07-11",
+    "to_end": "2016-07-18",
+    "delta_pr": 0.1684342568668658
+  },
+  {
+    "node": "0x9d87f6fb4c8a732a68ebb909330f720bacd256df",
+    "from_index": 39,
+    "to_index": 53,
+    "from_end": "2016-07-11",
+    "to_end": "2016-10-17",
+    "delta_pr": 0.005160676647712999
+  },
+  {
+    "node": "0x174cfcf1d925c259d6c5ba7df6eb6511d2f4ae01",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-07-11",
+    "to_end": "2016-07-18",
+    "delta_pr": 0.010694510003600189
+  },
+  {
+    "node": "0x6c65fb326e7734ba5508b5d043718288b43b9ed9",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-07-11",
+    "to_end": "2016-07-18",
+    "delta_pr": 0.010694510003600189
+  },
+  {
+    "node": "0x59d5284238e34d03791b14378a259d7e1290001e",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-07-11",
+    "to_end": "2016-07-18",
+    "delta_pr": 0.010694510003600189
+  },
+  {
+    "node": "0xe7b4dba7370f773888d197600d9955a7cc6e0015",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-07-11",
+    "to_end": "2016-07-18",
+    "delta_pr": 0.010694510003600189
+  },
+  {
+    "node": "0xab8d8b74f202f4cd4a918b65da4bac612e086ee7",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-07-11",
+    "to_end": "2016-07-18",
+    "delta_pr": 0.010694510003600189
   },
   {
     "node": "0x32be343b94f860124dc4fee278fdcbd38c102d88",
@@ -109,7 +149,7 @@
     "to_index": 83,
     "from_end": "2017-01-30",
     "to_end": "2017-05-15",
-    "delta_pr": 0.065094710111864
+    "delta_pr": 0.06508241453430996
   },
   {
     "node": "0xe8c0b3943030f894ac3c0a492463b40ab949e015",
@@ -117,7 +157,7 @@
     "to_index": 82,
     "from_end": "2017-04-10",
     "to_end": "2017-05-08",
-    "delta_pr": 0.25379545169748857
+    "delta_pr": 0.2594395143403274
   },
   {
     "node": "0xe692869347b9b18ef2deed19ae1bbace303b52b0",
@@ -136,20 +176,20 @@
     "delta_pr": 0.5233837462277663
   },
   {
-    "node": "0xd26114cd6ee289accf82350c8d8487fedb8a0c07",
-    "from_index": 95,
-    "to_index": 97,
-    "from_end": "2017-08-07",
-    "to_end": "2017-08-21",
-    "delta_pr": 0.14412956933840157
+    "node": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+    "from_index": 104,
+    "to_index": 137,
+    "from_end": "2017-10-09",
+    "to_end": "2018-05-28",
+    "delta_pr": 0.025610862511278632
   },
   {
     "node": "0x0cfb686e114d478b055ce8614621f8bb62f70360",
-    "from_index": 103,
-    "to_index": 104,
-    "from_end": "2017-10-02",
-    "to_end": "2017-10-09",
-    "delta_pr": 0.2324921809440629
+    "from_index": 104,
+    "to_index": 105,
+    "from_end": "2017-10-09",
+    "to_end": "2017-10-16",
+    "delta_pr": 0.3251616930701496
   },
   {
     "node": "0x876eabf441b2ee5b5b0554fd502a8e0600950cfa",
@@ -214,14 +254,6 @@
     "from_end": "2018-12-03",
     "to_end": "2018-12-10",
     "delta_pr": 0.26667299920937937
-  },
-  {
-    "node": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
-    "from_index": 164,
-    "to_index": 165,
-    "from_end": "2018-12-03",
-    "to_end": "2018-12-10",
-    "delta_pr": 0.02079863798492757
   },
   {
     "node": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
@@ -333,7 +365,7 @@
     "to_index": 470,
     "from_end": "2023-07-10",
     "to_end": "2024-10-14",
-    "delta_pr": 0.05996505677097791
+    "delta_pr": 0.05996505677097792
   },
   {
     "node": "0xdac17f958d2ee523a2206206994597c13d831ec7",
@@ -357,7 +389,7 @@
     "to_index": 359,
     "from_end": "2021-05-31",
     "to_end": "2022-08-29",
-    "delta_pr": 0.017585923059984347
+    "delta_pr": 0.017585846420244355
   },
   {
     "node": "0xae1a5304bfc706838dd1ec1dbe228dac50243a47",
@@ -413,7 +445,7 @@
     "to_index": 327,
     "from_end": "2022-01-10",
     "to_end": "2022-01-17",
-    "delta_pr": 0.01742425636490174
+    "delta_pr": 0.01742406093334267
   },
   {
     "node": "0x6571d6be3d8460cf5f7d6711cd9961860029d85f",
@@ -421,7 +453,7 @@
     "to_index": 351,
     "from_end": "2022-05-23",
     "to_end": "2022-07-04",
-    "delta_pr": 0.016259300973171135
+    "delta_pr": 0.016259300973171138
   },
   {
     "node": "0xa06c2b67e7435ce25a5969e49983ec3304d8e787",
@@ -453,7 +485,7 @@
     "to_index": 435,
     "from_end": "2022-04-25",
     "to_end": "2024-02-12",
-    "delta_pr": 0.07605286702632603
+    "delta_pr": 0.07594270950158681
   },
   {
     "node": "0xaecfe4eff84a1cd9a24accc1914ac537af7f6e1b",
@@ -469,7 +501,7 @@
     "to_index": 422,
     "from_end": "2023-11-06",
     "to_end": "2023-11-13",
-    "delta_pr": 0.04171778089596549
+    "delta_pr": 0.04171778089596552
   },
   {
     "node": "0x3211c6cbef1429da3d0d58494938299c92ad5860",
@@ -501,7 +533,7 @@
     "to_index": 436,
     "from_end": "2023-08-14",
     "to_end": "2024-02-19",
-    "delta_pr": 0.028858585989122155
+    "delta_pr": 0.02885858598912216
   },
   {
     "node": "0x43134dd29523c86c1ac6d0ccb920278b2b89eac0",

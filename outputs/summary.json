@@ -1,31 +1,31 @@
 {
   "graph": {
-    "nodes": 19814,
-    "edges": 20412,
-    "avg_degree": 2.060361360654083,
-    "avg_clustering": 0.010418443158552226,
+    "nodes": 21850,
+    "edges": 22482,
+    "avg_degree": 2.057848970251716,
+    "avg_clustering": 0.009535293770123531,
     "giant_component_fraction": 1.0
   },
   "assortativity": {
-    "undirected_degree_pearson": -0.6482295295953171,
-    "directed_out_in": -0.5698286584763458
+    "undirected_degree_pearson": -0.6745146674438027,
+    "directed_out_in": -0.576031801811835
   },
   "centralization_value": {
-    "gini_in": 0.9997067542438892,
-    "gini_out": 0.9996842879068245,
-    "gini_abs_net": 0.9989923419890383,
-    "top10_share_in": 0.9999605294389127,
-    "top10_share_out": 0.9998741330085417,
-    "cross_community_flow_share": 0.8006667066707526,
-    "n_communities": 16
+    "gini_in": 0.9997339106696969,
+    "gini_out": 0.9997133760985719,
+    "gini_abs_net": 0.9990849702965359,
+    "top10_share_in": 0.999973354012487,
+    "top10_share_out": 0.9998946554453528,
+    "cross_community_flow_share": 0.8006661849117067,
+    "n_communities": 17
   },
   "powerlaw": {
-    "n_samples": 19814,
-    "alpha": 2.060483950510164,
-    "xmin": 361,
-    "KS_statistic": 0.17213462331616614,
-    "LR_powerlaw_vs_lognormal": -0.4743986970536751,
-    "p_value": 0.581218250032894,
+    "n_samples": 21850,
+    "alpha": 4.945837956146761,
+    "xmin": 1712,
+    "KS_statistic": 0.17946877243359655,
+    "LR_powerlaw_vs_lognormal": -0.22425056976222013,
+    "p_value": 0.6925228233288864,
     "interpretation": "R>0 & p<0.05 → power-law better; R<0 & p<0.05 → lognormal better; else inconclusive"
   },
   "temporal": {
@@ -37,48 +37,53 @@
       "betweenness": "outputs\\temporal\\timeseries_betweenness.png",
       "kcore": "outputs\\temporal\\timeseries_kcore.png"
     },
-    "pr_spikes_json": "outputs\\temporal\\pagerank_spikes.json"
+    "pr_spikes_json": "outputs\\temporal\\pagerank_spikes.json",
+    "temporal_gnn": {
+      "enabled": true,
+      "loss_curve": "outputs\\temporal\\temporal_gnn_loss.png",
+      "last_snapshot_pred": "outputs\\temporal\\temporal_gnn_last_snapshot_prediction.csv"
+    }
   },
   "top_pagerank": [
     [
       "0x876eabf441b2ee5b5b0554fd502a8e0600950cfa",
-      0.19247205150446398
+      0.17495244257029238
     ],
     [
       "0x742d35cc6634c0532925a3b844bc454e4438f44e",
-      0.15626684931067372
+      0.1546119872111275
     ],
     [
       "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
-      0.04101096546872432
+      0.03923109267460181
     ],
     [
       "0xe592427a0aece92de3edee1f18e0157c05861564",
-      0.027511410892394818
+      0.02631720015591741
     ],
     [
       "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-      0.026691517995227468
+      0.025533932468467944
     ],
     [
       "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
-      0.016345058406428865
+      0.015670016201420788
     ],
     [
       "0xab5801a7d398351b8be11c439e05c5b3259aec9b",
-      0.01577577436317925
+      0.01511008407245566
     ],
     [
       "0x8e160c8e949967d6b797cdf2a2f38f6344a5c95f",
-      0.009367864297273416
+      0.008961181008392178
     ],
     [
       "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7",
-      0.00702290798494387
+      0.006718294238300203
     ],
     [
       "0xaa1a6e3e6ef20068f7f8d8c835d2d22fd5116444",
-      0.0051121546458229635
+      0.004908429990718038
     ]
   ],
   "anomalies_sample": [
@@ -86,13 +91,12 @@
     "0xd26114cd6ee289accf82350c8d8487fedb8a0c07",
     "0x876eabf441b2ee5b5b0554fd502a8e0600950cfa",
     "0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0",
+    "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
     "0x618e75ac90b12c6049ba3b27f5d5f8651b0037f6",
     "0x9281b23353b9028a94f182bac94c48aaa82a799f",
     "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
     "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
     "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
-    "",
-    "0x6acc9a6876739e9190d06463196e27b6d37405c6",
     "0xce7fb4c38949d7c09bd95197c3981ec8bb0638e5",
     "0xd654bdd32fc99471455e86c2e7f7d7b6437e9179",
     "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7",
@@ -101,6 +105,7 @@
     "0xaa1a6e3e6ef20068f7f8d8c835d2d22fd5116444",
     "0xab5801a7d398351b8be11c439e05c5b3259aec9b",
     "0xfbe0678db305a280820d02194c94d450d0755883",
-    "0x6090a6e47849629b7245dfa1ca21d94cd15878ef"
+    "0x6090a6e47849629b7245dfa1ca21d94cd15878ef",
+    "0x0cfb686e114d478b055ce8614621f8bb62f70360"
   ]
 }
