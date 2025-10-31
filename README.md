@@ -5,9 +5,9 @@
 
 **内容包括：**
 
-1.项目简介（你们在做什么，研究问题是什么）
+1.项目简介
 
-2.环境配置（Python 版本、依赖、虚拟环境）
+2.环境配置
 
 3.Etherscan API_KEY 配置方法
 
@@ -20,8 +20,6 @@
 ------
 
 # Ethereum Transaction Network Analysis
-
-Final Project – Complexity Science
 
 ## 1. 项目简介
 
@@ -52,7 +50,7 @@ Final Project – Complexity Science
 
 ## 2. 环境配置
 
-建议使用 Conda 或 venv 创建独立虚拟环境，避免污染系统 Python。
+建议使用 Conda 创建独立虚拟环境，避免污染系统 Python。
 
 ### 2.1 Python 版本
 
@@ -105,10 +103,10 @@ pip install torch torch_geometric torch_geometric_temporal
 在脚本开头有一段：
 
 ```python
-API_KEY = "YOUR_API_KEY_HERE"
+API_KEY = os.getenv("ETHERSCAN_API_KEY", "7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS")
 ```
 
-请把 `"YOUR_API_KEY_HERE"` 替换成你自己的真实 key.
+请配置环境变量`ETHERSCAN_API_KEY`，如果未配置，则`API_KEY`的默认值为后面的`7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS`，请把 `"7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS"` 替换成你自己的真实 key.
 
 ⚠️ 注意：
 
@@ -119,12 +117,12 @@ API_KEY = "YOUR_API_KEY_HERE"
 
 ## 4. 运行脚本
 
-假设脚本文件叫 `final_run.py`，在虚拟环境里运行：
+当前完整脚本文件为`run1.py`，在conda环境里运行：
 
 ```bash
-python final_run.py
+python run1.py
 ```
-当前完整脚本文件为run1.py，而GNN.py则是单独的GNN模块，可以用于测试当前你的虚拟环境内能否运行GNN图神经网络来进行训练。
+而GNN.py则是单独的GNN模块，可以用于测试当前你的虚拟环境内能否运行GNN图神经网络来进行训练。
 
 脚本会依次完成：
 
@@ -142,9 +140,9 @@ python final_run.py
 
 ## 5. 输出文件说明
 
-运行结束后会在当前目录生成这些文件：
+脚本运行结束后，将在 `outputs/` 文件夹下生成分析结果：
 
-### 5.1 交易数据（CSV）
+### 5.1 原始交易数据（CSV）
 
 ```
 ethereum_transactions_YYYYMMDD_HHMMSS.csv
@@ -232,13 +230,16 @@ outputs/edges_metrics.csv
 
 > 通过 `WINDOW_DAYS` 与 `STEP_DAYS` 生成多个时间窗快照，计算**动态中心性**并输出图表与数据。
 
-**时序数据表：**  outputs/temporal/dynamic_centrality_timeseries.csv
+**时序数据表：**  `outputs/temporal/dynamic_centrality_timeseries.csv`
+
 - 含义：**节点 × 时间** 的时序指标汇总表，包含在每个快照上计算的 PR、介数（采样）、k-core、度、入/出额、交易数等。
 
-**时序曲线图（按节点 PR 均值选取 Top-K 绘制）：**  outputs/timeseries_pagerank.png, outputs/timeseries_betweenness.png, outputs/timeseries_kcore.png
+**时序曲线图（按节点 PR 均值选取 Top-K 绘制）：**  `outputs/timeseries_pagerank.png, outputs/timeseries_betweenness.png, outputs/timeseries_kcore.png`
+
 - 含义：展示**关键节点**在不同时间窗上的指标变化轨迹，用于**发现结构地位的爬升/衰退**与**异常波动**。
 
-**PR 峰值（突变）检测：**  outputs/pagerank_spikes.json
+**PR 峰值（突变）检测：**  `outputs/pagerank_spikes.json`
+
 - 含义：用简单阈值（如 `ΔPR > μ + 3σ`）记录**可疑突增时刻**与节点列表，便于交叉核对链上事件。
 
 
@@ -246,11 +247,11 @@ outputs/edges_metrics.csv
 
 > 若环境安装了 `torch_geometric_temporal` 等依赖且快照数量充足，脚本会训练一个 **GConvGRU** 基线模型，用于**预测下一快照 PageRank**。
 
-**训练曲线：**  outputs/temporal_gnn_loss.png
+**训练曲线：**  `outputs/temporal_gnn_loss.png`
 
 - 含义：训练/验证损失随迭代变化，评估时序模型是否收敛、是否过拟合。
 
-**最后快照的预测对比：**  outputs/temporal_gnn_last_snapshot_prediction.csv
+**最后快照的预测对比：**  `outputs/temporal_gnn_last_snapshot_prediction.csv`
 
 - 列示例：`node, y_true_pagerank, y_pred_pagerank`  
 - 含义：对最后一个可预测快照上各节点 PR 的 **真值 vs 预测值** 对照，可直接做误差统计或绘制散点。
@@ -278,12 +279,15 @@ outputs/summary.json
 
 ## 6. 脚本主要逻辑解释（逐段解析）
 
-下面对应 `final_run.py` 的核心段落。
+下面对应 `run1.py` 的核心段落。
 
 ### 6.1 配置区
 
 ```python
-API_KEY = "YOUR_API_KEY_HERE"
+try:
+    API_KEY = os.getenv("ETHERSCAN_API_KEY", "7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS")
+except KeyError:
+    sys.exit("Missing env var ETHERSCAN_API_KEY. Please set it before running.")
 
 seed_addresses_level1 = [
     "0x742d35...f44e",  # Binance hot wallet
@@ -402,7 +406,7 @@ Gini ~0.51 非常高，表示极强不平等：
 
 > 绝大多数地址没什么连接度，资金全在少数超级节点之间流动。
 
-这是你们在报告里可以当作“定量证明中心化”的关键数字。
+这是我们在报告里可以当作“定量证明中心化”的关键数字。
 
 1) 基础结构特征
 ```python
@@ -569,7 +573,7 @@ nx.write_gexf(G, "ethereum_network.gexf")
 
 ------
 
-## 7. 在报告/答辩时可以直接写的总结
+## 7. 总结
 
 > 我们抓取了约 55k 条真实 Ethereum 主网交易，构建了一个 ~21k 地址、~22k 边的资金流网络。
 >  我们发现该网络的平均度仅约 2，但 PageRank 和度分布极度偏斜，Gini 系数约 0.51，巨型连通分量覆盖率几乎 100%。
