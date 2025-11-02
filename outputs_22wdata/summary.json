@@ -1,0 +1,111 @@
+{
+  "graph": {
+    "nodes": 61134,
+    "edges": 72351,
+    "avg_degree": 2.366964373343802,
+    "avg_clustering": 0.011279982153020118,
+    "giant_component_fraction": 1.0
+  },
+  "assortativity": {
+    "undirected_degree_pearson": -0.5227419294192722,
+    "directed_out_in": -0.44033904089463766
+  },
+  "centralization_value": {
+    "gini_in": 0.9997334894291919,
+    "gini_out": 0.998670935023726,
+    "gini_abs_net": 0.9975622546158497,
+    "top10_share_in": 0.999998704074807,
+    "top10_share_out": 0.9998175065479541,
+    "cross_community_flow_share": 0.5076097186574655,
+    "n_communities": 40
+  },
+  "powerlaw": {
+    "n_samples": 61134,
+    "alpha": 2.3824647098716616,
+    "xmin": 402,
+    "KS_statistic": 0.09307898426966604,
+    "LR_powerlaw_vs_lognormal": -1.553477416728743,
+    "p_value": 0.21192577971244442,
+    "interpretation": "R>0 & p<0.05 → power-law better; R<0 & p<0.05 → lognormal better; else inconclusive"
+  },
+  "temporal": {
+    "window_days": 30,
+    "step_days": 7,
+    "timeseries_csv": "outputs\\temporal\\dynamic_centrality_timeseries.csv",
+    "topk_plots": {
+      "pagerank": "outputs\\temporal\\timeseries_pagerank.png",
+      "betweenness": "outputs\\temporal\\timeseries_betweenness.png",
+      "kcore": "outputs\\temporal\\timeseries_kcore.png"
+    },
+    "pr_spikes_json": "outputs\\temporal\\pagerank_spikes.json",
+    "temporal_gnn": {
+      "enabled": true,
+      "loss_curve": "outputs\\temporal\\temporal_gnn_loss.png",
+      "last_snapshot_pred": "outputs\\temporal\\temporal_gnn_last_snapshot_prediction.csv"
+    }
+  },
+  "top_pagerank": [
+    [
+      "0x876eabf441b2ee5b5b0554fd502a8e0600950cfa",
+      0.06091563039349292
+    ],
+    [
+      "0x742d35cc6634c0532925a3b844bc454e4438f44e",
+      0.03690182616532024
+    ],
+    [
+      "0xdf6c10f310ef0402a5d4a35b85905cb09ae80994",
+      0.021934475493028866
+    ],
+    [
+      "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      0.018754544920213032
+    ],
+    [
+      "0xff1f2b4adb9df6fc8eafecdcbf96a2b351680455",
+      0.01865690502184078
+    ],
+    [
+      "0xef1c6e67703c7bd7107eed8303fbe6ec2554bf6b",
+      0.017660032213870594
+    ],
+    [
+      "0x32be343b94f860124dc4fee278fdcbd38c102d88",
+      0.01420099317110137
+    ],
+    [
+      "0xe592427a0aece92de3edee1f18e0157c05861564",
+      0.012168403402979396
+    ],
+    [
+      "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+      0.01139930917433372
+    ],
+    [
+      "0xab5801a7d398351b8be11c439e05c5b3259aec9b",
+      0.010397137668551094
+    ]
+  ],
+  "anomalies_sample": [
+    "0xf4b51b14b9ee30dc37ec970b50a486f37686e2a8",
+    "0x742d35cc6634c0532925a3b844bc454e4438f44e",
+    "0xd26114cd6ee289accf82350c8d8487fedb8a0c07",
+    "0x876eabf441b2ee5b5b0554fd502a8e0600950cfa",
+    "0xf230b790e05390fc8295f4d3f60332c93bed42e2",
+    "0xcbeaec699431857fdb4d37addbbdc20e132d4903",
+    "0xf7920b0768ecb20a123fac32311d07d193381d6f",
+    "0xbf2179859fc6d5bee9bf9158632dc51678a4100e",
+    "0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0",
+    "0x3893b9422cd5d70a81edeffe3d5a1c6a978310bb",
+    "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+    "0x618e75ac90b12c6049ba3b27f5d5f8651b0037f6",
+    "0xd7e7a876058d8e67efb26ad7b10a4007d90396bc",
+    "0xcc80c051057b774cd75067dc48f8987c4eb97a5e",
+    "0xc6cde7c39eb2f0f0095f41570af89efc2c1ea828",
+    "0xe41d2489571d322189246dafa5ebde1f4699f498",
+    "0x97aeb5066e1a590e868b511457beb6fe99d329f5",
+    "0x42d6622dece394b54999fbd73d108123806f6a18",
+    "0x0e8d6b471e332f140e7d9dbb99e5e3822f728da6",
+    "0xaec2e87e0a235266d9c5adc9deb4b2e29b54d009"
+  ]
+}

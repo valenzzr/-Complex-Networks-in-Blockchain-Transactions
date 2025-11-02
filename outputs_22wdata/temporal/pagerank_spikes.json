@@ -1,0 +1,5442 @@
+[
+  {
+    "node": "0xfbb1b73c4f0bda4f67dca266ce6ef42f520fbb98",
+    "from_index": 123,
+    "to_index": 185,
+    "from_end": "2018-01-06",
+    "to_end": "2019-03-16",
+    "delta_pr": 0.017529084608489353
+  },
+  {
+    "node": "0xab5801a7d398351b8be11c439e05c5b3259aec9b",
+    "from_index": 16,
+    "to_index": 17,
+    "from_end": "2015-12-19",
+    "to_end": "2015-12-26",
+    "delta_pr": 0.08986424002178572
+  },
+  {
+    "node": "0xab5801a7d398351b8be11c439e05c5b3259aec9b",
+    "from_index": 101,
+    "to_index": 102,
+    "from_end": "2017-08-05",
+    "to_end": "2017-08-12",
+    "delta_pr": 0.05970735389868721
+  },
+  {
+    "node": "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
+    "from_index": 17,
+    "to_index": 21,
+    "from_end": "2015-12-26",
+    "to_end": "2016-01-23",
+    "delta_pr": 0.12899017620238903
+  },
+  {
+    "node": "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
+    "from_index": 31,
+    "to_index": 32,
+    "from_end": "2016-04-02",
+    "to_end": "2016-04-09",
+    "delta_pr": 0.06970366357200651
+  },
+  {
+    "node": "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
+    "from_index": 111,
+    "to_index": 112,
+    "from_end": "2017-10-14",
+    "to_end": "2017-10-21",
+    "delta_pr": 0.17510713170130915
+  },
+  {
+    "node": "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
+    "from_index": 216,
+    "to_index": 217,
+    "from_end": "2019-10-19",
+    "to_end": "2019-10-26",
+    "delta_pr": 0.08663174554766977
+  },
+  {
+    "node": "0x1db3439a222c519ab44bb1144fc28167b4fa6ee6",
+    "from_index": 419,
+    "to_index": 420,
+    "from_end": "2023-09-09",
+    "to_end": "2023-09-16",
+    "delta_pr": 0.07580928851815633
+  },
+  {
+    "node": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "from_index": 15,
+    "to_index": 28,
+    "from_end": "2015-12-12",
+    "to_end": "2016-03-12",
+    "delta_pr": 0.20115626073654114
+  },
+  {
+    "node": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "from_index": 419,
+    "to_index": 420,
+    "from_end": "2023-09-09",
+    "to_end": "2023-09-16",
+    "delta_pr": 0.1146306479512602
+  },
+  {
+    "node": "0xd8da6bf26964af9d7eed9e03e53415d37aa96045",
+    "from_index": 421,
+    "to_index": 422,
+    "from_end": "2023-09-23",
+    "to_end": "2023-09-30",
+    "delta_pr": 0.1249454508467315
+  },
+  {
+    "node": "0xd654bdd32fc99471455e86c2e7f7d7b6437e9179",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.17580080845908166
+  },
+  {
+    "node": "0xc66ea802717bfb9833400264dd12c2bceaa34a6d",
+    "from_index": 33,
+    "to_index": 34,
+    "from_end": "2016-04-16",
+    "to_end": "2016-04-23",
+    "delta_pr": 0.04814232227265384
+  },
+  {
+    "node": "0xda4a4626d3e16e094de3225a751aab7128e96526",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.009522906040267263
+  },
+  {
+    "node": "0xe25e3a1947405a1f82dd8e3048a9ca471dc782e1",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.009522906040267263
+  },
+  {
+    "node": "0xf9dff387dcb5cc4cca5b91adb07a95f54e9f1bb6",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.009522906040267263
+  },
+  {
+    "node": "0xf5c7bcb44ebafc72d46dbc70b717272e19024da4",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.009522906040267263
+  },
+  {
+    "node": "0x00995ae79d60365b2a0c52a5ad19140dfb8d45f2",
+    "from_index": 39,
+    "to_index": 41,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-11",
+    "delta_pr": 0.010517546757161393
+  },
+  {
+    "node": "0x26bdce6e4ea9afd060049993ed11f153eb1e322f",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.009522906040267263
+  },
+  {
+    "node": "0xa919efc72756222c072a1594efdba8178aa360d8",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.009522906040267263
+  },
+  {
+    "node": "0xf1e971df559a0a9a56bb9c5ad87d6a3ace9d08eb",
+    "from_index": 332,
+    "to_index": 374,
+    "from_end": "2022-01-08",
+    "to_end": "2022-10-29",
+    "delta_pr": 0.0019657368988915663
+  },
+  {
+    "node": "0xd8e80673419acfbf15bf8eb0239cda90f232051f",
+    "from_index": 39,
+    "to_index": 50,
+    "from_end": "2016-05-28",
+    "to_end": "2016-08-13",
+    "delta_pr": 0.00427563751118418
+  },
+  {
+    "node": "0x2b8d5c9209fbd500fd817d960830ac6718b88112",
+    "from_index": 147,
+    "to_index": 154,
+    "from_end": "2018-06-23",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.0057108009640059266
+  },
+  {
+    "node": "0x56ef1e9dc98a93f33633b10183ba75ce422ea57e",
+    "from_index": 39,
+    "to_index": 71,
+    "from_end": "2016-05-28",
+    "to_end": "2017-01-07",
+    "delta_pr": 0.004099734070058391
+  },
+  {
+    "node": "0xfca73eff8771c0103ba3cc1a9c259448c72abf0b",
+    "from_index": 39,
+    "to_index": 49,
+    "from_end": "2016-05-28",
+    "to_end": "2016-08-06",
+    "delta_pr": 0.005511204358819653
+  },
+  {
+    "node": "0x8fdb7441bd9263499af346135153a737aa9b3fbb",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.009522906040267263
+  },
+  {
+    "node": "0x0d53ac8163d98791e77b23da0b5097552f6b6753",
+    "from_index": 39,
+    "to_index": 52,
+    "from_end": "2016-05-28",
+    "to_end": "2016-08-27",
+    "delta_pr": 0.00328641921663614
+  },
+  {
+    "node": "0x74d14887489eb48eb6ec080927fe0dcc24ba8d9c",
+    "from_index": 39,
+    "to_index": 40,
+    "from_end": "2016-05-28",
+    "to_end": "2016-06-04",
+    "delta_pr": 0.009522906040267263
+  },
+  {
+    "node": "0x174cfcf1d925c259d6c5ba7df6eb6511d2f4ae01",
+    "from_index": 46,
+    "to_index": 47,
+    "from_end": "2016-07-16",
+    "to_end": "2016-07-23",
+    "delta_pr": 0.0071975300731796695
+  },
+  {
+    "node": "0x73e2defb56bf59eb2ad8f91f0d8e90b1604b5985",
+    "from_index": 46,
+    "to_index": 47,
+    "from_end": "2016-07-16",
+    "to_end": "2016-07-23",
+    "delta_pr": 0.0071975300731796695
+  },
+  {
+    "node": "0x59d5284238e34d03791b14378a259d7e1290001e",
+    "from_index": 46,
+    "to_index": 47,
+    "from_end": "2016-07-16",
+    "to_end": "2016-07-23",
+    "delta_pr": 0.0071975300731796695
+  },
+  {
+    "node": "0xab8d8b74f202f4cd4a918b65da4bac612e086ee7",
+    "from_index": 46,
+    "to_index": 47,
+    "from_end": "2016-07-16",
+    "to_end": "2016-07-23",
+    "delta_pr": 0.0071975300731796695
+  },
+  {
+    "node": "0x2136bbba2edca21afdddee838fff19ea70d10f03",
+    "from_index": 84,
+    "to_index": 85,
+    "from_end": "2017-04-08",
+    "to_end": "2017-04-15",
+    "delta_pr": 0.09006675098529711
+  },
+  {
+    "node": "0x267be1c1d684f78cb4f6a176c4911b741e4ffdc0",
+    "from_index": 423,
+    "to_index": 489,
+    "from_end": "2023-10-07",
+    "to_end": "2025-01-11",
+    "delta_pr": 0.009410918013269398
+  },
+  {
+    "node": "0xfb8dbb0eb9967a71c0df854c2fc372e63e71f453",
+    "from_index": 83,
+    "to_index": 84,
+    "from_end": "2017-04-01",
+    "to_end": "2017-04-08",
+    "delta_pr": 0.007272354751073686
+  },
+  {
+    "node": "0xbe4736749ef1e1c1e686bb161fb17cdd4aea563e",
+    "from_index": 83,
+    "to_index": 84,
+    "from_end": "2017-04-01",
+    "to_end": "2017-04-08",
+    "delta_pr": 0.007272354751073686
+  },
+  {
+    "node": "0xe692869347b9b18ef2deed19ae1bbace303b52b0",
+    "from_index": 69,
+    "to_index": 87,
+    "from_end": "2016-12-24",
+    "to_end": "2017-04-29",
+    "delta_pr": 0.07567742760926327
+  },
+  {
+    "node": "0xe692869347b9b18ef2deed19ae1bbace303b52b0",
+    "from_index": 216,
+    "to_index": 217,
+    "from_end": "2019-10-19",
+    "to_end": "2019-10-26",
+    "delta_pr": 0.10607394035366544
+  },
+  {
+    "node": "0x1cddd700d327ac29f5053fd219f9ac77112a12e7",
+    "from_index": 83,
+    "to_index": 84,
+    "from_end": "2017-04-01",
+    "to_end": "2017-04-08",
+    "delta_pr": 0.007272354751073686
+  },
+  {
+    "node": "0xb0e83c2d71a991017e0116d58c5765abc57384af",
+    "from_index": 224,
+    "to_index": 226,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-28",
+    "delta_pr": 0.003316714475217966
+  },
+  {
+    "node": "0x80d63799b1e08a80f73fb7a83264b5c31600bf3a",
+    "from_index": 288,
+    "to_index": 291,
+    "from_end": "2021-03-06",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.000703275262248184
+  },
+  {
+    "node": "0x004c350cd1ab72ea28cd6c47935b5bb31f64a928",
+    "from_index": 236,
+    "to_index": 245,
+    "from_end": "2020-03-07",
+    "to_end": "2020-05-09",
+    "delta_pr": 0.00118383891884776
+  },
+  {
+    "node": "0x67fe8b36535919c04e783b13baabd14d77b6ed3e",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.002357027636630277
+  },
+  {
+    "node": "0xd26114cd6ee289accf82350c8d8487fedb8a0c07",
+    "from_index": 101,
+    "to_index": 102,
+    "from_end": "2017-08-05",
+    "to_end": "2017-08-12",
+    "delta_pr": 0.029307657464747904
+  },
+  {
+    "node": "0xc4d0ee5b642d3b429c58cc4d10bdcd92312ac180",
+    "from_index": 101,
+    "to_index": 102,
+    "from_end": "2017-08-05",
+    "to_end": "2017-08-12",
+    "delta_pr": 0.08862374053058239
+  },
+  {
+    "node": "0xc4d0ee5b642d3b429c58cc4d10bdcd92312ac180",
+    "from_index": 111,
+    "to_index": 112,
+    "from_end": "2017-10-14",
+    "to_end": "2017-10-21",
+    "delta_pr": 0.06884315461473699
+  },
+  {
+    "node": "0xc4d0ee5b642d3b429c58cc4d10bdcd92312ac180",
+    "from_index": 113,
+    "to_index": 114,
+    "from_end": "2017-10-28",
+    "to_end": "2017-11-04",
+    "delta_pr": 0.05587260209334896
+  },
+  {
+    "node": "0xc4d0ee5b642d3b429c58cc4d10bdcd92312ac180",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.05520384294334953
+  },
+  {
+    "node": "0xc4d0ee5b642d3b429c58cc4d10bdcd92312ac180",
+    "from_index": 194,
+    "to_index": 195,
+    "from_end": "2019-05-18",
+    "to_end": "2019-05-25",
+    "delta_pr": 0.058351901784964744
+  },
+  {
+    "node": "0xc4d0ee5b642d3b429c58cc4d10bdcd92312ac180",
+    "from_index": 206,
+    "to_index": 207,
+    "from_end": "2019-08-10",
+    "to_end": "2019-08-17",
+    "delta_pr": 0.11428340613693815
+  },
+  {
+    "node": "0x0f5d2fb29fb7d3cfee444a200298f468908cc942",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.010427455829045697
+  },
+  {
+    "node": "0x69faa59e22242667bdfa03c6aabee7cb6a57666c",
+    "from_index": 123,
+    "to_index": 254,
+    "from_end": "2018-01-06",
+    "to_end": "2020-07-11",
+    "delta_pr": 0.0015662036522367524
+  },
+  {
+    "node": "0xd24400ae8bfebb18ca49be86258a3c749cf46853",
+    "from_index": 297,
+    "to_index": 351,
+    "from_end": "2021-05-08",
+    "to_end": "2022-05-21",
+    "delta_pr": 0.0025981819861844793
+  },
+  {
+    "node": "0x0cfb686e114d478b055ce8614621f8bb62f70360",
+    "from_index": 111,
+    "to_index": 112,
+    "from_end": "2017-10-14",
+    "to_end": "2017-10-21",
+    "delta_pr": 0.1636476468540812
+  },
+  {
+    "node": "0x55046f4c03f0b4bedd87fa1f14198be2aa8b47d7",
+    "from_index": 108,
+    "to_index": 112,
+    "from_end": "2017-09-23",
+    "to_end": "2017-10-21",
+    "delta_pr": 0.04705631632459433
+  },
+  {
+    "node": "0x3f5ce5fbfe3e9af3971dd833d26ba9b5c936f0be",
+    "from_index": 111,
+    "to_index": 112,
+    "from_end": "2017-10-14",
+    "to_end": "2017-10-21",
+    "delta_pr": 0.015518709561801368
+  },
+  {
+    "node": "0x3f5ce5fbfe3e9af3971dd833d26ba9b5c936f0be",
+    "from_index": 147,
+    "to_index": 216,
+    "from_end": "2018-06-23",
+    "to_end": "2019-10-19",
+    "delta_pr": 0.017258460727241114
+  },
+  {
+    "node": "0x731697098ff29d084cdec21152bd0613e6565d07",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.1413128845357334
+  },
+  {
+    "node": "0x82382149a64b6b9537135d15244f2f9421e02ee4",
+    "from_index": 157,
+    "to_index": 182,
+    "from_end": "2018-09-01",
+    "to_end": "2019-02-23",
+    "delta_pr": 0.06440415200738436
+  },
+  {
+    "node": "0x882668c887286d3dd0eb894a78eb92798484978d",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.005447952471982752
+  },
+  {
+    "node": "0xc7878ad4ed72c12685190e6ed772b00054e1b338",
+    "from_index": 124,
+    "to_index": 129,
+    "from_end": "2018-01-13",
+    "to_end": "2018-02-17",
+    "delta_pr": 0.0016280561669184388
+  },
+  {
+    "node": "0xa37fed1379c1b1243d7f216ababaaf287a9fd6fc",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.010684409560800983
+  },
+  {
+    "node": "0xd60fbdd7e666fe39cfc1600b1f282a0f92c1b77f",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.05273193445090837
+  },
+  {
+    "node": "0xc6cde7c39eb2f0f0095f41570af89efc2c1ea828",
+    "from_index": 110,
+    "to_index": 114,
+    "from_end": "2017-10-07",
+    "to_end": "2017-11-04",
+    "delta_pr": 0.020874992826042216
+  },
+  {
+    "node": "0xc6cde7c39eb2f0f0095f41570af89efc2c1ea828",
+    "from_index": 179,
+    "to_index": 180,
+    "from_end": "2019-02-02",
+    "to_end": "2019-02-09",
+    "delta_pr": 0.009905203244635449
+  },
+  {
+    "node": "0xc6cde7c39eb2f0f0095f41570af89efc2c1ea828",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0xf4b51b14b9ee30dc37ec970b50a486f37686e2a8",
+    "from_index": 149,
+    "to_index": 174,
+    "from_end": "2018-07-07",
+    "to_end": "2018-12-29",
+    "delta_pr": 0.008360563504366933
+  },
+  {
+    "node": "0xf4b51b14b9ee30dc37ec970b50a486f37686e2a8",
+    "from_index": 177,
+    "to_index": 178,
+    "from_end": "2019-01-19",
+    "to_end": "2019-01-26",
+    "delta_pr": 0.008347425254405185
+  },
+  {
+    "node": "0xf4b51b14b9ee30dc37ec970b50a486f37686e2a8",
+    "from_index": 179,
+    "to_index": 180,
+    "from_end": "2019-02-02",
+    "to_end": "2019-02-09",
+    "delta_pr": 0.009905203244635449
+  },
+  {
+    "node": "0xf4b51b14b9ee30dc37ec970b50a486f37686e2a8",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0x2f1e5d5b078058b120b9fe71f38a2c8b53b63dab",
+    "from_index": 111,
+    "to_index": 114,
+    "from_end": "2017-10-14",
+    "to_end": "2017-11-04",
+    "delta_pr": 0.06430031538515991
+  },
+  {
+    "node": "0x514910771af9ca656af840dff83e8264ecf986ca",
+    "from_index": 111,
+    "to_index": 199,
+    "from_end": "2017-10-14",
+    "to_end": "2019-06-22",
+    "delta_pr": 0.017800306536583904
+  },
+  {
+    "node": "0x618e75ac90b12c6049ba3b27f5d5f8651b0037f6",
+    "from_index": 111,
+    "to_index": 112,
+    "from_end": "2017-10-14",
+    "to_end": "2017-10-21",
+    "delta_pr": 0.015518709561801368
+  },
+  {
+    "node": "0xdd974d5c2e2928dea5f71b9825b8b646686bd200",
+    "from_index": 133,
+    "to_index": 159,
+    "from_end": "2018-03-17",
+    "to_end": "2018-09-15",
+    "delta_pr": 0.010901393380162442
+  },
+  {
+    "node": "0xa5836a97da9f714238d4481d6bccb87789d84fdc",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.009551511186526215
+  },
+  {
+    "node": "0x368324c5c5b1c8a28f789ad5f4f355fe2892c1c6",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0021330839898834096
+  },
+  {
+    "node": "0x05ee546c1a62f90d7acbffd6d846c9c54c7cf94c",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0015087886441715569
+  },
+  {
+    "node": "0x279f53893439e6d2b61b0037bc7103462017f09d",
+    "from_index": 121,
+    "to_index": 130,
+    "from_end": "2017-12-23",
+    "to_end": "2018-02-24",
+    "delta_pr": 0.0013597092166845925
+  },
+  {
+    "node": "0x14d06788090769f669427b6aea1c0240d2321f34",
+    "from_index": 121,
+    "to_index": 215,
+    "from_end": "2017-12-23",
+    "to_end": "2019-10-12",
+    "delta_pr": 0.018914805028285353
+  },
+  {
+    "node": "0x843f0f0e093655f036ee2763932d411c2b5b7e8d",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0016589275646671793
+  },
+  {
+    "node": "0xa26abc461b3c68e2abca80b7726115a66f93688e",
+    "from_index": 122,
+    "to_index": 123,
+    "from_end": "2017-12-30",
+    "to_end": "2018-01-06",
+    "delta_pr": 0.017346993451695922
+  },
+  {
+    "node": "0xfdb16996831753d5331ff813c29a93c76834a0ad",
+    "from_index": 170,
+    "to_index": 171,
+    "from_end": "2018-12-01",
+    "to_end": "2018-12-08",
+    "delta_pr": 0.003467691203993033
+  },
+  {
+    "node": "0xd4a162644449864107addd79d9fd02af10a8202b",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0018562938677693396
+  },
+  {
+    "node": "0x7decccf512c9bfec62babdd00352ec81184d7e33",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.002789578711944939
+  },
+  {
+    "node": "0x876eabf441b2ee5b5b0554fd502a8e0600950cfa",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.12404519446602907
+  },
+  {
+    "node": "0x190c6493796ead17e6c5a28bcea5a55c0781c61e",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.010284366591215807
+  },
+  {
+    "node": "0x744d70fdbe2ba4cf95131626614a1763df805b9e",
+    "from_index": 122,
+    "to_index": 229,
+    "from_end": "2017-12-30",
+    "to_end": "2020-01-18",
+    "delta_pr": 0.0020295638999480873
+  },
+  {
+    "node": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "from_index": 120,
+    "to_index": 121,
+    "from_end": "2017-12-16",
+    "to_end": "2017-12-23",
+    "delta_pr": 0.03323409981907369
+  },
+  {
+    "node": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "from_index": 122,
+    "to_index": 123,
+    "from_end": "2017-12-30",
+    "to_end": "2018-01-06",
+    "delta_pr": 0.10032671926746181
+  },
+  {
+    "node": "0x28d804bf2212e220bc2b7b6252993db8286df07f",
+    "from_index": 289,
+    "to_index": 413,
+    "from_end": "2021-03-13",
+    "to_end": "2023-07-29",
+    "delta_pr": 0.000778237673018838
+  },
+  {
+    "node": "0xbf8887fc01b2cb22dddf6129c7dc6302ca59a350",
+    "from_index": 151,
+    "to_index": 186,
+    "from_end": "2018-07-21",
+    "to_end": "2019-03-23",
+    "delta_pr": 0.018911370073431324
+  },
+  {
+    "node": "0x552b3ab4ea82a190b9fe8e3fee8a33743e211ccb",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0022037990913671224
+  },
+  {
+    "node": "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0x236f9f97e0e62388479bf9e5ba4889e46b0273c3",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0015087886441715569
+  },
+  {
+    "node": "0xce70e9550a8b997e84dd10e15f45421207dcf64b",
+    "from_index": 140,
+    "to_index": 141,
+    "from_end": "2018-05-05",
+    "to_end": "2018-05-12",
+    "delta_pr": 0.10262842053798263
+  },
+  {
+    "node": "0x1fe4e05e5cb5b4da7855d465f5df20d6ff9e085d",
+    "from_index": 140,
+    "to_index": 141,
+    "from_end": "2018-05-05",
+    "to_end": "2018-05-12",
+    "delta_pr": 0.08769424056108248
+  },
+  {
+    "node": "0xcfc2142b58bcd3c67c08e1ea11307eab756bf6e8",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0016540883443223648
+  },
+  {
+    "node": "0x8722551e83e0d026175158d3cf0b73b90096c286",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0015087886441715569
+  },
+  {
+    "node": "0x6aee2613bb81565021be3bdb232bd34708c9a407",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0015087886441715569
+  },
+  {
+    "node": "0x00aec6e482d2ec9cedf8f03072ff8bd27850e95c",
+    "from_index": 125,
+    "to_index": 129,
+    "from_end": "2018-01-20",
+    "to_end": "2018-02-17",
+    "delta_pr": 0.0016050422231386479
+  },
+  {
+    "node": "0xcf869040e78993eaa57bf92a847a24e0ed56c247",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.006271731103059788
+  },
+  {
+    "node": "0xf970b8e36e23f7fc3fd752eea86f8be8d83375a6",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x610023fc494a3a1370f32637456c30897cb3233c",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0024842501218463263
+  },
+  {
+    "node": "0x493b407c8d9b90e50a166218b843442d195b689a",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.004390936541814055
+  },
+  {
+    "node": "0x9b20dabcec77f6289113e61893f7beefaeb1990a",
+    "from_index": 141,
+    "to_index": 155,
+    "from_end": "2018-05-12",
+    "to_end": "2018-08-18",
+    "delta_pr": 0.004055680795046659
+  },
+  {
+    "node": "0xb5604c2c63804c633ae93e4ad3d14bcbade15bf4",
+    "from_index": 151,
+    "to_index": 154,
+    "from_end": "2018-07-21",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.004978153445539641
+  },
+  {
+    "node": "0xcac725bef4f114f728cbcfd744a731c2a463c3fc",
+    "from_index": 127,
+    "to_index": 257,
+    "from_end": "2018-02-03",
+    "to_end": "2020-08-01",
+    "delta_pr": 0.0012459248332837825
+  },
+  {
+    "node": "0x2b1e58b979e4b2d72d8bca5bb4646ccc032ddbfc",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0015087886441715569
+  },
+  {
+    "node": "0x25595d7ed9197b6983b5bd814c1024cc97c9bd44",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.003927680791304477
+  },
+  {
+    "node": "0x564286362092d8e7936f0549571a803b203aaced",
+    "from_index": 127,
+    "to_index": 128,
+    "from_end": "2018-02-03",
+    "to_end": "2018-02-10",
+    "delta_pr": 0.0012974116656791798
+  },
+  {
+    "node": "0xd551234ae421e3bcba99a0da6d736074f22192ff",
+    "from_index": 144,
+    "to_index": 216,
+    "from_end": "2018-06-02",
+    "to_end": "2019-10-19",
+    "delta_pr": 0.015726351903285064
+  },
+  {
+    "node": "0x2b5634c42055806a59e9107ed44d43c426e58258",
+    "from_index": 171,
+    "to_index": 185,
+    "from_end": "2018-12-08",
+    "to_end": "2019-03-16",
+    "delta_pr": 0.012607374714736034
+  },
+  {
+    "node": "0x0681d8db095565fe8a346fa0277bffde9c0edbbf",
+    "from_index": 144,
+    "to_index": 216,
+    "from_end": "2018-06-02",
+    "to_end": "2019-10-19",
+    "delta_pr": 0.015726351903285064
+  },
+  {
+    "node": "0xe75ad3aab14e4b0df8c5da4286608dabb21bd864",
+    "from_index": 135,
+    "to_index": 194,
+    "from_end": "2018-03-31",
+    "to_end": "2019-05-18",
+    "delta_pr": 0.014232324199987795
+  },
+  {
+    "node": "0xfa1a856cfa3409cfa145fa4e20eb270df3eb21ab",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.005423103918961634
+  },
+  {
+    "node": "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.010427455829045697
+  },
+  {
+    "node": "0x69b148395ce0015c13e36bffbad63f49ef874e03",
+    "from_index": 135,
+    "to_index": 158,
+    "from_end": "2018-03-31",
+    "to_end": "2018-09-08",
+    "delta_pr": 0.008901640794434664
+  },
+  {
+    "node": "0x61d5a4d5bd270e59e9320243e574288e2a199fed",
+    "from_index": 149,
+    "to_index": 174,
+    "from_end": "2018-07-07",
+    "to_end": "2018-12-29",
+    "delta_pr": 0.008360563504366933
+  },
+  {
+    "node": "0x61d5a4d5bd270e59e9320243e574288e2a199fed",
+    "from_index": 177,
+    "to_index": 178,
+    "from_end": "2019-01-19",
+    "to_end": "2019-01-26",
+    "delta_pr": 0.008347425254405185
+  },
+  {
+    "node": "0x61d5a4d5bd270e59e9320243e574288e2a199fed",
+    "from_index": 179,
+    "to_index": 180,
+    "from_end": "2019-02-02",
+    "to_end": "2019-02-09",
+    "delta_pr": 0.009905203244635449
+  },
+  {
+    "node": "0x61d5a4d5bd270e59e9320243e574288e2a199fed",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0x3893b9422cd5d70a81edeffe3d5a1c6a978310bb",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.010427455829045697
+  },
+  {
+    "node": "0x5732046a883704404f284ce41ffadd5b007fd668",
+    "from_index": 137,
+    "to_index": 229,
+    "from_end": "2018-04-14",
+    "to_end": "2020-01-18",
+    "delta_pr": 0.0014411079576822881
+  },
+  {
+    "node": "0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec",
+    "from_index": 150,
+    "to_index": 157,
+    "from_end": "2018-07-14",
+    "to_end": "2018-09-01",
+    "delta_pr": 0.005975638227688002
+  },
+  {
+    "node": "0xec2a9a192929ed1f280f7fd8935b881e3a649dc0",
+    "from_index": 147,
+    "to_index": 186,
+    "from_end": "2018-06-23",
+    "to_end": "2019-03-23",
+    "delta_pr": 0.019177050999167104
+  },
+  {
+    "node": "0xec2a9a192929ed1f280f7fd8935b881e3a649dc0",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0xec2a9a192929ed1f280f7fd8935b881e3a649dc0",
+    "from_index": 248,
+    "to_index": 249,
+    "from_end": "2020-05-30",
+    "to_end": "2020-06-06",
+    "delta_pr": 0.01385007841474024
+  },
+  {
+    "node": "0xcc80c051057b774cd75067dc48f8987c4eb97a5e",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.010427455829045697
+  },
+  {
+    "node": "0xcc80c051057b774cd75067dc48f8987c4eb97a5e",
+    "from_index": 177,
+    "to_index": 178,
+    "from_end": "2019-01-19",
+    "to_end": "2019-01-26",
+    "delta_pr": 0.008347425254405185
+  },
+  {
+    "node": "0xcc80c051057b774cd75067dc48f8987c4eb97a5e",
+    "from_index": 179,
+    "to_index": 180,
+    "from_end": "2019-02-02",
+    "to_end": "2019-02-09",
+    "delta_pr": 0.009905203244635449
+  },
+  {
+    "node": "0xcc80c051057b774cd75067dc48f8987c4eb97a5e",
+    "from_index": 207,
+    "to_index": 209,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-31",
+    "delta_pr": 0.010487444742254395
+  },
+  {
+    "node": "0x01ff50f8b7f74e4f00580d9596cd3d0d6d6e326f",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.010427455829045697
+  },
+  {
+    "node": "0xe1f3c653248de6894d683cb2f10de7ca2253046f",
+    "from_index": 148,
+    "to_index": 189,
+    "from_end": "2018-06-30",
+    "to_end": "2019-04-13",
+    "delta_pr": 0.01720946341327381
+  },
+  {
+    "node": "0xe1f3c653248de6894d683cb2f10de7ca2253046f",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0x60000551fea1a6333fae8cc2b76db80e88e1e786",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.005447952471982752
+  },
+  {
+    "node": "0xbbca92f48e4688f204d973dd5bc76564b16324a4",
+    "from_index": 142,
+    "to_index": 154,
+    "from_end": "2018-05-19",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.0052978619254164545
+  },
+  {
+    "node": "0x34f1e87e890b5683ef7b011b16055113c7194c35",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.005423103918961634
+  },
+  {
+    "node": "0x96b795b19ea44a018e73ac0a00d2ecd23b11267a",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.010427455829045697
+  },
+  {
+    "node": "0xfc898b18a70ce49579f8d79a32e29928c15b4bc8",
+    "from_index": 163,
+    "to_index": 212,
+    "from_end": "2018-10-13",
+    "to_end": "2019-09-21",
+    "delta_pr": 0.016981518491442433
+  },
+  {
+    "node": "0x742d35cc6634c0532925a3b844bc454e4438f44e",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.13357362423090746
+  },
+  {
+    "node": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+    "from_index": 149,
+    "to_index": 182,
+    "from_end": "2018-07-07",
+    "to_end": "2019-02-23",
+    "delta_pr": 0.02710983419247642
+  },
+  {
+    "node": "0x826f43bf78c0caff4f347c2a89b60126eaab44ee",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.00547280102500387
+  },
+  {
+    "node": "0xd160c2767651df3b6bd4bc6c8e5f3a2c2031b4bd",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.010427455829045697
+  },
+  {
+    "node": "0x6fb3e0a217407efff7ca062d46c26e5d60a14d69",
+    "from_index": 147,
+    "to_index": 242,
+    "from_end": "2018-06-23",
+    "to_end": "2020-04-18",
+    "delta_pr": 0.0020798937644851594
+  },
+  {
+    "node": "0x97aeb5066e1a590e868b511457beb6fe99d329f5",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.005423103918961634
+  },
+  {
+    "node": "0x45083c507882cb7b638f660762b28e2f1a504f73",
+    "from_index": 147,
+    "to_index": 154,
+    "from_end": "2018-06-23",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.0057108009640059266
+  },
+  {
+    "node": "0x59a5208b32e627891c389ebafc644145224006e8",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x915d7915f2b469bb654a7d903a5d4417cb8ea7df",
+    "from_index": 153,
+    "to_index": 154,
+    "from_end": "2018-08-04",
+    "to_end": "2018-08-11",
+    "delta_pr": 0.005423103918961634
+  },
+  {
+    "node": "0x51836a753e344257b361519e948ffcaf5fb8d521",
+    "from_index": 151,
+    "to_index": 219,
+    "from_end": "2018-07-21",
+    "to_end": "2019-11-09",
+    "delta_pr": 0.008591913845297953
+  },
+  {
+    "node": "0x132db8234171cc9d8a65853cf03d5c0f46c8867e",
+    "from_index": 155,
+    "to_index": 219,
+    "from_end": "2018-08-18",
+    "to_end": "2019-11-09",
+    "delta_pr": 0.011754249061158479
+  },
+  {
+    "node": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "from_index": 171,
+    "to_index": 172,
+    "from_end": "2018-12-08",
+    "to_end": "2018-12-15",
+    "delta_pr": 0.010427455829045697
+  },
+  {
+    "node": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "from_index": 531,
+    "to_index": 532,
+    "from_end": "2025-11-01",
+    "to_end": "2025-11-08",
+    "delta_pr": 0.01445691712777178
+  },
+  {
+    "node": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+    "from_index": 533,
+    "to_index": 534,
+    "from_end": "2025-11-15",
+    "to_end": "2025-11-22",
+    "delta_pr": 0.026318564620754555
+  },
+  {
+    "node": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "from_index": 158,
+    "to_index": 205,
+    "from_end": "2018-09-08",
+    "to_end": "2019-08-03",
+    "delta_pr": 0.0062257168231575465
+  },
+  {
+    "node": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0x818e6fecd516ecc3849daf6845e3ec868087b755",
+    "from_index": 162,
+    "to_index": 218,
+    "from_end": "2018-10-06",
+    "to_end": "2019-11-02",
+    "delta_pr": 0.01331134919955946
+  },
+  {
+    "node": "0xa5c9ecf54790334b73e5dfa1ff5668eb425dc474",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0x06f5140a415f4e3969f7e40daeccfd0558c9ce26",
+    "from_index": 177,
+    "to_index": 180,
+    "from_end": "2019-01-19",
+    "to_end": "2019-02-09",
+    "delta_pr": 0.022660122356292313
+  },
+  {
+    "node": "0xe03e70e33f2ac48cec3be5c0c7b06a0f25ad5610",
+    "from_index": 177,
+    "to_index": 181,
+    "from_end": "2019-01-19",
+    "to_end": "2019-02-16",
+    "delta_pr": 0.02042353996490478
+  },
+  {
+    "node": "0xf9ed3cca3e56a7b72049e6e830c39fd842a2f8e6",
+    "from_index": 177,
+    "to_index": 182,
+    "from_end": "2019-01-19",
+    "to_end": "2019-02-23",
+    "delta_pr": 0.015225251605678456
+  },
+  {
+    "node": "0x10f4bc8cd156b4785f8f1f100c53c4ca0181e9b9",
+    "from_index": 177,
+    "to_index": 180,
+    "from_end": "2019-01-19",
+    "to_end": "2019-02-09",
+    "delta_pr": 0.022660122356292313
+  },
+  {
+    "node": "0x415eda0e27b032e39f6ca3a3d89669c5b979b71a",
+    "from_index": 343,
+    "to_index": 344,
+    "from_end": "2022-03-26",
+    "to_end": "2022-04-02",
+    "delta_pr": 0.009416565150047866
+  },
+  {
+    "node": "0xb1e14bccad2f1f5a58fa789d80f8e4142d9f7eaf",
+    "from_index": 170,
+    "to_index": 188,
+    "from_end": "2018-12-01",
+    "to_end": "2019-04-06",
+    "delta_pr": 0.03630595301561845
+  },
+  {
+    "node": "0x77a01c716980169a051504f4e92ba25556befd0a",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0xc6c7e6b7e463f6b4f5849d0e6ecd95194b8a85ec",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0xc6c7e6b7e463f6b4f5849d0e6ecd95194b8a85ec",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.013780154363760953
+  },
+  {
+    "node": "0x1e0447b19bb6ecfdae1e4ae1694b0c3659614e4e",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0x567b2dd0fb4e9381d0752d2bf0b7f7f9e01af47d",
+    "from_index": 206,
+    "to_index": 210,
+    "from_end": "2019-08-10",
+    "to_end": "2019-09-07",
+    "delta_pr": 0.008218421730557493
+  },
+  {
+    "node": "0xf5dce57282a584d2746faf1593d3121fcac444dc",
+    "from_index": 207,
+    "to_index": 208,
+    "from_end": "2019-08-17",
+    "to_end": "2019-08-24",
+    "delta_pr": 0.011283810472162162
+  },
+  {
+    "node": "0xf748879edbe8cca140940788163d7be4d2a2e46a",
+    "from_index": 251,
+    "to_index": 252,
+    "from_end": "2020-06-20",
+    "to_end": "2020-06-27",
+    "delta_pr": 0.010729575309183111
+  },
+  {
+    "node": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+    "from_index": 395,
+    "to_index": 451,
+    "from_end": "2023-03-25",
+    "to_end": "2024-04-20",
+    "delta_pr": 0.0066505106454646835
+  },
+  {
+    "node": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+    "from_index": 495,
+    "to_index": 509,
+    "from_end": "2025-02-22",
+    "to_end": "2025-05-31",
+    "delta_pr": 0.006987225148274458
+  },
+  {
+    "node": "0x57ab1ec28d129707052df4df418d58a2d46d5f51",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x97dec872013f6b5fb443861090ad931542878126",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.008376183261866434
+  },
+  {
+    "node": "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "from_index": 427,
+    "to_index": 462,
+    "from_end": "2023-11-04",
+    "to_end": "2024-07-06",
+    "delta_pr": 0.003370829281719295
+  },
+  {
+    "node": "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "from_index": 463,
+    "to_index": 464,
+    "from_end": "2024-07-13",
+    "to_end": "2024-07-20",
+    "delta_pr": 0.0031719075865579314
+  },
+  {
+    "node": "0x6b175474e89094c44da98b954eedeac495271d0f",
+    "from_index": 464,
+    "to_index": 465,
+    "from_end": "2024-07-20",
+    "to_end": "2024-07-27",
+    "delta_pr": 0.004469083028349368
+  },
+  {
+    "node": "0x46340b20830761efd32832a74d7169b29feb9758",
+    "from_index": 331,
+    "to_index": 355,
+    "from_end": "2022-01-01",
+    "to_end": "2022-06-18",
+    "delta_pr": 0.0018474989440215356
+  },
+  {
+    "node": "0x46340b20830761efd32832a74d7169b29feb9758",
+    "from_index": 358,
+    "to_index": 369,
+    "from_end": "2022-07-09",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.002641913288341009
+  },
+  {
+    "node": "0x083fc10ce7e97cafbae0fe332a9c4384c5f54e45",
+    "from_index": 425,
+    "to_index": 450,
+    "from_end": "2023-10-21",
+    "to_end": "2024-04-13",
+    "delta_pr": 0.016694569877916177
+  },
+  {
+    "node": "0xa1b02d8c67b0fdcf4e379855868deb470e169cfb",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x080bf510fcbf18b91105470639e9561022937712",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0xdb40ae9e2cbaf17bbe68d2ae221fa499f8e42c85",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0xb440dd674e1243644791a4adfe3a2abb0a92d309",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x2a1530c4c41db0b0b2bb646cb5eb1a67b7158667",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0034784146645374624
+  },
+  {
+    "node": "0x775e9cea06fb2bda74c3bd7f3b7e0ff720dece7c",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.007777856124658991
+  },
+  {
+    "node": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+    "from_index": 334,
+    "to_index": 335,
+    "from_end": "2022-01-22",
+    "to_end": "2022-01-29",
+    "delta_pr": 0.0078472937111185
+  },
+  {
+    "node": "0x5d3a536e4d6dbd6114cc1ead35777bab948e3643",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x8b94f9c38a6cacc49cbd48ad867c0a9c2f89eb11",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x89b5deaf887ef9e3360f5e3347e6bcdd738778ba",
+    "from_index": 386,
+    "to_index": 387,
+    "from_end": "2023-01-21",
+    "to_end": "2023-01-28",
+    "delta_pr": 0.02656894075009808
+  },
+  {
+    "node": "0x0d4aea0f52513c5f18299b0721cdb31565cb673f",
+    "from_index": 386,
+    "to_index": 387,
+    "from_end": "2023-01-21",
+    "to_end": "2023-01-28",
+    "delta_pr": 0.030770187359497433
+  },
+  {
+    "node": "0x0d4aea0f52513c5f18299b0721cdb31565cb673f",
+    "from_index": 472,
+    "to_index": 473,
+    "from_end": "2024-09-14",
+    "to_end": "2024-09-21",
+    "delta_pr": 0.020981320817950823
+  },
+  {
+    "node": "0x0d4aea0f52513c5f18299b0721cdb31565cb673f",
+    "from_index": 483,
+    "to_index": 484,
+    "from_end": "2024-11-30",
+    "to_end": "2024-12-07",
+    "delta_pr": 0.0281598969798264
+  },
+  {
+    "node": "0x0d4aea0f52513c5f18299b0721cdb31565cb673f",
+    "from_index": 516,
+    "to_index": 517,
+    "from_end": "2025-07-19",
+    "to_end": "2025-07-26",
+    "delta_pr": 0.02562344662607724
+  },
+  {
+    "node": "0x0d4aea0f52513c5f18299b0721cdb31565cb673f",
+    "from_index": 526,
+    "to_index": 527,
+    "from_end": "2025-09-27",
+    "to_end": "2025-10-04",
+    "delta_pr": 0.022767231448550064
+  },
+  {
+    "node": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
+    "from_index": 406,
+    "to_index": 446,
+    "from_end": "2023-06-10",
+    "to_end": "2024-03-16",
+    "delta_pr": 0.002872125094428084
+  },
+  {
+    "node": "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39",
+    "from_index": 446,
+    "to_index": 447,
+    "from_end": "2024-03-16",
+    "to_end": "2024-03-23",
+    "delta_pr": 0.002740864954074017
+  },
+  {
+    "node": "0x60a87cc7fca7e53867facb79da73181b1bb4238b",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0034087625488722958
+  },
+  {
+    "node": "0xd91ff16ef92568fc27f466c3c5613e43313ab1dc",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.003504967224643416
+  },
+  {
+    "node": "0xe6c198d27a5b71144b40cfa2362ae3166728e0c8",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0035248157804855153
+  },
+  {
+    "node": "0xc6581ce3a005e2801c1e0903281bbd318ec5b5c2",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0034087625488722958
+  },
+  {
+    "node": "0x069c97dba948175d10af4b2414969e0b88d44669",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0034087625488722958
+  },
+  {
+    "node": "0x8d134c5956409c9a7c649cf2d39c252e54b8dd99",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x493c57c4763932315a328269e1adad09653b9081",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x4abdcc4e4fe5d17bd05109fe9d15879e838add97",
+    "from_index": 224,
+    "to_index": 225,
+    "from_end": "2019-12-14",
+    "to_end": "2019-12-21",
+    "delta_pr": 0.0033125578731011737
+  },
+  {
+    "node": "0x60a92ba00bbf3bfaa752130d74ddc7174fcc5907",
+    "from_index": 251,
+    "to_index": 253,
+    "from_end": "2020-06-20",
+    "to_end": "2020-07-04",
+    "delta_pr": 0.01090286658537985
+  },
+  {
+    "node": "0x964135ec7f0bc297ebcde192a851d62f26a10b63",
+    "from_index": 251,
+    "to_index": 253,
+    "from_end": "2020-06-20",
+    "to_end": "2020-07-04",
+    "delta_pr": 0.008722029696804488
+  },
+  {
+    "node": "0x964135ec7f0bc297ebcde192a851d62f26a10b63",
+    "from_index": 464,
+    "to_index": 510,
+    "from_end": "2024-07-20",
+    "to_end": "2025-06-07",
+    "delta_pr": 0.010245084127319967
+  },
+  {
+    "node": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+    "from_index": 319,
+    "to_index": 352,
+    "from_end": "2021-10-09",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.000798621608925831
+  },
+  {
+    "node": "0x9a7a75e66b325a3bd46973b2b57c9b8d9d26a621",
+    "from_index": 236,
+    "to_index": 240,
+    "from_end": "2020-03-07",
+    "to_end": "2020-04-04",
+    "delta_pr": 0.0018810818359740753
+  },
+  {
+    "node": "0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c",
+    "from_index": 300,
+    "to_index": 311,
+    "from_end": "2021-05-29",
+    "to_end": "2021-08-14",
+    "delta_pr": 0.0010719031131867058
+  },
+  {
+    "node": "0x8a9c67fee641579deba04928c4bc45f66e26343a",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.0011081441075475235
+  },
+  {
+    "node": "0x5c872500c00565505f3624ab435c222e558e9ff8",
+    "from_index": 234,
+    "to_index": 240,
+    "from_end": "2020-02-22",
+    "to_end": "2020-04-04",
+    "delta_pr": 0.0016682354743968552
+  },
+  {
+    "node": "0x80fb784b7ed66730e8b1dbd9820afd29931aab03",
+    "from_index": 233,
+    "to_index": 243,
+    "from_end": "2020-02-15",
+    "to_end": "2020-04-25",
+    "delta_pr": 0.0010853018777772629
+  },
+  {
+    "node": "0x398ec7346dcd622edc5ae82352f02be94c62d119",
+    "from_index": 232,
+    "to_index": 244,
+    "from_end": "2020-02-08",
+    "to_end": "2020-05-02",
+    "delta_pr": 0.002042967964562418
+  },
+  {
+    "node": "0x398ec7346dcd622edc5ae82352f02be94c62d119",
+    "from_index": 270,
+    "to_index": 271,
+    "from_end": "2020-10-31",
+    "to_end": "2020-11-07",
+    "delta_pr": 0.002111331719943694
+  },
+  {
+    "node": "0x7d2d3688df45ce7c552e19c27e007673da9204b8",
+    "from_index": 233,
+    "to_index": 244,
+    "from_end": "2020-02-15",
+    "to_end": "2020-05-02",
+    "delta_pr": 0.0009560395478252924
+  },
+  {
+    "node": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c",
+    "from_index": 329,
+    "to_index": 457,
+    "from_end": "2021-12-18",
+    "to_end": "2024-06-01",
+    "delta_pr": 0.008865608972046963
+  },
+  {
+    "node": "0x255aa6df07540cb5d3d297f0d0d4d84cb52bc8e6",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0xbbbbca6a901c926f240b89eacb641d8aec7aeafd",
+    "from_index": 233,
+    "to_index": 242,
+    "from_end": "2020-02-15",
+    "to_end": "2020-04-18",
+    "delta_pr": 0.001387942648436553
+  },
+  {
+    "node": "0xbbbbca6a901c926f240b89eacb641d8aec7aeafd",
+    "from_index": 343,
+    "to_index": 352,
+    "from_end": "2022-03-26",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0015707463606760438
+  },
+  {
+    "node": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+    "from_index": 397,
+    "to_index": 454,
+    "from_end": "2023-04-08",
+    "to_end": "2024-05-11",
+    "delta_pr": 0.008015080734774097
+  },
+  {
+    "node": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+    "from_index": 531,
+    "to_index": 532,
+    "from_end": "2025-11-01",
+    "to_end": "2025-11-08",
+    "delta_pr": 0.01445691712777178
+  },
+  {
+    "node": "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0",
+    "from_index": 532,
+    "to_index": 533,
+    "from_end": "2025-11-08",
+    "to_end": "2025-11-15",
+    "delta_pr": 0.007362297007716845
+  },
+  {
+    "node": "0xa4e8c3ec456107ea67d3075bf9e3df3a75823db0",
+    "from_index": 238,
+    "to_index": 240,
+    "from_end": "2020-03-21",
+    "to_end": "2020-04-04",
+    "delta_pr": 0.0014091236510424528
+  },
+  {
+    "node": "0x8f8e8b3c4de76a31971fe6a87297d8f703be8570",
+    "from_index": 238,
+    "to_index": 240,
+    "from_end": "2020-03-21",
+    "to_end": "2020-04-04",
+    "delta_pr": 0.0014091236510424528
+  },
+  {
+    "node": "0x6c6ee5e31d828de241282b9606c8e98ea48526e2",
+    "from_index": 331,
+    "to_index": 352,
+    "from_end": "2022-01-01",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0021994270654206436
+  },
+  {
+    "node": "0x4976fb03c32e5b8cfe2b6ccb31c09ba78ebaba41",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x4976fb03c32e5b8cfe2b6ccb31c09ba78ebaba41",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0x4976fb03c32e5b8cfe2b6ccb31c09ba78ebaba41",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025388203073827644
+  },
+  {
+    "node": "0x0f7f961648ae6db43c75663ac7e5414eb79b5704",
+    "from_index": 236,
+    "to_index": 247,
+    "from_end": "2020-03-07",
+    "to_end": "2020-05-23",
+    "delta_pr": 0.0009687953910521446
+  },
+  {
+    "node": "0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e",
+    "from_index": 333,
+    "to_index": 350,
+    "from_end": "2022-01-15",
+    "to_end": "2022-05-14",
+    "delta_pr": 0.0024950135259921014
+  },
+  {
+    "node": "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85",
+    "from_index": 424,
+    "to_index": 485,
+    "from_end": "2023-10-14",
+    "to_end": "2024-12-14",
+    "delta_pr": 0.01044899529979234
+  },
+  {
+    "node": "0x5b950d40061321ae97336d5de00d8dad8e834145",
+    "from_index": 239,
+    "to_index": 240,
+    "from_end": "2020-03-28",
+    "to_end": "2020-04-04",
+    "delta_pr": 0.0018976986357252777
+  },
+  {
+    "node": "0xaaaf91d9b90df800df4f55c205fd6989c977e73a",
+    "from_index": 291,
+    "to_index": 388,
+    "from_end": "2021-03-27",
+    "to_end": "2023-02-04",
+    "delta_pr": 0.0018496401597514068
+  },
+  {
+    "node": "0xa5409ec958c83c3f309868babaca7c86dcb077c1",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.0011081441075475235
+  },
+  {
+    "node": "0x3a3a65aab0dd2a17e3f1947ba16138cd37d08c04",
+    "from_index": 330,
+    "to_index": 406,
+    "from_end": "2021-12-25",
+    "to_end": "2023-06-10",
+    "delta_pr": 0.0016031159461469436
+  },
+  {
+    "node": "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.0061489386591694626
+  },
+  {
+    "node": "0x283af0b28c62c092c9727f1ee09c02ca627eb7f5",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.00899253703598744
+  },
+  {
+    "node": "0x62b85f0dd05b3b0ee8ec0d4f3787486527ebddb6",
+    "from_index": 334,
+    "to_index": 335,
+    "from_end": "2022-01-22",
+    "to_end": "2022-01-29",
+    "delta_pr": 0.00443150773774865
+  },
+  {
+    "node": "0xd3f9c937112508ac0ac0bf3fd6b282cc6e553030",
+    "from_index": 320,
+    "to_index": 372,
+    "from_end": "2021-10-16",
+    "to_end": "2022-10-15",
+    "delta_pr": 0.0014314056084427733
+  },
+  {
+    "node": "0x8400d94a5cb0fa0d041a3788e395285d61c9ee5e",
+    "from_index": 297,
+    "to_index": 311,
+    "from_end": "2021-05-08",
+    "to_end": "2021-08-14",
+    "delta_pr": 0.001076932706896283
+  },
+  {
+    "node": "0xed1199093b1abd07a368dd1c0cdc77d8517ba2a0",
+    "from_index": 343,
+    "to_index": 344,
+    "from_end": "2022-03-26",
+    "to_end": "2022-04-02",
+    "delta_pr": 0.0009570901644999516
+  },
+  {
+    "node": "0x7de91b204c1c737bcee6f000aaa6569cf7061cb7",
+    "from_index": 385,
+    "to_index": 465,
+    "from_end": "2023-01-14",
+    "to_end": "2024-07-27",
+    "delta_pr": 0.011192329067877423
+  },
+  {
+    "node": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.04247767738623277
+  },
+  {
+    "node": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+    "from_index": 300,
+    "to_index": 301,
+    "from_end": "2021-05-29",
+    "to_end": "2021-06-05",
+    "delta_pr": 0.021215877279954647
+  },
+  {
+    "node": "0xe44a8db349bed805a66d39d39f922d9517336d36",
+    "from_index": 380,
+    "to_index": 386,
+    "from_end": "2022-12-10",
+    "to_end": "2023-01-21",
+    "delta_pr": 0.0032404117701081508
+  },
+  {
+    "node": "0xf1fced5b0475a935b49b95786adbda2d40794d2d",
+    "from_index": 250,
+    "to_index": 251,
+    "from_end": "2020-06-13",
+    "to_end": "2020-06-20",
+    "delta_pr": 0.005402884703010237
+  },
+  {
+    "node": "0xf1fced5b0475a935b49b95786adbda2d40794d2d",
+    "from_index": 256,
+    "to_index": 257,
+    "from_end": "2020-07-25",
+    "to_end": "2020-08-01",
+    "delta_pr": 0.004699844862655222
+  },
+  {
+    "node": "0xf1fced5b0475a935b49b95786adbda2d40794d2d",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.005114856851072661
+  },
+  {
+    "node": "0xf74dd1816dc7d3ccbad42fcdeaebd9ad0109f4ca",
+    "from_index": 313,
+    "to_index": 346,
+    "from_end": "2021-08-28",
+    "to_end": "2022-04-16",
+    "delta_pr": 0.001250274079821845
+  },
+  {
+    "node": "0xabea9132b05a70803a4e85094fd0e1800777fbef",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.0037706219021582587
+  },
+  {
+    "node": "0xc49e71b3f1cf4f6bdfddb58b47b5b923bd22e12d",
+    "from_index": 324,
+    "to_index": 348,
+    "from_end": "2021-11-13",
+    "to_end": "2022-04-30",
+    "delta_pr": 0.001416436473695919
+  },
+  {
+    "node": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+    "from_index": 395,
+    "to_index": 462,
+    "from_end": "2023-03-25",
+    "to_end": "2024-07-06",
+    "delta_pr": 0.004606093205324997
+  },
+  {
+    "node": "0xc00e94cb662c3520282e6f5717214004a7f26888",
+    "from_index": 464,
+    "to_index": 465,
+    "from_end": "2024-07-20",
+    "to_end": "2024-07-27",
+    "delta_pr": 0.004469083028349368
+  },
+  {
+    "node": "0x75e89d5979e4f6fba9f97c104c2f0afb3f1dcb88",
+    "from_index": 421,
+    "to_index": 446,
+    "from_end": "2023-09-23",
+    "to_end": "2024-03-16",
+    "delta_pr": 0.004266644874099929
+  },
+  {
+    "node": "0x75e89d5979e4f6fba9f97c104c2f0afb3f1dcb88",
+    "from_index": 446,
+    "to_index": 447,
+    "from_end": "2024-03-16",
+    "to_end": "2024-03-23",
+    "delta_pr": 0.002740864954074017
+  },
+  {
+    "node": "0xba100000625a3754423978a60c9317c58a424e3d",
+    "from_index": 302,
+    "to_index": 392,
+    "from_end": "2021-06-12",
+    "to_end": "2023-03-04",
+    "delta_pr": 0.0015280629961325941
+  },
+  {
+    "node": "0x821144518dfe9e7b44fcf4d0824e15e8390d4637",
+    "from_index": 263,
+    "to_index": 271,
+    "from_end": "2020-09-12",
+    "to_end": "2020-11-07",
+    "delta_pr": 0.0006473974100954083
+  },
+  {
+    "node": "0x4575f41308ec1483f3d399aa9a2826d74da13deb",
+    "from_index": 380,
+    "to_index": 394,
+    "from_end": "2022-12-10",
+    "to_end": "2023-03-18",
+    "delta_pr": 0.0019143464154204246
+  },
+  {
+    "node": "0x4648451b5f87ff8f0f7d622bd40574bb97e25980",
+    "from_index": 299,
+    "to_index": 344,
+    "from_end": "2021-05-22",
+    "to_end": "2022-04-02",
+    "delta_pr": 0.0016091944906462471
+  },
+  {
+    "node": "0xd46ba6d942050d489dbd938a2c909a5d5039a161",
+    "from_index": 298,
+    "to_index": 309,
+    "from_end": "2021-05-15",
+    "to_end": "2021-07-31",
+    "delta_pr": 0.0010650076749793374
+  },
+  {
+    "node": "0xdf6c10f310ef0402a5d4a35b85905cb09ae80994",
+    "from_index": 363,
+    "to_index": 364,
+    "from_end": "2022-08-13",
+    "to_end": "2022-08-20",
+    "delta_pr": 0.4273617529868406
+  },
+  {
+    "node": "0xda9483087494b69ff5307516ec9cfbd3edadb359",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.004372449764903818
+  },
+  {
+    "node": "0xb8b7791b1a445fb1e202683a0a329504772e0e52",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.0005955738287064331
+  },
+  {
+    "node": "0x7b123f53421b1bf8533339bfbdc7c98aa94163db",
+    "from_index": 299,
+    "to_index": 304,
+    "from_end": "2021-05-22",
+    "to_end": "2021-06-26",
+    "delta_pr": 0.0007008413287294618
+  },
+  {
+    "node": "0x110b04f0be40fdc1bd8ab013131fc7f7081311ae",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.0031576235823496507
+  },
+  {
+    "node": "0x4e352cf164e64adcbad318c3a1e222e9eba4ce42",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x93ed3fbe21207ec2e8f2d3c3de6e058cb73bc04d",
+    "from_index": 300,
+    "to_index": 309,
+    "from_end": "2021-05-29",
+    "to_end": "2021-07-31",
+    "delta_pr": 0.0010546722489843485
+  },
+  {
+    "node": "0x6810e776880c02933d47db1b9fc05908e5386b96",
+    "from_index": 423,
+    "to_index": 492,
+    "from_end": "2023-10-07",
+    "to_end": "2025-02-01",
+    "delta_pr": 0.008340014422304604
+  },
+  {
+    "node": "0x1442a68091301e612578eadca5b8e079bb9e7732",
+    "from_index": 296,
+    "to_index": 314,
+    "from_end": "2021-05-01",
+    "to_end": "2021-09-04",
+    "delta_pr": 0.0009130031937292904
+  },
+  {
+    "node": "0xf07c45890d103080c6a4bbf123a020710b891fd5",
+    "from_index": 453,
+    "to_index": 457,
+    "from_end": "2024-05-04",
+    "to_end": "2024-06-01",
+    "delta_pr": 0.00791443319455591
+  },
+  {
+    "node": "0xf07c45890d103080c6a4bbf123a020710b891fd5",
+    "from_index": 478,
+    "to_index": 491,
+    "from_end": "2024-10-26",
+    "to_end": "2025-01-25",
+    "delta_pr": 0.01011110175532263
+  },
+  {
+    "node": "0xd533a949740bb3306d119cc777fa900ba034cd52",
+    "from_index": 304,
+    "to_index": 392,
+    "from_end": "2021-06-26",
+    "to_end": "2023-03-04",
+    "delta_pr": 0.0013339078596695197
+  },
+  {
+    "node": "0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xd7c49cee7e9188cca6ad8ff264c1da2e69d4cf3b",
+    "from_index": 267,
+    "to_index": 436,
+    "from_end": "2020-10-10",
+    "to_end": "2024-01-06",
+    "delta_pr": 0.0015745826263367786
+  },
+  {
+    "node": "0x6a5d7be330f024771ab04a836b5e41406b7a2757",
+    "from_index": 268,
+    "to_index": 273,
+    "from_end": "2020-10-17",
+    "to_end": "2020-11-21",
+    "delta_pr": 0.005961550755169861
+  },
+  {
+    "node": "0x34612903db071e888a4dadcaa416d3ee263a87b9",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025388203073827644
+  },
+  {
+    "node": "0x9e78b8274e1d6a76a0dbbf90418894df27cbceb5",
+    "from_index": 299,
+    "to_index": 305,
+    "from_end": "2021-05-22",
+    "to_end": "2021-07-03",
+    "delta_pr": 0.0007183751349647869
+  },
+  {
+    "node": "0xde21f729137c5af1b01d73af1dc21effa2b8a0d6",
+    "from_index": 355,
+    "to_index": 356,
+    "from_end": "2022-06-18",
+    "to_end": "2022-06-25",
+    "delta_pr": 0.12302285921710976
+  },
+  {
+    "node": "0xde21f729137c5af1b01d73af1dc21effa2b8a0d6",
+    "from_index": 503,
+    "to_index": 505,
+    "from_end": "2025-04-19",
+    "to_end": "2025-05-03",
+    "delta_pr": 0.0848723180478747
+  },
+  {
+    "node": "0xde21f729137c5af1b01d73af1dc21effa2b8a0d6",
+    "from_index": 534,
+    "to_index": 535,
+    "from_end": "2025-11-22",
+    "to_end": "2025-11-29",
+    "delta_pr": 0.15270958712166074
+  },
+  {
+    "node": "0xc324b8857555948b7c02e8da71a7c2023436fee7",
+    "from_index": 272,
+    "to_index": 273,
+    "from_end": "2020-11-14",
+    "to_end": "2020-11-21",
+    "delta_pr": 0.0013746246918446463
+  },
+  {
+    "node": "0x2b91ea7b82c3a49694cc6ad92bf819e2ea0e7941",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.011581505736975292
+  },
+  {
+    "node": "0x2b91ea7b82c3a49694cc6ad92bf819e2ea0e7941",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.010868338972043768
+  },
+  {
+    "node": "0x5d269fac3b2e0552b0f34cdc253bdb427682a4b9",
+    "from_index": 294,
+    "to_index": 352,
+    "from_end": "2021-04-17",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0019483409757973802
+  },
+  {
+    "node": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+    "from_index": 395,
+    "to_index": 462,
+    "from_end": "2023-03-25",
+    "to_end": "2024-07-06",
+    "delta_pr": 0.004606093205324997
+  },
+  {
+    "node": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+    "from_index": 463,
+    "to_index": 464,
+    "from_end": "2024-07-13",
+    "to_end": "2024-07-20",
+    "delta_pr": 0.0031719075865579314
+  },
+  {
+    "node": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+    "from_index": 464,
+    "to_index": 465,
+    "from_end": "2024-07-20",
+    "to_end": "2024-07-27",
+    "delta_pr": 0.004469083028349368
+  },
+  {
+    "node": "0x1858119c1145551e01482fcf29e6a6e87e379ff3",
+    "from_index": 447,
+    "to_index": 448,
+    "from_end": "2024-03-23",
+    "to_end": "2024-03-30",
+    "delta_pr": 0.013913075251441705
+  },
+  {
+    "node": "0x1858119c1145551e01482fcf29e6a6e87e379ff3",
+    "from_index": 531,
+    "to_index": 532,
+    "from_end": "2025-11-01",
+    "to_end": "2025-11-08",
+    "delta_pr": 0.01445691712777178
+  },
+  {
+    "node": "0x1858119c1145551e01482fcf29e6a6e87e379ff3",
+    "from_index": 533,
+    "to_index": 534,
+    "from_end": "2025-11-15",
+    "to_end": "2025-11-22",
+    "delta_pr": 0.026318564620754555
+  },
+  {
+    "node": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+    "from_index": 342,
+    "to_index": 346,
+    "from_end": "2022-03-19",
+    "to_end": "2022-04-16",
+    "delta_pr": 0.0017338421642525117
+  },
+  {
+    "node": "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+    "from_index": 384,
+    "to_index": 386,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-21",
+    "delta_pr": 0.0026532140272580123
+  },
+  {
+    "node": "0x574a782a00dd152d98ff85104f723575d870698e",
+    "from_index": 270,
+    "to_index": 271,
+    "from_end": "2020-10-31",
+    "to_end": "2020-11-07",
+    "delta_pr": 0.004491290701538877
+  },
+  {
+    "node": "0x574a782a00dd152d98ff85104f723575d870698e",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.004267409253179119
+  },
+  {
+    "node": "0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f",
+    "from_index": 383,
+    "to_index": 386,
+    "from_end": "2022-12-31",
+    "to_end": "2023-01-21",
+    "delta_pr": 0.005100484598343974
+  },
+  {
+    "node": "0x8798249c2e607446efb7ad49ec89dd1865ff4272",
+    "from_index": 300,
+    "to_index": 307,
+    "from_end": "2021-05-29",
+    "to_end": "2021-07-17",
+    "delta_pr": 0.0008575574932497209
+  },
+  {
+    "node": "0x3e66b66fd1d0b02fda6c811da9e0547970db2f21",
+    "from_index": 266,
+    "to_index": 267,
+    "from_end": "2020-10-03",
+    "to_end": "2020-10-10",
+    "delta_pr": 0.0023751817610348485
+  },
+  {
+    "node": "0x00a8b738e453ffd858a7edf03bccfe20412f0eb0",
+    "from_index": 288,
+    "to_index": 350,
+    "from_end": "2021-03-06",
+    "to_end": "2022-05-14",
+    "delta_pr": 0.00264938239712197
+  },
+  {
+    "node": "0xd5525d397898e5502075ea5e830d8914f6f0affe",
+    "from_index": 301,
+    "to_index": 312,
+    "from_end": "2021-06-05",
+    "to_end": "2021-08-21",
+    "delta_pr": 0.000630565254749538
+  },
+  {
+    "node": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+    "from_index": 351,
+    "to_index": 352,
+    "from_end": "2022-05-21",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.007964015483983844
+  },
+  {
+    "node": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.008277403311753195
+  },
+  {
+    "node": "0xdef1c0ded9bec7f1a1670819833240f027b25eff",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.00809128218360788
+  },
+  {
+    "node": "0xfb36693ac2dbe8dfc9f89dd0de6015c6ea66b0bf",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.002401743706657543
+  },
+  {
+    "node": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+    "from_index": 395,
+    "to_index": 500,
+    "from_end": "2023-03-25",
+    "to_end": "2025-03-29",
+    "delta_pr": 0.009782514998774193
+  },
+  {
+    "node": "0x60f80121c31a0d46b5279700f9df786054aa5ee5",
+    "from_index": 302,
+    "to_index": 431,
+    "from_end": "2021-06-12",
+    "to_end": "2023-12-02",
+    "delta_pr": 0.0026470254167324176
+  },
+  {
+    "node": "0x3b5d2b254224954547a33cbf753bcaa5eb4b27bd",
+    "from_index": 289,
+    "to_index": 311,
+    "from_end": "2021-03-13",
+    "to_end": "2021-08-14",
+    "delta_pr": 0.0010052521842832574
+  },
+  {
+    "node": "0xfca59cd816ab1ead66534d82bc21e7515ce441cf",
+    "from_index": 315,
+    "to_index": 352,
+    "from_end": "2021-09-11",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0010650874849584516
+  },
+  {
+    "node": "0xa4eed63db85311e22df4473f87ccfc3dadcfa3e3",
+    "from_index": 299,
+    "to_index": 344,
+    "from_end": "2021-05-22",
+    "to_end": "2022-04-02",
+    "delta_pr": 0.0016091944906462471
+  },
+  {
+    "node": "0x064d3c335c3c692442314499a1976f2ac8170398",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.0030617856465382453
+  },
+  {
+    "node": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+    "from_index": 395,
+    "to_index": 462,
+    "from_end": "2023-03-25",
+    "to_end": "2024-07-06",
+    "delta_pr": 0.004606093205324997
+  },
+  {
+    "node": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+    "from_index": 463,
+    "to_index": 464,
+    "from_end": "2024-07-13",
+    "to_end": "2024-07-20",
+    "delta_pr": 0.0031719075865579314
+  },
+  {
+    "node": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+    "from_index": 464,
+    "to_index": 465,
+    "from_end": "2024-07-20",
+    "to_end": "2024-07-27",
+    "delta_pr": 0.004469083028349368
+  },
+  {
+    "node": "0xad32a8e6220741182940c5abf610bde99e737b2d",
+    "from_index": 298,
+    "to_index": 399,
+    "from_end": "2021-05-15",
+    "to_end": "2023-04-22",
+    "delta_pr": 0.001246607521460748
+  },
+  {
+    "node": "0x83e6f1e41cdd28eaceb20cb649155049fac3d5aa",
+    "from_index": 302,
+    "to_index": 320,
+    "from_end": "2021-06-12",
+    "to_end": "2021-10-16",
+    "delta_pr": 0.0008258339205124616
+  },
+  {
+    "node": "0x35a18000230da775cac24873d00ff85bccded550",
+    "from_index": 298,
+    "to_index": 392,
+    "from_end": "2021-05-15",
+    "to_end": "2023-03-04",
+    "delta_pr": 0.0020389504790558743
+  },
+  {
+    "node": "0xade00c28244d5ce17d72e40330b1c318cd12b7c3",
+    "from_index": 300,
+    "to_index": 352,
+    "from_end": "2021-05-29",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0022167165514842433
+  },
+  {
+    "node": "0x9e5ec4de0bdd91cf6d33bfe9ac883b161cbf86fb",
+    "from_index": 431,
+    "to_index": 432,
+    "from_end": "2023-12-02",
+    "to_end": "2023-12-09",
+    "delta_pr": 0.0170052629917863
+  },
+  {
+    "node": "0x1611c227725c5e420ef058275ae772b41775e261",
+    "from_index": 284,
+    "to_index": 285,
+    "from_end": "2021-02-06",
+    "to_end": "2021-02-13",
+    "delta_pr": 0.022032809101249627
+  },
+  {
+    "node": "0x52de8d3febd3a06d3c627f59d56e6892b80dcf12",
+    "from_index": 302,
+    "to_index": 303,
+    "from_end": "2021-06-12",
+    "to_end": "2021-06-19",
+    "delta_pr": 0.0026931966567681678
+  },
+  {
+    "node": "0x88ad09518695c6c3712ac10a214be5109a655671",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025388203073827644
+  },
+  {
+    "node": "0x1ceb5cb57c4d4e2b2433641b95dd330a33185a44",
+    "from_index": 300,
+    "to_index": 318,
+    "from_end": "2021-05-29",
+    "to_end": "2021-10-02",
+    "delta_pr": 0.00138385272948323
+  },
+  {
+    "node": "0x648aa14e4424e0825a5ce739c8c68610e143fb79",
+    "from_index": 290,
+    "to_index": 407,
+    "from_end": "2021-03-20",
+    "to_end": "2023-06-17",
+    "delta_pr": 0.0012498430967584572
+  },
+  {
+    "node": "0x6f9f04243f8e0b09e8b5a7ea0df21777fec8464e",
+    "from_index": 344,
+    "to_index": 475,
+    "from_end": "2022-04-02",
+    "to_end": "2024-10-05",
+    "delta_pr": 0.007477434659506938
+  },
+  {
+    "node": "0x464e146614d53b675b74cd04d2d727b2c04aeaba",
+    "from_index": 453,
+    "to_index": 454,
+    "from_end": "2024-05-04",
+    "to_end": "2024-05-11",
+    "delta_pr": 0.036862751437114524
+  },
+  {
+    "node": "0x11327d82b182ff93fea4b46bd3c2e6113458db8f",
+    "from_index": 453,
+    "to_index": 454,
+    "from_end": "2024-05-04",
+    "to_end": "2024-05-11",
+    "delta_pr": 0.042349163211581775
+  },
+  {
+    "node": "0x11327d82b182ff93fea4b46bd3c2e6113458db8f",
+    "from_index": 525,
+    "to_index": 528,
+    "from_end": "2025-09-20",
+    "to_end": "2025-10-11",
+    "delta_pr": 0.12092613074867362
+  },
+  {
+    "node": "0x5c1500662d910ff8533c877ae6b90b012ca06d14",
+    "from_index": 449,
+    "to_index": 452,
+    "from_end": "2024-04-06",
+    "to_end": "2024-04-27",
+    "delta_pr": 0.045000771188740456
+  },
+  {
+    "node": "0x5c1500662d910ff8533c877ae6b90b012ca06d14",
+    "from_index": 501,
+    "to_index": 502,
+    "from_end": "2025-04-05",
+    "to_end": "2025-04-12",
+    "delta_pr": 0.018803092103766426
+  },
+  {
+    "node": "0x5c1500662d910ff8533c877ae6b90b012ca06d14",
+    "from_index": 533,
+    "to_index": 534,
+    "from_end": "2025-11-15",
+    "to_end": "2025-11-22",
+    "delta_pr": 0.026318564620754555
+  },
+  {
+    "node": "0x70e36f6bf80a52b3b46b3af8e106cc0ed743e8e4",
+    "from_index": 298,
+    "to_index": 392,
+    "from_end": "2021-05-15",
+    "to_end": "2023-03-04",
+    "delta_pr": 0.0020389504790558743
+  },
+  {
+    "node": "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+    "from_index": 392,
+    "to_index": 484,
+    "from_end": "2023-03-04",
+    "to_end": "2024-12-07",
+    "delta_pr": 0.012801628408697021
+  },
+  {
+    "node": "0x881d40237659c251811cec9c364ef91dc08d300c",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.008921891046500973
+  },
+  {
+    "node": "0x881d40237659c251811cec9c364ef91dc08d300c",
+    "from_index": 423,
+    "to_index": 431,
+    "from_end": "2023-10-07",
+    "to_end": "2023-12-02",
+    "delta_pr": 0.01329576642123856
+  },
+  {
+    "node": "0x881d40237659c251811cec9c364ef91dc08d300c",
+    "from_index": 465,
+    "to_index": 468,
+    "from_end": "2024-07-27",
+    "to_end": "2024-08-17",
+    "delta_pr": 0.016216695635472646
+  },
+  {
+    "node": "0xb4efd85c19999d84251304bda99e90b92300bd93",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0xfa5047c9c78b8877af97bdcb85db743fd7313d4a",
+    "from_index": 288,
+    "to_index": 351,
+    "from_end": "2021-03-06",
+    "to_end": "2022-05-21",
+    "delta_pr": 0.0025317358789888433
+  },
+  {
+    "node": "0x794abb6064a4760da8cee3569492ff117bfd2d2f",
+    "from_index": 341,
+    "to_index": 345,
+    "from_end": "2022-03-12",
+    "to_end": "2022-04-09",
+    "delta_pr": 0.0016822968082665323
+  },
+  {
+    "node": "0x1e9df8b502d1567fd184b90c7e96755baf605f1a",
+    "from_index": 334,
+    "to_index": 335,
+    "from_end": "2022-01-22",
+    "to_end": "2022-01-29",
+    "delta_pr": 0.004017644910016841
+  },
+  {
+    "node": "0xa47c8bf37f92abed4a126bda807a7b7498661acd",
+    "from_index": 330,
+    "to_index": 345,
+    "from_end": "2021-12-25",
+    "to_end": "2022-04-09",
+    "delta_pr": 0.0018189163215894014
+  },
+  {
+    "node": "0xe3ba6bcfd9f9c4f49d7fd9268dd4633588ca57c8",
+    "from_index": 444,
+    "to_index": 456,
+    "from_end": "2024-03-02",
+    "to_end": "2024-05-25",
+    "delta_pr": 0.03574544450334629
+  },
+  {
+    "node": "0x374cb8c27130e2c9e04f44303f3c8351b9de61c1",
+    "from_index": 302,
+    "to_index": 354,
+    "from_end": "2021-06-12",
+    "to_end": "2022-06-11",
+    "delta_pr": 0.0011329358974744661
+  },
+  {
+    "node": "0xbd530a1c060dc600b951f16dc656e4ea451d1a2d",
+    "from_index": 357,
+    "to_index": 388,
+    "from_end": "2022-07-02",
+    "to_end": "2023-02-04",
+    "delta_pr": 0.0013643453917562452
+  },
+  {
+    "node": "0x505f8618f1e20ff1d7c77b23486f7c4565f82018",
+    "from_index": 402,
+    "to_index": 456,
+    "from_end": "2023-05-13",
+    "to_end": "2024-05-25",
+    "delta_pr": 0.011200774097579112
+  },
+  {
+    "node": "0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b",
+    "from_index": 379,
+    "to_index": 386,
+    "from_end": "2022-12-03",
+    "to_end": "2023-01-21",
+    "delta_pr": 0.003072448898964787
+  },
+  {
+    "node": "0xbcd4b7de6fde81025f74426d43165a5b0d790fdd",
+    "from_index": 294,
+    "to_index": 419,
+    "from_end": "2021-04-17",
+    "to_end": "2023-09-09",
+    "delta_pr": 0.0013986197887588675
+  },
+  {
+    "node": "0xc944e90c64b2c07662a292be6244bdf05cda44a7",
+    "from_index": 320,
+    "to_index": 388,
+    "from_end": "2021-10-16",
+    "to_end": "2023-02-04",
+    "delta_pr": 0.0012879459580448964
+  },
+  {
+    "node": "0xbc7f98ab471156d52b88549d61a5149414727478",
+    "from_index": 448,
+    "to_index": 449,
+    "from_end": "2024-03-30",
+    "to_end": "2024-04-06",
+    "delta_pr": 0.016863233895320753
+  },
+  {
+    "node": "0xbc7f98ab471156d52b88549d61a5149414727478",
+    "from_index": 476,
+    "to_index": 477,
+    "from_end": "2024-10-12",
+    "to_end": "2024-10-19",
+    "delta_pr": 0.01660121943064043
+  },
+  {
+    "node": "0x111111111117dc0aa78b770fa6a738034120c302",
+    "from_index": 452,
+    "to_index": 467,
+    "from_end": "2024-04-27",
+    "to_end": "2024-08-10",
+    "delta_pr": 0.007773496494294971
+  },
+  {
+    "node": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+    "from_index": 308,
+    "to_index": 350,
+    "from_end": "2021-07-24",
+    "to_end": "2022-05-14",
+    "delta_pr": 0.0018264606048810452
+  },
+  {
+    "node": "0x9ee457023bb3de16d51a003a247baead7fce313d",
+    "from_index": 438,
+    "to_index": 505,
+    "from_end": "2024-01-20",
+    "to_end": "2025-05-03",
+    "delta_pr": 0.01610833942351018
+  },
+  {
+    "node": "0xb14fa22a90479e6e942cf3aec88f971f256738fa",
+    "from_index": 372,
+    "to_index": 488,
+    "from_end": "2022-10-15",
+    "to_end": "2025-01-04",
+    "delta_pr": 0.01925927353828397
+  },
+  {
+    "node": "0x3b3908edd878ac42f1ed3e53cc3af02577d072c3",
+    "from_index": 492,
+    "to_index": 514,
+    "from_end": "2025-02-01",
+    "to_end": "2025-07-05",
+    "delta_pr": 0.03601429924018745
+  },
+  {
+    "node": "0xc6a7f15d82a1ec99093447ca023e826904a3a442",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.01025124209361692
+  },
+  {
+    "node": "0x9b02dd390a603add5c07f9fd9175b7dabe8d63b7",
+    "from_index": 298,
+    "to_index": 352,
+    "from_end": "2021-05-15",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.002227051977479232
+  },
+  {
+    "node": "0x13170030a9d193e65d9544d6269661ac416ea7e3",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.0077790441064386154
+  },
+  {
+    "node": "0x87d73e916d7057945c9bcd8cdd94e42a6f47f776",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025388203073827644
+  },
+  {
+    "node": "0x1c2e5f08cac74898083fcc41d8a5c6f835a4ad2a",
+    "from_index": 433,
+    "to_index": 473,
+    "from_end": "2023-12-16",
+    "to_end": "2024-09-21",
+    "delta_pr": 0.06989595718856018
+  },
+  {
+    "node": "0x1c2e5f08cac74898083fcc41d8a5c6f835a4ad2a",
+    "from_index": 522,
+    "to_index": 524,
+    "from_end": "2025-08-30",
+    "to_end": "2025-09-13",
+    "delta_pr": 0.04474276984506849
+  },
+  {
+    "node": "0x0f5647f7cd4ed903636ca58d81df5cc2339660fe",
+    "from_index": 344,
+    "to_index": 497,
+    "from_end": "2022-04-02",
+    "to_end": "2025-03-08",
+    "delta_pr": 0.02583829456397979
+  },
+  {
+    "node": "0xf0939011a9bb95c3b791f0cb546377ed2693a574",
+    "from_index": 298,
+    "to_index": 310,
+    "from_end": "2021-05-15",
+    "to_end": "2021-08-07",
+    "delta_pr": 0.0011398207048183163
+  },
+  {
+    "node": "0x61e7fdf56e296f346e5b347e92846be85a60fce1",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.0011081441075475235
+  },
+  {
+    "node": "0x0e9ea21ce2647d29089535c903fb5c41a7a92c58",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.003562971509792371
+  },
+  {
+    "node": "0x0e9ea21ce2647d29089535c903fb5c41a7a92c58",
+    "from_index": 399,
+    "to_index": 400,
+    "from_end": "2023-04-22",
+    "to_end": "2023-04-29",
+    "delta_pr": 0.004378628485806222
+  },
+  {
+    "node": "0x220b71671b649c03714da9c621285943f3cbcdc6",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.0011081441075475235
+  },
+  {
+    "node": "0xfa6a557ae44a6711765876ed8901eb109af8cc2c",
+    "from_index": 296,
+    "to_index": 486,
+    "from_end": "2021-05-01",
+    "to_end": "2024-12-21",
+    "delta_pr": 0.009387480921540911
+  },
+  {
+    "node": "0x038a68ff68c393373ec894015816e33ad41bd564",
+    "from_index": 298,
+    "to_index": 317,
+    "from_end": "2021-05-15",
+    "to_end": "2021-09-25",
+    "delta_pr": 0.0014071327531321792
+  },
+  {
+    "node": "0xadab284fc00cd059ed4396d0532811c9eed6bb85",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xadab284fc00cd059ed4396d0532811c9eed6bb85",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.004920640543308584
+  },
+  {
+    "node": "0xfb38d3924b632ed9e96271aefba4f66f82da4109",
+    "from_index": 459,
+    "to_index": 460,
+    "from_end": "2024-06-15",
+    "to_end": "2024-06-22",
+    "delta_pr": 0.06856515433426416
+  },
+  {
+    "node": "0xc46350900b078af7ab8042bd6f81198a0efd1f58",
+    "from_index": 334,
+    "to_index": 355,
+    "from_end": "2022-01-22",
+    "to_end": "2022-06-18",
+    "delta_pr": 0.003069029620868169
+  },
+  {
+    "node": "0xbf494f02ee3fde1f20bee6242bce2d1ed0c15e47",
+    "from_index": 290,
+    "to_index": 352,
+    "from_end": "2021-03-20",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0020475986044564336
+  },
+  {
+    "node": "0x27c70cd1946795b66be9d954418546998b546634",
+    "from_index": 371,
+    "to_index": 524,
+    "from_end": "2022-10-08",
+    "to_end": "2025-09-13",
+    "delta_pr": 0.014074557590653715
+  },
+  {
+    "node": "0x6919f07eac5d77b6eec8dc8a88b03d23e194d026",
+    "from_index": 330,
+    "to_index": 353,
+    "from_end": "2021-12-25",
+    "to_end": "2022-06-04",
+    "delta_pr": 0.010191513888612358
+  },
+  {
+    "node": "0x6919f07eac5d77b6eec8dc8a88b03d23e194d026",
+    "from_index": 359,
+    "to_index": 363,
+    "from_end": "2022-07-16",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.0057361063781023024
+  },
+  {
+    "node": "0x892a6f9df0147e5f079b0993f486f9aca3c87881",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0xf680429328caaacabee69b7a9fdb21a71419c063",
+    "from_index": 300,
+    "to_index": 448,
+    "from_end": "2021-05-29",
+    "to_end": "2024-03-30",
+    "delta_pr": 0.007704464256450442
+  },
+  {
+    "node": "0xe09fb60e8d6e7e1cebbe821bd5c3fc67a40f86bf",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025388203073827644
+  },
+  {
+    "node": "0x45804880de22913dafe09f4980848ece6ecbaf78",
+    "from_index": 393,
+    "to_index": 500,
+    "from_end": "2023-03-11",
+    "to_end": "2025-03-29",
+    "delta_pr": 0.009652655058374862
+  },
+  {
+    "node": "0xd94909653dc2d3c8435ed41054cbbc8b8c20a2ae",
+    "from_index": 396,
+    "to_index": 502,
+    "from_end": "2023-04-01",
+    "to_end": "2025-04-12",
+    "delta_pr": 0.009339061356141036
+  },
+  {
+    "node": "0x307d632c817ca584997c964154f12069c23d13d8",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.007113724390583745
+  },
+  {
+    "node": "0xa1faa113cbe53436df28ff0aee54275c13b40975",
+    "from_index": 297,
+    "to_index": 307,
+    "from_end": "2021-05-08",
+    "to_end": "2021-07-17",
+    "delta_pr": 0.0008625870869592981
+  },
+  {
+    "node": "0x03ab458634910aad20ef5f1c8ee96f1d6ac54919",
+    "from_index": 358,
+    "to_index": 386,
+    "from_end": "2022-07-09",
+    "to_end": "2023-01-21",
+    "delta_pr": 0.0032707118806197164
+  },
+  {
+    "node": "0x3646c26b809e51794facb6c9cb17c5d21dd0913a",
+    "from_index": 382,
+    "to_index": 483,
+    "from_end": "2022-12-24",
+    "to_end": "2024-11-30",
+    "delta_pr": 0.01336563604214564
+  },
+  {
+    "node": "0xe1f463281ec0aa27f06c6f18e5fa6a3f703eba2c",
+    "from_index": 333,
+    "to_index": 334,
+    "from_end": "2022-01-15",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.002050434789751742
+  },
+  {
+    "node": "0x6fc13eace26590b80cccab1ba5d51890577d83b2",
+    "from_index": 298,
+    "to_index": 314,
+    "from_end": "2021-05-15",
+    "to_end": "2021-09-04",
+    "delta_pr": 0.001137331721071582
+  },
+  {
+    "node": "0xddb3422497e61e13543bea06989c0789117555c5",
+    "from_index": 289,
+    "to_index": 313,
+    "from_end": "2021-03-13",
+    "to_end": "2021-08-28",
+    "delta_pr": 0.0009967512200276451
+  },
+  {
+    "node": "0x045e2a9db6ca319f6b667813c6088067eb52851e",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.010619875582534468
+  },
+  {
+    "node": "0x045e2a9db6ca319f6b667813c6088067eb52851e",
+    "from_index": 462,
+    "to_index": 485,
+    "from_end": "2024-07-06",
+    "to_end": "2024-12-14",
+    "delta_pr": 0.014098863957753333
+  },
+  {
+    "node": "0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9",
+    "from_index": 300,
+    "to_index": 301,
+    "from_end": "2021-05-29",
+    "to_end": "2021-06-05",
+    "delta_pr": 0.0004293875555829969
+  },
+  {
+    "node": "0x6ea484f5cfedc03fe3725d7139e145bdd6e5d320",
+    "from_index": 475,
+    "to_index": 479,
+    "from_end": "2024-10-05",
+    "to_end": "2024-11-02",
+    "delta_pr": 0.02241540339157343
+  },
+  {
+    "node": "0x1b40183efb4dd766f11bda7a7c3ad8982e998421",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.0005955738287064331
+  },
+  {
+    "node": "0x7f3edcdd180dbe4819bd98fee8929b5cedb3adeb",
+    "from_index": 298,
+    "to_index": 374,
+    "from_end": "2021-05-15",
+    "to_end": "2022-10-29",
+    "delta_pr": 0.0019508008531979994
+  },
+  {
+    "node": "0xc2e2b715d9e302947ec7e312fd2384b5a1296099",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xc2e2b715d9e302947ec7e312fd2384b5a1296099",
+    "from_index": 441,
+    "to_index": 452,
+    "from_end": "2024-02-10",
+    "to_end": "2024-04-27",
+    "delta_pr": 0.005617908910826645
+  },
+  {
+    "node": "0x5218e472cfcfe0b64a064f055b43b4cdc9efd3a6",
+    "from_index": 316,
+    "to_index": 347,
+    "from_end": "2021-09-18",
+    "to_end": "2022-04-23",
+    "delta_pr": 0.0009682010651182547
+  },
+  {
+    "node": "0xe53ec727dbdeb9e2d5456c3be40cff031ab40a55",
+    "from_index": 299,
+    "to_index": 317,
+    "from_end": "2021-05-22",
+    "to_end": "2021-09-25",
+    "delta_pr": 0.0014029314624752862
+  },
+  {
+    "node": "0x339dd90e14ec35d2f74ffea7495c2fb0150af2ba",
+    "from_index": 301,
+    "to_index": 406,
+    "from_end": "2021-06-05",
+    "to_end": "2023-06-10",
+    "delta_pr": 0.0011927796957470027
+  },
+  {
+    "node": "0x9f739b669d6ec4d7f797cc6d0a63df5d3198206d",
+    "from_index": 300,
+    "to_index": 317,
+    "from_end": "2021-05-29",
+    "to_end": "2021-09-25",
+    "delta_pr": 0.0013967973271371904
+  },
+  {
+    "node": "0x7c974104df9dd7fb91205ab3d66d15aff1049de8",
+    "from_index": 303,
+    "to_index": 372,
+    "from_end": "2021-06-19",
+    "to_end": "2022-10-15",
+    "delta_pr": 0.0017484072344302894
+  },
+  {
+    "node": "0xe4f726adc8e89c6a6017f01eada77865db22da14",
+    "from_index": 298,
+    "to_index": 352,
+    "from_end": "2021-05-15",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.002227051977479232
+  },
+  {
+    "node": "0x2e8aa6a3309e02bb5fe0862ed6591e2c66c2959b",
+    "from_index": 467,
+    "to_index": 489,
+    "from_end": "2024-08-10",
+    "to_end": "2025-01-11",
+    "delta_pr": 0.011448456146985319
+  },
+  {
+    "node": "0x2e8aa6a3309e02bb5fe0862ed6591e2c66c2959b",
+    "from_index": 492,
+    "to_index": 493,
+    "from_end": "2025-02-01",
+    "to_end": "2025-02-08",
+    "delta_pr": 0.005994706835075268
+  },
+  {
+    "node": "0x856bfc01d2a30956e72b0f61fe50173a36b2e759",
+    "from_index": 340,
+    "to_index": 509,
+    "from_end": "2022-03-05",
+    "to_end": "2025-05-31",
+    "delta_pr": 0.018312988962013273
+  },
+  {
+    "node": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+    "from_index": 384,
+    "to_index": 387,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-28",
+    "delta_pr": 0.0021612104836083576
+  },
+  {
+    "node": "0x3b856f8b4613bac2e7e5d7f1c7d8e66c1edb1665",
+    "from_index": 334,
+    "to_index": 396,
+    "from_end": "2022-01-22",
+    "to_end": "2023-04-01",
+    "delta_pr": 0.009980700648792275
+  },
+  {
+    "node": "0xa0c68c638235ee32657e8f720a23cec1bfc77c77",
+    "from_index": 400,
+    "to_index": 457,
+    "from_end": "2023-04-29",
+    "to_end": "2024-06-01",
+    "delta_pr": 0.011807338437919795
+  },
+  {
+    "node": "0xf3dd72ac3c9833574491861793e8ffe1f07c8905",
+    "from_index": 346,
+    "to_index": 347,
+    "from_end": "2022-04-16",
+    "to_end": "2022-04-23",
+    "delta_pr": 0.013905245107398342
+  },
+  {
+    "node": "0xf3dd72ac3c9833574491861793e8ffe1f07c8905",
+    "from_index": 417,
+    "to_index": 442,
+    "from_end": "2023-08-26",
+    "to_end": "2024-02-17",
+    "delta_pr": 0.012225082586914172
+  },
+  {
+    "node": "0x0baba1ad5be3a5c0a66e7ac838a129bf948f1ea4",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.01065681876119107
+  },
+  {
+    "node": "0x3436e45b6555b6ff62899dcf10686576b6cde09b",
+    "from_index": 299,
+    "to_index": 337,
+    "from_end": "2021-05-22",
+    "to_end": "2022-02-12",
+    "delta_pr": 0.004111201045891197
+  },
+  {
+    "node": "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+    "from_index": 423,
+    "to_index": 443,
+    "from_end": "2023-10-07",
+    "to_end": "2024-02-24",
+    "delta_pr": 0.0037408407127459465
+  },
+  {
+    "node": "0x4c36d2919e407f0cc2ee3c993ccf8ac26d9ce64e",
+    "from_index": 305,
+    "to_index": 351,
+    "from_end": "2021-07-03",
+    "to_end": "2022-05-21",
+    "delta_pr": 0.0018809113928482109
+  },
+  {
+    "node": "0x5da40665fb39e95f3f2ed52b7158286b4ad496ac",
+    "from_index": 296,
+    "to_index": 322,
+    "from_end": "2021-05-01",
+    "to_end": "2021-10-30",
+    "delta_pr": 0.0017696899348965903
+  },
+  {
+    "node": "0x373080be72dd67cddfdc0d5e0fbe3f7c0c126e8a",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x373080be72dd67cddfdc0d5e0fbe3f7c0c126e8a",
+    "from_index": 411,
+    "to_index": 448,
+    "from_end": "2023-07-15",
+    "to_end": "2024-03-30",
+    "delta_pr": 0.006641997609490254
+  },
+  {
+    "node": "0x84679bc467dc6c2c40ab04538813aff3796351f1",
+    "from_index": 300,
+    "to_index": 309,
+    "from_end": "2021-05-29",
+    "to_end": "2021-07-31",
+    "delta_pr": 0.0010546722489843485
+  },
+  {
+    "node": "0x17525e4f4af59fbc29551bc4ece6ab60ed49ce31",
+    "from_index": 305,
+    "to_index": 352,
+    "from_end": "2021-07-03",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0015044755518575522
+  },
+  {
+    "node": "0x0c1c9653e4c0fdc85a21f9c1a6020342683ef211",
+    "from_index": 290,
+    "to_index": 291,
+    "from_end": "2021-03-20",
+    "to_end": "2021-03-27",
+    "delta_pr": 0.000977392452672038
+  },
+  {
+    "node": "0xf55041e37e12cd407ad00ce2910b8269b01263b9",
+    "from_index": 324,
+    "to_index": 388,
+    "from_end": "2021-11-13",
+    "to_end": "2023-02-04",
+    "delta_pr": 0.001769288566025483
+  },
+  {
+    "node": "0x737901bea3eeb88459df9ef1be8ff3ae1b42a2ba",
+    "from_index": 332,
+    "to_index": 345,
+    "from_end": "2022-01-08",
+    "to_end": "2022-04-09",
+    "delta_pr": 0.005030470421697009
+  },
+  {
+    "node": "0x6de037ef9ad2725eb40118bb1702ebb27e4aeb24",
+    "from_index": 397,
+    "to_index": 495,
+    "from_end": "2023-04-08",
+    "to_end": "2025-02-22",
+    "delta_pr": 0.010109908273373856
+  },
+  {
+    "node": "0x37611b28aca5673744161dc337128cfdd2657f69",
+    "from_index": 298,
+    "to_index": 321,
+    "from_end": "2021-05-15",
+    "to_end": "2021-10-23",
+    "delta_pr": 0.0010722671775492579
+  },
+  {
+    "node": "0x92416e32042c9e67b0771a1b00bcdf92ecb64950",
+    "from_index": 298,
+    "to_index": 321,
+    "from_end": "2021-05-15",
+    "to_end": "2021-10-23",
+    "delta_pr": 0.0010722671775492579
+  },
+  {
+    "node": "0x536d52d0655c55b4be1012091b1e4c6fc9b543b4",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.010529426680205732
+  },
+  {
+    "node": "0x536d52d0655c55b4be1012091b1e4c6fc9b543b4",
+    "from_index": 400,
+    "to_index": 524,
+    "from_end": "2023-04-29",
+    "to_end": "2025-09-13",
+    "delta_pr": 0.015327479935267486
+  },
+  {
+    "node": "0x1a2a1c938ce3ec39b6d47113c7955baa9dd454f2",
+    "from_index": 312,
+    "to_index": 320,
+    "from_end": "2021-08-21",
+    "to_end": "2021-10-16",
+    "delta_pr": 0.0017084231230324672
+  },
+  {
+    "node": "0xdf72e0f35b215f669eaeec345ed32dcd0751dfe2",
+    "from_index": 301,
+    "to_index": 303,
+    "from_end": "2021-06-05",
+    "to_end": "2021-06-19",
+    "delta_pr": 0.0021419256363462463
+  },
+  {
+    "node": "0xdd8edaa9d1a65bce1b83c8461a07b8bd5fc1ab23",
+    "from_index": 301,
+    "to_index": 391,
+    "from_end": "2021-06-05",
+    "to_end": "2023-02-25",
+    "delta_pr": 0.005216734326470081
+  },
+  {
+    "node": "0x383518188c0c6d7730d91b2c03a03c837814a899",
+    "from_index": 299,
+    "to_index": 303,
+    "from_end": "2021-05-22",
+    "to_end": "2021-06-19",
+    "delta_pr": 0.000648053867681009
+  },
+  {
+    "node": "0x3d6f0dea3ac3c607b3998e6ce14b6350721752d9",
+    "from_index": 306,
+    "to_index": 473,
+    "from_end": "2021-07-10",
+    "to_end": "2024-09-21",
+    "delta_pr": 0.009994583477880035
+  },
+  {
+    "node": "0x71bc99efdf05d5afe4411144732c424cab044228",
+    "from_index": 348,
+    "to_index": 349,
+    "from_end": "2022-04-30",
+    "to_end": "2022-05-07",
+    "delta_pr": 0.011233850776190976
+  },
+  {
+    "node": "0x71bc99efdf05d5afe4411144732c424cab044228",
+    "from_index": 457,
+    "to_index": 468,
+    "from_end": "2024-06-01",
+    "to_end": "2024-08-17",
+    "delta_pr": 0.013068946878857991
+  },
+  {
+    "node": "0xa9b1eb5908cfc3cdf91f9b8b3a74108598009096",
+    "from_index": 447,
+    "to_index": 488,
+    "from_end": "2024-03-23",
+    "to_end": "2025-01-04",
+    "delta_pr": 0.004373619386861809
+  },
+  {
+    "node": "0x1796ae0b0fa4862485106a0de9b654efe301d0b2",
+    "from_index": 297,
+    "to_index": 304,
+    "from_end": "2021-05-08",
+    "to_end": "2021-06-26",
+    "delta_pr": 0.0006997367871009432
+  },
+  {
+    "node": "0xf411903cbc70a74d22900a5de66a2dda66507255",
+    "from_index": 295,
+    "to_index": 312,
+    "from_end": "2021-04-24",
+    "to_end": "2021-08-21",
+    "delta_pr": 0.0008506974184033986
+  },
+  {
+    "node": "0x626e8036deb333b408be468f951bdb42433cbf18",
+    "from_index": 302,
+    "to_index": 369,
+    "from_end": "2021-06-12",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0021841296941539443
+  },
+  {
+    "node": "0x7978a500a76313f85e7d5e3f835374ecd5707540",
+    "from_index": 342,
+    "to_index": 387,
+    "from_end": "2022-03-19",
+    "to_end": "2023-01-28",
+    "delta_pr": 0.003385237931235388
+  },
+  {
+    "node": "0x4e15361fd6b4bb609fa63c81a2be19d873717870",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0x5cbe98480a790554403694b98bff71a525907f5d",
+    "from_index": 295,
+    "to_index": 303,
+    "from_end": "2021-04-24",
+    "to_end": "2021-06-19",
+    "delta_pr": 0.00043266434041377684
+  },
+  {
+    "node": "0x6f2235864cf897078fcdcc2854b76c482cd16874",
+    "from_index": 300,
+    "to_index": 303,
+    "from_end": "2021-05-29",
+    "to_end": "2021-06-19",
+    "delta_pr": 0.0006419197323429132
+  },
+  {
+    "node": "0xae1a5304bfc706838dd1ec1dbe228dac50243a47",
+    "from_index": 448,
+    "to_index": 449,
+    "from_end": "2024-03-30",
+    "to_end": "2024-04-06",
+    "delta_pr": 0.010662155222420604
+  },
+  {
+    "node": "0xae1a5304bfc706838dd1ec1dbe228dac50243a47",
+    "from_index": 476,
+    "to_index": 477,
+    "from_end": "2024-10-12",
+    "to_end": "2024-10-19",
+    "delta_pr": 0.016852532587710103
+  },
+  {
+    "node": "0xc5a215cdbb69231b2e0f70613afdddbfc1e12c2d",
+    "from_index": 343,
+    "to_index": 344,
+    "from_end": "2022-03-26",
+    "to_end": "2022-04-02",
+    "delta_pr": 0.009958393664528591
+  },
+  {
+    "node": "0xe0810f583c7d4a51e798bb03980c6853a727e9b1",
+    "from_index": 342,
+    "to_index": 347,
+    "from_end": "2022-03-19",
+    "to_end": "2022-04-23",
+    "delta_pr": 0.0057443162111300424
+  },
+  {
+    "node": "0x15b543e986b8c34074dfc9901136d9355a537e7e",
+    "from_index": 339,
+    "to_index": 355,
+    "from_end": "2022-02-26",
+    "to_end": "2022-06-18",
+    "delta_pr": 0.001461129389752176
+  },
+  {
+    "node": "0xb00b1e544f4cbc7a4ef16b2d878f0ccda746e383",
+    "from_index": 300,
+    "to_index": 305,
+    "from_end": "2021-05-29",
+    "to_end": "2021-07-03",
+    "delta_pr": 0.0007326699407004351
+  },
+  {
+    "node": "0x3d3d783cadad9bb764ce4afec5d7f9a3b4ea1ff9",
+    "from_index": 317,
+    "to_index": 387,
+    "from_end": "2021-09-25",
+    "to_end": "2023-01-28",
+    "delta_pr": 0.001424679472574098
+  },
+  {
+    "node": "0xcef85a114732816da4e974db14742f53b3ff304f",
+    "from_index": 325,
+    "to_index": 387,
+    "from_end": "2021-11-20",
+    "to_end": "2023-01-28",
+    "delta_pr": 0.0019730356952510414
+  },
+  {
+    "node": "0x2ccce360d356bc9c200d32a53012832903029030",
+    "from_index": 408,
+    "to_index": 484,
+    "from_end": "2023-06-24",
+    "to_end": "2024-12-07",
+    "delta_pr": 0.02613118097967352
+  },
+  {
+    "node": "0xc40af1e4fecfa05ce6bab79dcd8b373d2e436c4e",
+    "from_index": 325,
+    "to_index": 335,
+    "from_end": "2021-11-20",
+    "to_end": "2022-01-29",
+    "delta_pr": 0.0010148332507374474
+  },
+  {
+    "node": "0xe7ab45162f5979f09b0bda1cc7dfc97c270ea3d5",
+    "from_index": 437,
+    "to_index": 489,
+    "from_end": "2024-01-13",
+    "to_end": "2025-01-11",
+    "delta_pr": 0.007399246072333745
+  },
+  {
+    "node": "0xf418588522d5dd018b425e472991e52ebbeeeeee",
+    "from_index": 318,
+    "to_index": 350,
+    "from_end": "2021-10-02",
+    "to_end": "2022-05-14",
+    "delta_pr": 0.0013269461811247986
+  },
+  {
+    "node": "0xff20817765cb7f73d4bde2e66e067e58d11095c2",
+    "from_index": 340,
+    "to_index": 352,
+    "from_end": "2022-03-05",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0018891471046810484
+  },
+  {
+    "node": "0x957891c11616d3e0b0a76a76fb42724c382e0ef3",
+    "from_index": 298,
+    "to_index": 308,
+    "from_end": "2021-05-15",
+    "to_end": "2021-07-24",
+    "delta_pr": 0.0008946737317219722
+  },
+  {
+    "node": "0x491011067e26925cf54cbc801f84831af0bb6285",
+    "from_index": 298,
+    "to_index": 302,
+    "from_end": "2021-05-15",
+    "to_end": "2021-06-12",
+    "delta_pr": 0.000520455691788371
+  },
+  {
+    "node": "0x5d0d809e3a201ca32a1734a1319d69a87d02173a",
+    "from_index": 389,
+    "to_index": 390,
+    "from_end": "2023-02-11",
+    "to_end": "2023-02-18",
+    "delta_pr": 0.01568608427815627
+  },
+  {
+    "node": "0x4fabb145d64652a948d72533023f6e7a623c7c53",
+    "from_index": 404,
+    "to_index": 500,
+    "from_end": "2023-05-27",
+    "to_end": "2025-03-29",
+    "delta_pr": 0.010244068992509623
+  },
+  {
+    "node": "0x292b2c9b7e0f576a0a183a635530fde8b063aa49",
+    "from_index": 429,
+    "to_index": 498,
+    "from_end": "2023-11-18",
+    "to_end": "2025-03-15",
+    "delta_pr": 0.013673560980021883
+  },
+  {
+    "node": "0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0x0b188e813f047b1a01a092cd9139c00616846885",
+    "from_index": 399,
+    "to_index": 400,
+    "from_end": "2023-04-22",
+    "to_end": "2023-04-29",
+    "delta_pr": 0.005577088694564012
+  },
+  {
+    "node": "0xbdea73db4b7a4610b74b6775cab0b83ab97cda51",
+    "from_index": 326,
+    "to_index": 336,
+    "from_end": "2021-11-27",
+    "to_end": "2022-02-05",
+    "delta_pr": 0.0035448581415188133
+  },
+  {
+    "node": "0x236d53148f83706c3d670064809577385f923a75",
+    "from_index": 324,
+    "to_index": 522,
+    "from_end": "2021-11-13",
+    "to_end": "2025-08-30",
+    "delta_pr": 0.021138018549284987
+  },
+  {
+    "node": "0xa2b4c0af19cc16a6cfacce81f192b024d625817d",
+    "from_index": 342,
+    "to_index": 352,
+    "from_end": "2022-03-19",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0018596009102785857
+  },
+  {
+    "node": "0x861f1da081407744617a6a4190f7eddb832a65ed",
+    "from_index": 300,
+    "to_index": 301,
+    "from_end": "2021-05-29",
+    "to_end": "2021-06-05",
+    "delta_pr": 0.006036273334669523
+  },
+  {
+    "node": "0x97b65710d03e12775189f0d113202cc1443b0aa2",
+    "from_index": 326,
+    "to_index": 489,
+    "from_end": "2021-11-27",
+    "to_end": "2025-01-11",
+    "delta_pr": 0.008816384725745537
+  },
+  {
+    "node": "0x6fcb032a31ff3c7d7bbe8fc9fb0c2b03f476f014",
+    "from_index": 325,
+    "to_index": 469,
+    "from_end": "2021-11-20",
+    "to_end": "2024-08-24",
+    "delta_pr": 0.006795836685307534
+  },
+  {
+    "node": "0x348b7f3106b5da47405332534d06069ff9ce4d1b",
+    "from_index": 324,
+    "to_index": 522,
+    "from_end": "2021-11-13",
+    "to_end": "2025-08-30",
+    "delta_pr": 0.021138018549284987
+  },
+  {
+    "node": "0x58e12b6a68530d8eaf1925f30b9386ef7176feb0",
+    "from_index": 425,
+    "to_index": 426,
+    "from_end": "2023-10-21",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.019968905934714315
+  },
+  {
+    "node": "0x58e12b6a68530d8eaf1925f30b9386ef7176feb0",
+    "from_index": 445,
+    "to_index": 446,
+    "from_end": "2024-03-09",
+    "to_end": "2024-03-16",
+    "delta_pr": 0.01078233793793446
+  },
+  {
+    "node": "0x401f6c983ea34274ec46f84d70b31c151321188b",
+    "from_index": 325,
+    "to_index": 457,
+    "from_end": "2021-11-20",
+    "to_end": "2024-06-01",
+    "delta_pr": 0.00803772801517008
+  },
+  {
+    "node": "0xda9a43198a0f0085e045e12e343e488fee7ecac3",
+    "from_index": 343,
+    "to_index": 351,
+    "from_end": "2022-03-26",
+    "to_end": "2022-05-21",
+    "delta_pr": 0.0020303441000075937
+  },
+  {
+    "node": "0x9ff34937b63ccd054d2e5799646eaa9beb133358",
+    "from_index": 303,
+    "to_index": 524,
+    "from_end": "2021-06-19",
+    "to_end": "2025-09-13",
+    "delta_pr": 0.015671005845324684
+  },
+  {
+    "node": "0x808507121b80c02388fad14726482e061b8da827",
+    "from_index": 342,
+    "to_index": 389,
+    "from_end": "2022-03-19",
+    "to_end": "2023-02-11",
+    "delta_pr": 0.0018428474021747801
+  },
+  {
+    "node": "0x084b1c3c81545d370f3634392de611caabff8148",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0x084b1c3c81545d370f3634392de611caabff8148",
+    "from_index": 382,
+    "to_index": 389,
+    "from_end": "2022-12-24",
+    "to_end": "2023-02-11",
+    "delta_pr": 0.0021423382278007285
+  },
+  {
+    "node": "0x3b8ccaa89fcd432f1334d35b10ff8547001ce3e5",
+    "from_index": 316,
+    "to_index": 317,
+    "from_end": "2021-09-18",
+    "to_end": "2021-09-25",
+    "delta_pr": 0.0036653147656080347
+  },
+  {
+    "node": "0x3b8ccaa89fcd432f1334d35b10ff8547001ce3e5",
+    "from_index": 427,
+    "to_index": 461,
+    "from_end": "2023-11-04",
+    "to_end": "2024-06-29",
+    "delta_pr": 0.0034011376340751026
+  },
+  {
+    "node": "0xa855dbe63a26d82c6de5dab5f1c9ca2ae5da77b5",
+    "from_index": 429,
+    "to_index": 486,
+    "from_end": "2023-11-18",
+    "to_end": "2024-12-21",
+    "delta_pr": 0.00732208815754838
+  },
+  {
+    "node": "0xc521c3860299e873df9bff4b23ea25aae8ea1cb1",
+    "from_index": 324,
+    "to_index": 474,
+    "from_end": "2021-11-13",
+    "to_end": "2024-09-28",
+    "delta_pr": 0.010140877713264112
+  },
+  {
+    "node": "0x790c2e02be67615f592c5bca1ff4a64db370d100",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.01202210250146141
+  },
+  {
+    "node": "0x790c2e02be67615f592c5bca1ff4a64db370d100",
+    "from_index": 428,
+    "to_index": 429,
+    "from_end": "2023-11-11",
+    "to_end": "2023-11-18",
+    "delta_pr": 0.026676597052514645
+  },
+  {
+    "node": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.003734200179911821
+  },
+  {
+    "node": "0xb5d85cbf7cb3ee0d56b3bb207d5fc4b82f43f511",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xc61043f368b0e6da01f7c9666a8bb2bde2f5d985",
+    "from_index": 300,
+    "to_index": 313,
+    "from_end": "2021-05-29",
+    "to_end": "2021-08-28",
+    "delta_pr": 0.0010634021489310936
+  },
+  {
+    "node": "0xf4b5470523ccd314c6b9da041076e7d79e0df267",
+    "from_index": 300,
+    "to_index": 304,
+    "from_end": "2021-05-29",
+    "to_end": "2021-06-26",
+    "delta_pr": 0.000694707193391366
+  },
+  {
+    "node": "0xc2bd7a597391f31d2e36c2cb769fce0e5bd6d482",
+    "from_index": 446,
+    "to_index": 489,
+    "from_end": "2024-03-16",
+    "to_end": "2025-01-11",
+    "delta_pr": 0.0053092108724772415
+  },
+  {
+    "node": "0x2988b653d6dec685cc34eb1dafb95ea17055cafc",
+    "from_index": 331,
+    "to_index": 350,
+    "from_end": "2022-01-01",
+    "to_end": "2022-05-14",
+    "delta_pr": 0.002678570737196016
+  },
+  {
+    "node": "0x175d7d37b210dfac47311cb8c0590ea7837aa181",
+    "from_index": 331,
+    "to_index": 350,
+    "from_end": "2022-01-01",
+    "to_end": "2022-05-14",
+    "delta_pr": 0.002678570737196016
+  },
+  {
+    "node": "0x3cd751e6b0078be393132286c442345e5dc49699",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xf60c2ea62edbfe808163751dd0d8693dcb30019c",
+    "from_index": 383,
+    "to_index": 389,
+    "from_end": "2022-12-31",
+    "to_end": "2023-02-11",
+    "delta_pr": 0.0020294467495768575
+  },
+  {
+    "node": "0x220866b1a2219f40e72f5c628b65d54268ca3a9d",
+    "from_index": 534,
+    "to_index": 535,
+    "from_end": "2025-11-22",
+    "to_end": "2025-11-29",
+    "delta_pr": 0.2825129739291353
+  },
+  {
+    "node": "0xb1edfe0273e46d4368e8032408cc87d3ed86ce36",
+    "from_index": 413,
+    "to_index": 456,
+    "from_end": "2023-07-29",
+    "to_end": "2024-05-25",
+    "delta_pr": 0.009672351249765964
+  },
+  {
+    "node": "0xb1edfe0273e46d4368e8032408cc87d3ed86ce36",
+    "from_index": 459,
+    "to_index": 513,
+    "from_end": "2024-06-15",
+    "to_end": "2025-06-28",
+    "delta_pr": 0.010327609554132065
+  },
+  {
+    "node": "0xba12222222228d8ba445958a75a0704d566bf2c8",
+    "from_index": 395,
+    "to_index": 426,
+    "from_end": "2023-03-25",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.005843833871013266
+  },
+  {
+    "node": "0x21a31ee1afc51d94c2efccaa2092ad1028285549",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x21a31ee1afc51d94c2efccaa2092ad1028285549",
+    "from_index": 442,
+    "to_index": 469,
+    "from_end": "2024-02-17",
+    "to_end": "2024-08-24",
+    "delta_pr": 0.005550045130819543
+  },
+  {
+    "node": "0x21a31ee1afc51d94c2efccaa2092ad1028285549",
+    "from_index": 478,
+    "to_index": 485,
+    "from_end": "2024-10-26",
+    "to_end": "2024-12-14",
+    "delta_pr": 0.0039090668643408325
+  },
+  {
+    "node": "0x0985fbcb517b2889eb2340a3c2747e133a825cd2",
+    "from_index": 367,
+    "to_index": 488,
+    "from_end": "2022-09-10",
+    "to_end": "2025-01-04",
+    "delta_pr": 0.030157718908300903
+  },
+  {
+    "node": "0x28c6c06298d514db089934071355e5743bf21d60",
+    "from_index": 478,
+    "to_index": 484,
+    "from_end": "2024-10-26",
+    "to_end": "2024-12-07",
+    "delta_pr": 0.007770565605378756
+  },
+  {
+    "node": "0x28c6c06298d514db089934071355e5743bf21d60",
+    "from_index": 521,
+    "to_index": 522,
+    "from_end": "2025-08-23",
+    "to_end": "2025-08-30",
+    "delta_pr": 0.0051782440568253485
+  },
+  {
+    "node": "0x4a25e4df835b605a5848d2db450fa600d96ee818",
+    "from_index": 300,
+    "to_index": 301,
+    "from_end": "2021-05-29",
+    "to_end": "2021-06-05",
+    "delta_pr": 0.0004293875555829969
+  },
+  {
+    "node": "0xdfd5293d8e347dfe59e90efd55b2956a1343963d",
+    "from_index": 444,
+    "to_index": 483,
+    "from_end": "2024-03-02",
+    "to_end": "2024-11-30",
+    "delta_pr": 0.01072939036428813
+  },
+  {
+    "node": "0xa7aa669679c61140c7e86d9687df0f5332f4094d",
+    "from_index": 408,
+    "to_index": 409,
+    "from_end": "2023-06-24",
+    "to_end": "2023-07-01",
+    "delta_pr": 0.0022403025107438704
+  },
+  {
+    "node": "0x9696f59e4d72e237be84ffd425dcad154bf96976",
+    "from_index": 437,
+    "to_index": 499,
+    "from_end": "2024-01-13",
+    "to_end": "2025-03-22",
+    "delta_pr": 0.013986390769629192
+  },
+  {
+    "node": "0x9696f59e4d72e237be84ffd425dcad154bf96976",
+    "from_index": 502,
+    "to_index": 509,
+    "from_end": "2025-04-12",
+    "to_end": "2025-05-31",
+    "delta_pr": 0.007730032920599943
+  },
+  {
+    "node": "0xc098b2a3aa256d2140208c3de6543aaef5cd3a94",
+    "from_index": 360,
+    "to_index": 376,
+    "from_end": "2022-07-23",
+    "to_end": "2022-11-12",
+    "delta_pr": 0.0018677184936041573
+  },
+  {
+    "node": "0x56eddb7aa87536c09ccc2793473599fd21a8b17f",
+    "from_index": 423,
+    "to_index": 448,
+    "from_end": "2023-10-07",
+    "to_end": "2024-03-30",
+    "delta_pr": 0.007311879051484515
+  },
+  {
+    "node": "0x56eddb7aa87536c09ccc2793473599fd21a8b17f",
+    "from_index": 451,
+    "to_index": 484,
+    "from_end": "2024-04-20",
+    "to_end": "2024-12-07",
+    "delta_pr": 0.00641927766347598
+  },
+  {
+    "node": "0x56eddb7aa87536c09ccc2793473599fd21a8b17f",
+    "from_index": 487,
+    "to_index": 517,
+    "from_end": "2024-12-28",
+    "to_end": "2025-07-26",
+    "delta_pr": 0.009964186125388852
+  },
+  {
+    "node": "0xc3f733ca98e0dad0386979eb96fb1722a1a05e69",
+    "from_index": 338,
+    "to_index": 388,
+    "from_end": "2022-02-19",
+    "to_end": "2023-02-04",
+    "delta_pr": 0.0013295318723241573
+  },
+  {
+    "node": "0x38a94e92a19e970c144ded0b2dd47278ca11cc1f",
+    "from_index": 343,
+    "to_index": 344,
+    "from_end": "2022-03-26",
+    "to_end": "2022-04-02",
+    "delta_pr": 0.0009570901644999516
+  },
+  {
+    "node": "0x249e38ea4102d0cf8264d3701f1a0e39c4f2dc3b",
+    "from_index": 330,
+    "to_index": 352,
+    "from_end": "2021-12-25",
+    "to_end": "2022-05-28",
+    "delta_pr": 0.0021976652463011875
+  },
+  {
+    "node": "0x249e38ea4102d0cf8264d3701f1a0e39c4f2dc3b",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0x2871a759c325af64d0e2e3715345e5dedbae4da0",
+    "from_index": 383,
+    "to_index": 490,
+    "from_end": "2022-12-31",
+    "to_end": "2025-01-18",
+    "delta_pr": 0.011162271242613256
+  },
+  {
+    "node": "0x2871a759c325af64d0e2e3715345e5dedbae4da0",
+    "from_index": 494,
+    "to_index": 524,
+    "from_end": "2025-02-15",
+    "to_end": "2025-09-13",
+    "delta_pr": 0.014953879878110048
+  },
+  {
+    "node": "0x04f2694c8fcee23e8fd0dfea1d4f5bb8c352111f",
+    "from_index": 334,
+    "to_index": 433,
+    "from_end": "2022-01-22",
+    "to_end": "2023-12-16",
+    "delta_pr": 0.0016628442110916187
+  },
+  {
+    "node": "0x32b30adef7c9dcb888d97f7b743db457e67f2142",
+    "from_index": 330,
+    "to_index": 334,
+    "from_end": "2021-12-25",
+    "to_end": "2022-01-22",
+    "delta_pr": 0.003689010827077333
+  },
+  {
+    "node": "0x03f7724180aa6b939894b5ca4314783b0b36b329",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0036244730153060676
+  },
+  {
+    "node": "0x9813037ee2218799597d83d4a5b6f3b6778218d9",
+    "from_index": 391,
+    "to_index": 494,
+    "from_end": "2023-02-25",
+    "to_end": "2025-02-15",
+    "delta_pr": 0.007633771234214045
+  },
+  {
+    "node": "0xa57d319b3cf3ad0e4d19770f71e63cf847263a0b",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0x99c9fc46f92e8a1c0dec1b1747d010903e884be1",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00615771721749967
+  },
+  {
+    "node": "0x99c9fc46f92e8a1c0dec1b1747d010903e884be1",
+    "from_index": 414,
+    "to_index": 415,
+    "from_end": "2023-08-05",
+    "to_end": "2023-08-12",
+    "delta_pr": 0.007665746708326648
+  },
+  {
+    "node": "0x25f8087ead173b73d6e8b84329989a8eea16cf73",
+    "from_index": 326,
+    "to_index": 350,
+    "from_end": "2021-11-27",
+    "to_end": "2022-05-14",
+    "delta_pr": 0.0017236804181182406
+  },
+  {
+    "node": "0xd084944d3c05cd115c09d072b9f44ba3e0e45921",
+    "from_index": 380,
+    "to_index": 386,
+    "from_end": "2022-12-10",
+    "to_end": "2023-01-21",
+    "delta_pr": 0.003222563437504987
+  },
+  {
+    "node": "0x712e0d89c604c2dc2bb8d139f5f6cafc96e923dd",
+    "from_index": 342,
+    "to_index": 350,
+    "from_end": "2022-03-19",
+    "to_end": "2022-05-14",
+    "delta_pr": 0.0030325603913850005
+  },
+  {
+    "node": "0xbd3531da5cf5857e7cfaa92426877b022e612cf8",
+    "from_index": 328,
+    "to_index": 388,
+    "from_end": "2021-12-11",
+    "to_end": "2023-02-04",
+    "delta_pr": 0.0012839761833777956
+  },
+  {
+    "node": "0xc1bfccd4c29813ede019d00d2179eea838a67703",
+    "from_index": 331,
+    "to_index": 349,
+    "from_end": "2022-01-01",
+    "to_end": "2022-05-07",
+    "delta_pr": 0.0024895317405311066
+  },
+  {
+    "node": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270",
+    "from_index": 343,
+    "to_index": 374,
+    "from_end": "2022-03-26",
+    "to_end": "2022-10-29",
+    "delta_pr": 0.001294495236394811
+  },
+  {
+    "node": "0x2e9d63788249371f1dfc918a52f8d799f4a38c94",
+    "from_index": 401,
+    "to_index": 433,
+    "from_end": "2023-05-06",
+    "to_end": "2023-12-16",
+    "delta_pr": 0.0021157091541305446
+  },
+  {
+    "node": "0x1a4b46696b2bb4794eb3d4c26f1c55f9170fa4c5",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x99d8a9c45b2eca8864373a26d1459e3dff1e17f3",
+    "from_index": 342,
+    "to_index": 385,
+    "from_end": "2022-03-19",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0028419709822800378
+  },
+  {
+    "node": "0x4dbd4fc535ac27206064b68ffcf827b0a60bab3f",
+    "from_index": 398,
+    "to_index": 457,
+    "from_end": "2023-04-15",
+    "to_end": "2024-06-01",
+    "delta_pr": 0.011756995964555098
+  },
+  {
+    "node": "0xd987c5800ef371844ceac3d0ee29e4ff29162d7c",
+    "from_index": 399,
+    "to_index": 479,
+    "from_end": "2023-04-22",
+    "to_end": "2024-11-02",
+    "delta_pr": 0.007433870222897771
+  },
+  {
+    "node": "0x1dfe7ca09e99d10835bf73044a23b73fc20623df",
+    "from_index": 332,
+    "to_index": 374,
+    "from_end": "2022-01-08",
+    "to_end": "2022-10-29",
+    "delta_pr": 0.0019221947884476439
+  },
+  {
+    "node": "0x1ac217d61c002caa32e1d46dadbbf3dc8f07e792",
+    "from_index": 327,
+    "to_index": 373,
+    "from_end": "2021-12-04",
+    "to_end": "2022-10-22",
+    "delta_pr": 0.001838988274543331
+  },
+  {
+    "node": "0x50d1c9771902476076ecfc8b2a83ad6b9355a4c9",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0x0fd829c3365a225fb9226e75c97c3a114bd3199e",
+    "from_index": 323,
+    "to_index": 429,
+    "from_end": "2021-11-06",
+    "to_end": "2023-11-18",
+    "delta_pr": 0.0021229420047959077
+  },
+  {
+    "node": "0x78941dd601863e127d6d8df3f76a5c5c9fe0c219",
+    "from_index": 395,
+    "to_index": 396,
+    "from_end": "2023-03-25",
+    "to_end": "2023-04-01",
+    "delta_pr": 0.005940132294636491
+  },
+  {
+    "node": "0x72ce9c846789fdb6fc1f34ac4ad25dd9ef7031ef",
+    "from_index": 340,
+    "to_index": 387,
+    "from_end": "2022-03-05",
+    "to_end": "2023-01-28",
+    "delta_pr": 0.0046141023455237695
+  },
+  {
+    "node": "0x92d6c1e31e14520e676a687f0a93788b716beff5",
+    "from_index": 433,
+    "to_index": 454,
+    "from_end": "2023-12-16",
+    "to_end": "2024-05-11",
+    "delta_pr": 0.006571732018687182
+  },
+  {
+    "node": "0x0b7a434782792b539623fd72a428838ea4173b22",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xc1e088fc1323b20bcbee9bd1b9fc9546db5624c5",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xdc59ac4fefa32293a95889dc396682858d52e5db",
+    "from_index": 331,
+    "to_index": 346,
+    "from_end": "2022-01-01",
+    "to_end": "2022-04-16",
+    "delta_pr": 0.0020736683193945697
+  },
+  {
+    "node": "0x4976a4a02f38326660d17bf34b431dc6e2eb2327",
+    "from_index": 497,
+    "to_index": 523,
+    "from_end": "2025-03-08",
+    "to_end": "2025-09-06",
+    "delta_pr": 0.010344131122492724
+  },
+  {
+    "node": "0x43bbb6a45d995a2f56ac5024ad90348ff73fe10e",
+    "from_index": 402,
+    "to_index": 475,
+    "from_end": "2023-05-13",
+    "to_end": "2024-10-05",
+    "delta_pr": 0.007606447860904203
+  },
+  {
+    "node": "0x09af55f35a88bae020467aca0a800586ede8e8b8",
+    "from_index": 367,
+    "to_index": 369,
+    "from_end": "2022-09-10",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.002929746938703532
+  },
+  {
+    "node": "0x8cc045867f30764daebeeed66a0b59c78be4f7e6",
+    "from_index": 333,
+    "to_index": 528,
+    "from_end": "2022-01-15",
+    "to_end": "2025-10-11",
+    "delta_pr": 0.0040322292084303225
+  },
+  {
+    "node": "0xdef171fe48cf0115b1d80b88dc8eab59176fee57",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.005114856851072661
+  },
+  {
+    "node": "0x74bc89a9e831ab5f33b90607dd9eb5e01452a064",
+    "from_index": 521,
+    "to_index": 522,
+    "from_end": "2025-08-23",
+    "to_end": "2025-08-30",
+    "delta_pr": 0.022227786897933203
+  },
+  {
+    "node": "0x099689220846644f87d1137665cded7bf3422747",
+    "from_index": 331,
+    "to_index": 518,
+    "from_end": "2022-01-01",
+    "to_end": "2025-08-02",
+    "delta_pr": 0.018071758182100016
+  },
+  {
+    "node": "0x6ca661bbe14d6f05cf7ac122797f2ad577f63fdb",
+    "from_index": 393,
+    "to_index": 502,
+    "from_end": "2023-03-11",
+    "to_end": "2025-04-12",
+    "delta_pr": 0.009020210394999952
+  },
+  {
+    "node": "0x6100dd79fcaa88420750dcee3f735d168abcb771",
+    "from_index": 383,
+    "to_index": 385,
+    "from_end": "2022-12-31",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.003028570329682115
+  },
+  {
+    "node": "0xf8e9f10c22840b613cda05a0c5fdb59a4d6cd7ef",
+    "from_index": 327,
+    "to_index": 349,
+    "from_end": "2021-12-04",
+    "to_end": "2022-05-07",
+    "delta_pr": 0.00138454450807074
+  },
+  {
+    "node": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
+    "from_index": 387,
+    "to_index": 461,
+    "from_end": "2023-01-28",
+    "to_end": "2024-06-29",
+    "delta_pr": 0.00357537991078676
+  },
+  {
+    "node": "0xb8901acb165ed027e32754e0ffe830802919727f",
+    "from_index": 395,
+    "to_index": 479,
+    "from_end": "2023-03-25",
+    "to_end": "2024-11-02",
+    "delta_pr": 0.013534685883513111
+  },
+  {
+    "node": "0x44c01e5e4216f3162538914d9c7f5e6a0d87820e",
+    "from_index": 367,
+    "to_index": 370,
+    "from_end": "2022-09-10",
+    "to_end": "2022-10-01",
+    "delta_pr": 0.002290067026189936
+  },
+  {
+    "node": "0x37bbf8f3644b60e4fd20e7efa097860d0273314c",
+    "from_index": 441,
+    "to_index": 465,
+    "from_end": "2024-02-10",
+    "to_end": "2024-07-27",
+    "delta_pr": 0.012415345384035395
+  },
+  {
+    "node": "0x1111111254fb6c44bac0bed2854e76f90643097d",
+    "from_index": 345,
+    "to_index": 346,
+    "from_end": "2022-04-09",
+    "to_end": "2022-04-16",
+    "delta_pr": 0.006368918780751847
+  },
+  {
+    "node": "0xfb7b4564402e5500db5bb6d63ae671302777c75a",
+    "from_index": 417,
+    "to_index": 448,
+    "from_end": "2023-08-26",
+    "to_end": "2024-03-30",
+    "delta_pr": 0.006532061466646587
+  },
+  {
+    "node": "0x6571d6be3d8460cf5f7d6711cd9961860029d85f",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xd6ea8275b1dd3126a154610b511d8a2a575c08b0",
+    "from_index": 393,
+    "to_index": 485,
+    "from_end": "2023-03-11",
+    "to_end": "2024-12-14",
+    "delta_pr": 0.00907842962750341
+  },
+  {
+    "node": "0x5206910a4b6f0d10037308eff9bd1ec157738c96",
+    "from_index": 356,
+    "to_index": 451,
+    "from_end": "2022-06-25",
+    "to_end": "2024-04-20",
+    "delta_pr": 0.0070112388276023715
+  },
+  {
+    "node": "0x31d8fe74e5cd4dc59abd528bf128733e3026cae7",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025388203073827644
+  },
+  {
+    "node": "0xbb0b66bda34aa03081151c3c9f47920791a5c2a7",
+    "from_index": 395,
+    "to_index": 406,
+    "from_end": "2023-03-25",
+    "to_end": "2023-06-10",
+    "delta_pr": 0.040787981183654363
+  },
+  {
+    "node": "0xbb0b66bda34aa03081151c3c9f47920791a5c2a7",
+    "from_index": 418,
+    "to_index": 420,
+    "from_end": "2023-09-02",
+    "to_end": "2023-09-16",
+    "delta_pr": 0.053683168902828884
+  },
+  {
+    "node": "0x8d53afbeb62c18917b5f71385d52e8ba87669794",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xca21d4228cdcc68d4e23807e5e370c07577dd152",
+    "from_index": 409,
+    "to_index": 453,
+    "from_end": "2023-07-01",
+    "to_end": "2024-05-04",
+    "delta_pr": 0.007269968770833201
+  },
+  {
+    "node": "0xa06c2b67e7435ce25a5969e49983ec3304d8e787",
+    "from_index": 451,
+    "to_index": 523,
+    "from_end": "2024-04-20",
+    "to_end": "2025-09-06",
+    "delta_pr": 0.016702011110596063
+  },
+  {
+    "node": "0xcad621da75a66c7a8f4ff86d30a2bf981bfc8fdd",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.0026600609328370235
+  },
+  {
+    "node": "0x59728544b08ab483533076417fbbb2fd0b17ce3a",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.0042384612522837735
+  },
+  {
+    "node": "0x0fa10d440522d4235c55811dc1adf4a875c16d00",
+    "from_index": 533,
+    "to_index": 534,
+    "from_end": "2025-11-15",
+    "to_end": "2025-11-22",
+    "delta_pr": 0.026318564620754555
+  },
+  {
+    "node": "0x679780ea3133c388e3c7efeb22e98a68ccf99aff",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.005985508721153511
+  },
+  {
+    "node": "0xf0f9d895aca5c8678f706fb8216fa22957685a13",
+    "from_index": 420,
+    "to_index": 489,
+    "from_end": "2023-09-16",
+    "to_end": "2025-01-11",
+    "delta_pr": 0.009214001541398467
+  },
+  {
+    "node": "0x6eb4cc8b5614eef6269155e5ddda7981df018a0b",
+    "from_index": 345,
+    "to_index": 478,
+    "from_end": "2022-04-09",
+    "to_end": "2024-10-26",
+    "delta_pr": 0.005221710229606694
+  },
+  {
+    "node": "0xd55f5887fcfb24ab61b57a3fe011998425c0fc41",
+    "from_index": 377,
+    "to_index": 378,
+    "from_end": "2022-11-19",
+    "to_end": "2022-11-26",
+    "delta_pr": 0.003539975204079413
+  },
+  {
+    "node": "0x7f268357a8c2552623316e2562d90e642bb538e5",
+    "from_index": 348,
+    "to_index": 349,
+    "from_end": "2022-04-30",
+    "to_end": "2022-05-07",
+    "delta_pr": 0.014272295724648557
+  },
+  {
+    "node": "0x4a6ce9f668c707c810b455476499d070ae352da7",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x60e4d786628fea6478f785a6d7e704777c86a7c6",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x60e4d786628fea6478f785a6d7e704777c86a7c6",
+    "from_index": 380,
+    "to_index": 385,
+    "from_end": "2022-12-10",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.003108169717629739
+  },
+  {
+    "node": "0x15d4c048f83bd7e37d49ea4c83a07267ec4203da",
+    "from_index": 342,
+    "to_index": 386,
+    "from_end": "2022-03-19",
+    "to_end": "2023-01-21",
+    "delta_pr": 0.0029563647021552857
+  },
+  {
+    "node": "0xaecfe4eff84a1cd9a24accc1914ac537af7f6e1b",
+    "from_index": 389,
+    "to_index": 390,
+    "from_end": "2023-02-11",
+    "to_end": "2023-02-18",
+    "delta_pr": 0.01339426808345326
+  },
+  {
+    "node": "0x7953b183e1264f1f12d8b79301d8911725f361e9",
+    "from_index": 353,
+    "to_index": 456,
+    "from_end": "2022-06-04",
+    "to_end": "2024-05-25",
+    "delta_pr": 0.013130158242342888
+  },
+  {
+    "node": "0xaf5191b0de278c7286d6c7cc6ab6bb8a73ba2cd6",
+    "from_index": 382,
+    "to_index": 389,
+    "from_end": "2022-12-24",
+    "to_end": "2023-02-11",
+    "delta_pr": 0.0021423382278007285
+  },
+  {
+    "node": "0x2a95b595922b5a629f9557f15c8bd85227aaaa4c",
+    "from_index": 381,
+    "to_index": 385,
+    "from_end": "2022-12-17",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.005812448602783211
+  },
+  {
+    "node": "0x80c67432656d59144ceff962e8faf8926599bcf8",
+    "from_index": 418,
+    "to_index": 419,
+    "from_end": "2023-09-02",
+    "to_end": "2023-09-09",
+    "delta_pr": 0.006319911254942478
+  },
+  {
+    "node": "0x80c67432656d59144ceff962e8faf8926599bcf8",
+    "from_index": 441,
+    "to_index": 456,
+    "from_end": "2024-02-10",
+    "to_end": "2024-05-25",
+    "delta_pr": 0.008538812231761624
+  },
+  {
+    "node": "0x0554f068365ed43dcc98dcd7fd7a8208a5638c72",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xbda2481db91fc0f942ed3f53de378ba45ba9d17e",
+    "from_index": 432,
+    "to_index": 508,
+    "from_end": "2023-12-09",
+    "to_end": "2025-05-24",
+    "delta_pr": 0.018642140363974744
+  },
+  {
+    "node": "0x07be9763a718c0539017e2ab6fc42853b4aeeb6b",
+    "from_index": 415,
+    "to_index": 431,
+    "from_end": "2023-08-12",
+    "to_end": "2023-12-02",
+    "delta_pr": 0.0023682196762160462
+  },
+  {
+    "node": "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0xbce3781ae7ca1a5e050bd9c4c77369867ebc307e",
+    "from_index": 362,
+    "to_index": 363,
+    "from_end": "2022-08-06",
+    "to_end": "2022-08-13",
+    "delta_pr": 0.00402767591506353
+  },
+  {
+    "node": "0x5cc5b05a8a13e3fbdb0bb9fccd98d38e50f90c38",
+    "from_index": 389,
+    "to_index": 484,
+    "from_end": "2023-02-11",
+    "to_end": "2024-12-07",
+    "delta_pr": 0.012630280418377469
+  },
+  {
+    "node": "0xc86ebdd39d5bd736f95abc0da314b5522dcaa2cf",
+    "from_index": 498,
+    "to_index": 500,
+    "from_end": "2025-03-15",
+    "to_end": "2025-03-29",
+    "delta_pr": 0.0612627378326904
+  },
+  {
+    "node": "0xae0ee0a63a2ce6baeeffe56e7714fb4efe48d419",
+    "from_index": 423,
+    "to_index": 430,
+    "from_end": "2023-10-07",
+    "to_end": "2023-11-25",
+    "delta_pr": 0.005771300805080613
+  },
+  {
+    "node": "0xc5102fe9359fd9a28f877a67e36b0f050d81a3cc",
+    "from_index": 377,
+    "to_index": 492,
+    "from_end": "2022-11-19",
+    "to_end": "2025-02-01",
+    "delta_pr": 0.006712139502503602
+  },
+  {
+    "node": "0xd1982d1df41dd7622413bc245ea04341e63817fb",
+    "from_index": 463,
+    "to_index": 517,
+    "from_end": "2024-07-13",
+    "to_end": "2025-07-26",
+    "delta_pr": 0.014474266851315053
+  },
+  {
+    "node": "0x9bea6f8da78e7236350f012b58360fe1cefbf412",
+    "from_index": 368,
+    "to_index": 369,
+    "from_end": "2022-09-17",
+    "to_end": "2022-09-24",
+    "delta_pr": 0.004920640543308584
+  },
+  {
+    "node": "0xfd54dbab9b73bea0aa8211cb548378193ec93cfc",
+    "from_index": 531,
+    "to_index": 532,
+    "from_end": "2025-11-01",
+    "to_end": "2025-11-08",
+    "delta_pr": 0.026744962423754792
+  },
+  {
+    "node": "0x0000000000c2d145a2526bd8c716263bfebe1a72",
+    "from_index": 494,
+    "to_index": 508,
+    "from_end": "2025-02-15",
+    "to_end": "2025-05-24",
+    "delta_pr": 0.011797221272552292
+  },
+  {
+    "node": "0x5e2361cd711de7efe2a85045b643271a64262d40",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0028273370579097006
+  },
+  {
+    "node": "0x2c88aa0956bc9813505d73575f653f69ada60923",
+    "from_index": 413,
+    "to_index": 486,
+    "from_end": "2023-07-29",
+    "to_end": "2024-12-21",
+    "delta_pr": 0.00876463492298717
+  },
+  {
+    "node": "0x06450dee7fd2fb8e39061434babcfc05599a6fb8",
+    "from_index": 433,
+    "to_index": 465,
+    "from_end": "2023-12-16",
+    "to_end": "2024-07-27",
+    "delta_pr": 0.011404641988108049
+  },
+  {
+    "node": "0x4ee3a02bb2653c3d595bb8a6cc4419f3602deaa7",
+    "from_index": 383,
+    "to_index": 387,
+    "from_end": "2022-12-31",
+    "to_end": "2023-01-28",
+    "delta_pr": 0.002749264436899238
+  },
+  {
+    "node": "0x4d992dc92a714374a46ca2e73e0b82fe0d21eb65",
+    "from_index": 462,
+    "to_index": 515,
+    "from_end": "2024-07-06",
+    "to_end": "2025-07-12",
+    "delta_pr": 0.02952825020489066
+  },
+  {
+    "node": "0x1c53dc20d1e36ed8359250de626acae36bd28a29",
+    "from_index": 415,
+    "to_index": 452,
+    "from_end": "2023-08-12",
+    "to_end": "2024-04-27",
+    "delta_pr": 0.013442666113960064
+  },
+  {
+    "node": "0x885d90a424f87d362c9369c0f3d9a2d28af495f4",
+    "from_index": 408,
+    "to_index": 472,
+    "from_end": "2023-06-24",
+    "to_end": "2024-09-14",
+    "delta_pr": 0.006970790681680805
+  },
+  {
+    "node": "0xfeea44bc2161f2fe11d55e557ae4ec855e2d1168",
+    "from_index": 420,
+    "to_index": 426,
+    "from_end": "2023-09-16",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.002424001746182786
+  },
+  {
+    "node": "0x82e0b8cdd80af5930c4452c684e71c861148ec8a",
+    "from_index": 382,
+    "to_index": 389,
+    "from_end": "2022-12-24",
+    "to_end": "2023-02-11",
+    "delta_pr": 0.0023403892816269032
+  },
+  {
+    "node": "0x9040e41ef5e8b281535a96d9a48acb8cfabd9a48",
+    "from_index": 382,
+    "to_index": 447,
+    "from_end": "2022-12-24",
+    "to_end": "2024-03-23",
+    "delta_pr": 0.007177532484252391
+  },
+  {
+    "node": "0xc186fa914353c44b2e33ebe05f21846f1048beda",
+    "from_index": 382,
+    "to_index": 447,
+    "from_end": "2022-12-24",
+    "to_end": "2024-03-23",
+    "delta_pr": 0.007177532484252391
+  },
+  {
+    "node": "0xbdf712a3852b76a572d5ba71b8bd992a7ef2e8d8",
+    "from_index": 389,
+    "to_index": 447,
+    "from_end": "2023-02-11",
+    "to_end": "2024-03-23",
+    "delta_pr": 0.005035194256451663
+  },
+  {
+    "node": "0xf08e8bd28993cbcb1a3c68767c32a3f741dd66d4",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025677049935053124
+  },
+  {
+    "node": "0xadcb03ed1d419098b96835eed0c021be959378ed",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025408834992486605
+  },
+  {
+    "node": "0x37efc3f05d659b30a83cf0b07522c9d08513ca9d",
+    "from_index": 384,
+    "to_index": 385,
+    "from_end": "2023-01-07",
+    "to_end": "2023-01-14",
+    "delta_pr": 0.0025388203073827644
+  },
+  {
+    "node": "0x510e221c48ee37dafc0d3802b43679cf5d78561f",
+    "from_index": 423,
+    "to_index": 429,
+    "from_end": "2023-10-07",
+    "to_end": "2023-11-18",
+    "delta_pr": 0.002695492657657214
+  },
+  {
+    "node": "0xe55d97a97ae6a17706ee281486e98a84095d8aaf",
+    "from_index": 402,
+    "to_index": 433,
+    "from_end": "2023-05-13",
+    "to_end": "2023-12-16",
+    "delta_pr": 0.002096263229583845
+  },
+  {
+    "node": "0x6131b5fae19ea4f9d964eac0408e4408b66337b5",
+    "from_index": 470,
+    "to_index": 471,
+    "from_end": "2024-08-31",
+    "to_end": "2024-09-07",
+    "delta_pr": 0.006754140399164032
+  },
+  {
+    "node": "0x666a3ce3f9438dccd4a885ba5b565f3035984793",
+    "from_index": 459,
+    "to_index": 460,
+    "from_end": "2024-06-15",
+    "to_end": "2024-06-22",
+    "delta_pr": 0.011939584576282102
+  },
+  {
+    "node": "0x666a3ce3f9438dccd4a885ba5b565f3035984793",
+    "from_index": 463,
+    "to_index": 464,
+    "from_end": "2024-07-13",
+    "to_end": "2024-07-20",
+    "delta_pr": 0.011260186705227802
+  },
+  {
+    "node": "0x207e14389183a94343942de7afbc607f57460618",
+    "from_index": 446,
+    "to_index": 455,
+    "from_end": "2024-03-16",
+    "to_end": "2024-05-18",
+    "delta_pr": 0.006152260193097489
+  },
+  {
+    "node": "0xb23d80f5fefcddaa212212f028021b41ded428cf",
+    "from_index": 437,
+    "to_index": 484,
+    "from_end": "2024-01-13",
+    "to_end": "2024-12-07",
+    "delta_pr": 0.012425986315856327
+  },
+  {
+    "node": "0x32400084c286cf3e17e7b677ea9583e60a000324",
+    "from_index": 401,
+    "to_index": 405,
+    "from_end": "2023-05-06",
+    "to_end": "2023-06-03",
+    "delta_pr": 0.011129974678138602
+  },
+  {
+    "node": "0x974bbc9c9b8a1b81e92df9d1457d2df98941814e",
+    "from_index": 425,
+    "to_index": 426,
+    "from_end": "2023-10-21",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.0017806610708910064
+  },
+  {
+    "node": "0xf7858da8a6617f7c6d0ff2bcafdb6d2eedf64840",
+    "from_index": 438,
+    "to_index": 452,
+    "from_end": "2024-01-20",
+    "to_end": "2024-04-27",
+    "delta_pr": 0.0053148675487270985
+  },
+  {
+    "node": "0xe4edb277e41dc89ab076a1f049f4a3efa700bce8",
+    "from_index": 446,
+    "to_index": 484,
+    "from_end": "2024-03-16",
+    "to_end": "2024-12-07",
+    "delta_pr": 0.013995553847176424
+  },
+  {
+    "node": "0xfc3ff9d9abd3abadda68821e443779beb1082f43",
+    "from_index": 432,
+    "to_index": 434,
+    "from_end": "2023-12-09",
+    "to_end": "2023-12-23",
+    "delta_pr": 0.01395066048955978
+  },
+  {
+    "node": "0x1111111254eeb25477b68fb85ed929f73a960582",
+    "from_index": 446,
+    "to_index": 492,
+    "from_end": "2024-03-16",
+    "to_end": "2025-02-01",
+    "delta_pr": 0.004998897544741428
+  },
+  {
+    "node": "0x00005ea00ac477b1030ce78506496e8c2de24bf5",
+    "from_index": 434,
+    "to_index": 485,
+    "from_end": "2023-12-23",
+    "to_end": "2024-12-14",
+    "delta_pr": 0.008502503359969944
+  },
+  {
+    "node": "0x630e7c10138a9486243f810016b10e5d664a7c37",
+    "from_index": 412,
+    "to_index": 427,
+    "from_end": "2023-07-22",
+    "to_end": "2023-11-04",
+    "delta_pr": 0.004103749651134498
+  },
+  {
+    "node": "0x6cfbac623df5f4987ad0097e1da45f7fd1f0a7b3",
+    "from_index": 425,
+    "to_index": 426,
+    "from_end": "2023-10-21",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.001787025282732825
+  },
+  {
+    "node": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+    "from_index": 423,
+    "to_index": 468,
+    "from_end": "2023-10-07",
+    "to_end": "2024-08-17",
+    "delta_pr": 0.011381476721153994
+  },
+  {
+    "node": "0x1ce270557c1f68cfb577b856766310bf8b47fd9c",
+    "from_index": 423,
+    "to_index": 476,
+    "from_end": "2023-10-07",
+    "to_end": "2024-10-12",
+    "delta_pr": 0.008067981954905382
+  },
+  {
+    "node": "0xfa53d837b5ddd616007f91487f041d27edb683a0",
+    "from_index": 413,
+    "to_index": 426,
+    "from_end": "2023-07-29",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.002622243005283695
+  },
+  {
+    "node": "0xa58e81fe9b61b5c3fe2afd33cf304c454abfc7cb",
+    "from_index": 423,
+    "to_index": 454,
+    "from_end": "2023-10-07",
+    "to_end": "2024-05-11",
+    "delta_pr": 0.009165920516976326
+  },
+  {
+    "node": "0x5a2837c26c96d24edbc9def55f33b8b94491777d",
+    "from_index": 413,
+    "to_index": 430,
+    "from_end": "2023-07-29",
+    "to_end": "2023-11-25",
+    "delta_pr": 0.00246558770805092
+  },
+  {
+    "node": "0x5ca887615098c6b7409f18502f57538205c768d9",
+    "from_index": 425,
+    "to_index": 426,
+    "from_end": "2023-10-21",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.00454180904736368
+  },
+  {
+    "node": "0x9a1c5af0e25cb0e03514ea75084fb8442f4995d6",
+    "from_index": 407,
+    "to_index": 473,
+    "from_end": "2023-06-17",
+    "to_end": "2024-09-21",
+    "delta_pr": 0.06773923560209741
+  },
+  {
+    "node": "0xdb287caa3454db75744538bcf9da3ed5bf64aebf",
+    "from_index": 437,
+    "to_index": 517,
+    "from_end": "2024-01-13",
+    "to_end": "2025-07-26",
+    "delta_pr": 0.03437320065871833
+  },
+  {
+    "node": "0x2fc617e933a52713247ce25730f6695920b3befe",
+    "from_index": 423,
+    "to_index": 447,
+    "from_end": "2023-10-07",
+    "to_end": "2024-03-23",
+    "delta_pr": 0.006842572094866174
+  },
+  {
+    "node": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+    "from_index": 450,
+    "to_index": 483,
+    "from_end": "2024-04-13",
+    "to_end": "2024-11-30",
+    "delta_pr": 0.019222911202759665
+  },
+  {
+    "node": "0xbcbf98098a1396490a091fbb92e3783374096c0f",
+    "from_index": 425,
+    "to_index": 450,
+    "from_end": "2023-10-21",
+    "to_end": "2024-04-13",
+    "delta_pr": 0.006625077574839712
+  },
+  {
+    "node": "0x94e696acd3c6b58990b26d5ee5899a72fc3d6481",
+    "from_index": 425,
+    "to_index": 449,
+    "from_end": "2023-10-21",
+    "to_end": "2024-04-06",
+    "delta_pr": 0.006588362600157226
+  },
+  {
+    "node": "0x76e9d04a28c86091167f4d3b77db10a283989bf3",
+    "from_index": 426,
+    "to_index": 449,
+    "from_end": "2023-10-28",
+    "to_end": "2024-04-06",
+    "delta_pr": 0.0047081186450951325
+  },
+  {
+    "node": "0xb50721bcf8d664c30412cfbc6cf7a15145234ad1",
+    "from_index": 424,
+    "to_index": 430,
+    "from_end": "2023-10-14",
+    "to_end": "2023-11-25",
+    "delta_pr": 0.0027883695764466575
+  },
+  {
+    "node": "0x2ec2df6ff862faf61ded666a90f4faaba62ca982",
+    "from_index": 463,
+    "to_index": 478,
+    "from_end": "2024-07-13",
+    "to_end": "2024-10-26",
+    "delta_pr": 0.01697859398529856
+  },
+  {
+    "node": "0xf6808e3563c4d31bb168778eb83e9ebad69f2eb0",
+    "from_index": 429,
+    "to_index": 458,
+    "from_end": "2023-11-18",
+    "to_end": "2024-06-08",
+    "delta_pr": 0.006927799358846446
+  },
+  {
+    "node": "0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad",
+    "from_index": 447,
+    "to_index": 448,
+    "from_end": "2024-03-23",
+    "to_end": "2024-03-30",
+    "delta_pr": 0.026904501525429426
+  },
+  {
+    "node": "0x43b8b7256da4a7078b56a17667d04cde54a88aeb",
+    "from_index": 426,
+    "to_index": 458,
+    "from_end": "2023-10-28",
+    "to_end": "2024-06-08",
+    "delta_pr": 0.015220217950092336
+  },
+  {
+    "node": "0x38177225d00f17b01fe20953564f77cdcb5712cf",
+    "from_index": 432,
+    "to_index": 448,
+    "from_end": "2023-12-09",
+    "to_end": "2024-03-30",
+    "delta_pr": 0.014672875108889944
+  },
+  {
+    "node": "0x94c08ed53f9a7a038440e2a79c96ef63a5ff7085",
+    "from_index": 429,
+    "to_index": 486,
+    "from_end": "2023-11-18",
+    "to_end": "2024-12-21",
+    "delta_pr": 0.01274283427220637
+  },
+  {
+    "node": "0x391192f54ac1145a0fc5310c90f017e0490bb5d9",
+    "from_index": 424,
+    "to_index": 447,
+    "from_end": "2023-10-14",
+    "to_end": "2024-03-23",
+    "delta_pr": 0.01303847930542442
+  },
+  {
+    "node": "0xb4e8589b747410858e227e68503e0142ded1aa3f",
+    "from_index": 425,
+    "to_index": 450,
+    "from_end": "2023-10-21",
+    "to_end": "2024-04-13",
+    "delta_pr": 0.0066583728415561625
+  },
+  {
+    "node": "0x9a745ea847cb30e58a13e77b6ae28916e88c99ad",
+    "from_index": 424,
+    "to_index": 449,
+    "from_end": "2023-10-14",
+    "to_end": "2024-04-06",
+    "delta_pr": 0.007334779205352595
+  },
+  {
+    "node": "0xc80d3f547976d4519753818064dd517d1f84c3ce",
+    "from_index": 414,
+    "to_index": 449,
+    "from_end": "2023-08-05",
+    "to_end": "2024-04-06",
+    "delta_pr": 0.007140532852740765
+  },
+  {
+    "node": "0x428ab2ba90eba0a4be7af34c9ac451ab061ac010",
+    "from_index": 425,
+    "to_index": 426,
+    "from_end": "2023-10-21",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.001798914689820706
+  },
+  {
+    "node": "0xbb289bc97591f70d8216462df40ed713011b968a",
+    "from_index": 415,
+    "to_index": 428,
+    "from_end": "2023-08-12",
+    "to_end": "2023-11-11",
+    "delta_pr": 0.0023442985923981426
+  },
+  {
+    "node": "0x8eb8a3b98659cce290402893d0123abb75e3ab28",
+    "from_index": 418,
+    "to_index": 431,
+    "from_end": "2023-09-02",
+    "to_end": "2023-12-02",
+    "delta_pr": 0.0017585772207063199
+  },
+  {
+    "node": "0xd19d4b5d358258f05d7b411e21a1460d11b0876f",
+    "from_index": 423,
+    "to_index": 430,
+    "from_end": "2023-10-07",
+    "to_end": "2023-11-25",
+    "delta_pr": 0.005082554113432689
+  },
+  {
+    "node": "0xb2ecfe4e4d61f8790bbb9de2d1259b9e2410cea5",
+    "from_index": 453,
+    "to_index": 454,
+    "from_end": "2024-05-04",
+    "to_end": "2024-05-11",
+    "delta_pr": 0.014332324571247522
+  },
+  {
+    "node": "0xdc0b688033ae1ac996ac1dd95d37f0d52d21ff0a",
+    "from_index": 417,
+    "to_index": 429,
+    "from_end": "2023-08-26",
+    "to_end": "2023-11-18",
+    "delta_pr": 0.028894048823788772
+  },
+  {
+    "node": "0x156863a0fb1fa1c74a62e253b7f9dc5f8c6337f7",
+    "from_index": 417,
+    "to_index": 426,
+    "from_end": "2023-08-26",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.001842687511442155
+  },
+  {
+    "node": "0x4bbbe7380d5eab30d654c61ddc26e9ae75987451",
+    "from_index": 432,
+    "to_index": 477,
+    "from_end": "2023-12-09",
+    "to_end": "2024-10-19",
+    "delta_pr": 0.006126332654801057
+  },
+  {
+    "node": "0xb12995d37c20227045c0dce7cbfdd17ef0149d91",
+    "from_index": 446,
+    "to_index": 447,
+    "from_end": "2024-03-16",
+    "to_end": "2024-03-23",
+    "delta_pr": 0.003171793002144406
+  },
+  {
+    "node": "0x19b243d002175167c616de17066ec3e114f20568",
+    "from_index": 472,
+    "to_index": 492,
+    "from_end": "2024-09-14",
+    "to_end": "2025-02-01",
+    "delta_pr": 0.007879818689453316
+  },
+  {
+    "node": "0x75fca405d37ab7cb3571afc7be8d886359ae4c8b",
+    "from_index": 425,
+    "to_index": 426,
+    "from_end": "2023-10-21",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.0018171683087504057
+  },
+  {
+    "node": "0x4658ce0ccd683b54d17c84c196da066b554d1263",
+    "from_index": 425,
+    "to_index": 426,
+    "from_end": "2023-10-21",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.0017933894945746447
+  },
+  {
+    "node": "0x5a5d9ab7b1bd978f80909503ebb828879daca9c3",
+    "from_index": 533,
+    "to_index": 534,
+    "from_end": "2025-11-15",
+    "to_end": "2025-11-22",
+    "delta_pr": 0.026318564620754555
+  },
+  {
+    "node": "0x0802dd2edd3f9fad39a9173b4595be819f201d61",
+    "from_index": 425,
+    "to_index": 426,
+    "from_end": "2023-10-21",
+    "to_end": "2023-10-28",
+    "delta_pr": 0.001798914689820706
+  },
+  {
+    "node": "0x728f30fa2f100742c7949d1961804fa8e0b1387d",
+    "from_index": 494,
+    "to_index": 517,
+    "from_end": "2025-02-15",
+    "to_end": "2025-07-26",
+    "delta_pr": 0.011518099910169463
+  },
+  {
+    "node": "0x5f834c8f70baaeafad00662cd214245c9a1a9ef5",
+    "from_index": 534,
+    "to_index": 535,
+    "from_end": "2025-11-22",
+    "to_end": "2025-11-29",
+    "delta_pr": 0.15270958712166074
+  },
+  {
+    "node": "0xa5f565650890fba1824ee0f21ebbbf660a179934",
+    "from_index": 533,
+    "to_index": 534,
+    "from_end": "2025-11-15",
+    "to_end": "2025-11-22",
+    "delta_pr": 0.06891436719505487
+  },
+  {
+    "node": "0xf8fc9a91349ebd2033d53f2b97245102f00aba96",
+    "from_index": 534,
+    "to_index": 535,
+    "from_end": "2025-11-22",
+    "to_end": "2025-11-29",
+    "delta_pr": 0.15270958712166074
+  }
+]
