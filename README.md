@@ -1,586 +1,637 @@
-# -Complex-Networks-in-Blockchain-Transactions
-> *Author: Zhang Zhirui*
->
-> *Description: PC5253 final project* 
+# Ethereum Transaction Network as a Complex System
 
-**内容包括：**
+Final Project – *GROUP 5* 
+Topic: **Complex Networks in Blockchain Transactions**
 
-1.项目简介
+---
 
-2.环境配置
+## 1. Project Overview
 
-3.Etherscan API_KEY 配置方法
+This project studies **Ethereum transaction networks** as a real-world example of a complex system.
 
-4.脚本怎么跑、会输出什么文件
+We focus on a **local subnetwork** around several well-known wallets (exchanges, protocol contracts, Vitalik, etc.), and analyze:
 
-5.每个输出文件的意义（CSV / PNG / GEXF）
+- Static network structure (degree distributions, clustering, assortativity, cores, communities)
+- **Centralization** of value flows (Gini coefficients, top-k concentration, cross-community flows)
+- **Temporal dynamics** of connectivity and node centrality
+- **Anomaly detection** on wallets using multi-dimensional network features
+- An optional **temporal GNN baseline** (GConvGRU) to forecast future PageRank
 
-6.代码结构分章节解释（数据获取 / 建图 / 指标分析 / 时间演化 / 异常检测 / 可视化）
+All analysis is implemented in a single script:
 
-------
+```bash
+ethereum_network_analysis.py
+```
 
-# Ethereum Transaction Network Analysis
-
-## 1. 项目简介
-
-本项目的目标是用**复杂网络的视角**来研究以太坊主网上的真实资金流动结构。
- 我们想回答的问题包括：
-
-- 以太坊的资金流网络是不是“去中心化”的？还是由少数超级节点控制？
-- 资金流网络的结构是否呈现典型的复杂网络特征（例如：幂律度分布、巨型连通分量、中心化骨干）？
-- 这些关键节点是谁（交易所钱包？DeFi 路由合约？创始人地址？），它们在网络中扮演什么角色？
-- 网络连通性如何随时间演化？是不是越来越集中到同一批“金融枢纽”中？
-
-为此我们做了几件事：
-
-1. 从 Etherscan v2 API 抓取主网真实交易数据（Ethereum mainnet）。
-2. 构建一个“以太坊交易网络”（节点=地址，边=资金转移）。
-3. 分析网络的拓扑性质（平均度、聚类系数、Gini 系数、PageRank、巨型连通分量等）。
-4. 用 IsolationForest 检测“异常”/“高影响力”地址。
-5. 研究网络随时间的演化（网络凝聚度如何增长，活动是否呈爆发式）。
-6. 输出可视化图，包括一个可以在 Gephi 中进一步渲染的 `.gexf` 网络文件，用于展示资金流的中心化骨干。
-
-> 这个项目直接对应课程大作业要求里的：
->
-> - "complex transaction networks where nodes can be wallet addresses and directed edges represent fund transfers"
-> - "investigate emergent features such as centralization or anomaly detection"
-> - "examine network properties temporal dynamics"
+Running it fetches transactions from Etherscan, builds graphs, computes metrics, and saves all outputs into `outputs/` and `outputs/temporal/`.
 
 ------
 
-## 2. 环境配置
+## 2. Data Source & Sampling Strategy
 
-建议使用 Conda 创建独立虚拟环境，避免污染系统 Python。
+### 2.1 Data source
 
-### 2.1 Python 版本
+We use the [Etherscan v2 API](https://etherscan.io/apidashboard) on Ethereum mainnet:
 
-推荐使用 **Python 3.9+**。
- 我们在运行时使用了如下主要依赖：
+- Endpoint: `module=account&action=txlist&chainid=1`
+- For each address, we retrieve up to `MAX_TX` normal transactions (default: 3,000).
+- We keep:
+  - `from`, `to` – wallet addresses
+  - `value` – in ETH (converted from wei)
+  - `timeStamp` – converted to Python `datetime`
+  - `hash` – transaction hash
+  - plus `contractAddress` to correctly handle contract-creation transactions
 
-- `requests` （访问 Etherscan API）
-- `pandas` （清洗和操作交易表格）
+Data cleaning:
+
+- Convert `value` to ETH and `timeStamp` to `datetime`.
+- Strip and normalize address strings.
+- Replace `to == ""` with `contractAddress` for contract-creation txs.
+- Drop rows with invalid timestamps or missing addresses.
+- Keep only valid Ethereum addresses matching `^0x[0-9a-fA-F]{40}$`.
+
+A full raw export is saved to:
+
+```text
+outputs/ethereum_transactions_YYYYMMDD_HHMMSS.csv
+```
+
+(Example: `outputs/ethereum_transactions_20251102_223921.csv`.)
+
+### 2.2 Seed selection & 2-hop expansion
+
+We construct a **local Ethereum subnetwork** around several high-visibility addresses:
+
+- Binance hot wallet
+- Vitalik Buterin
+- Uniswap V3 router
+- Tether Treasury
+
+(Exact addresses are listed in `seed_addresses_level1` in the code.)
+
+Sampling strategy:
+
+1. **1-hop expansion**
+   - For each seed address, fetch up to `MAX_TX` transactions.
+   - Concatenate the results and **deduplicate by transaction hash**.
+2. **2-hop expansion** (optional, controlled by `DO_SECOND_HOP`)
+   - From the level-1 data, count how often each address appears as a counterparty.
+   - Select the **top 200 counterparties** by occurrence frequency.
+   - Fetch transactions for each of these neighbors (again up to `MAX_TX`).
+   - Merge everything and deduplicate by transaction hash.
+3. Final dataset: `df_all`
+   - All unique transactions involving the seeds and top neighbors after cleaning.
+
+On one representative run (2025-11-02), we obtain:
+
+- **Total unique transactions collected:** **250,876**
+- **Unique addresses involved (nodes):** **61,134**
+- **Directed edges in the aggregated graph:** **72,351**
+
+------
+
+## 3. Network Construction
+
+From the cleaned transaction dataframe `df_all`, we build a **directed weighted transaction graph** `G`:
+
+- **Nodes:** all unique wallet addresses (both `from` and `to`)
+- **Directed edges:** `from → to`
+- **Edge attributes:**
+  - `weight`: total ETH value sent along that edge (aggregated over all transactions)
+  - `count`: number of transactions between a given pair of addresses
+
+We also construct an **undirected graph** `UG = G.to_undirected()` for metrics that assume undirected edges (e.g., clustering, k-core, community detection).
+
+On the representative run:
+
+- `G.number_of_nodes() = 61,134`
+- `G.number_of_edges() = 72,351`
+- The largest connected component in `UG` contains essentially **100% of nodes**, i.e. the sampled subnetwork is fully connected.
+
+------
+
+## 4. Static Network Analysis
+
+### 4.1 Basic structural metrics
+
+On the directed graph `G` and its undirected projection `UG`, we compute:
+
+- **Degree statistics**
+  - Total degree, in-degree, and out-degree for each node
+  - **Average degree:** ≈ **2.37**
+- **Clustering coefficient** (on `UG`)
+  - **Average clustering coefficient:** ≈ **0.0113**
+     → very low triangle density, as expected for a sparse financial network.
+- **Giant component**
+  - Fraction of nodes in the giant component: ≈ **100%**
+
+These values suggest a **large, sparse, but well-connected** transaction network.
+
+### 4.2 Assortativity
+
+We measure degree assortativity:
+
+- **Undirected degree assortativity (Pearson):** ≈ **−0.52**
+- **Directed out→in assortativity:** ≈ **−0.44**
+
+Both are strongly **negative (disassortative)**:
+
+- High-degree hubs tend to connect to many low-degree nodes.
+- High out-degree “senders” are more likely to send to addresses with lower in-degree than themselves.
+
+This pattern is typical of infrastructure networks where a small number of large entities (exchanges, routers) interact with a broad set of smaller wallets.
+
+### 4.3 Extended structural metrics
+
+We further compute:
+
+- **k-core decomposition** (`nx.core_number` on `UG`)
+   → identifies deeply embedded “core” addresses.
+- **Rich-club coefficient** (for high-degree nodes), when computation is numerically stable.
+- **HITS scores** (`hubs`, `authorities`) on `G`
+  - Highlighting nodes that act as broadcasters vs. information sinks.
+- **Betweenness centrality**
+  - Computed using exact or sampled algorithms depending on graph size.
+  - For this run:
+    - `N = 61,134`, `M = 72,351`, sampled with `k = 1,835`.
+
+### 4.4 Top PageRank wallets
+
+We compute **PageRank** on `G` (`alpha = 0.85`). The top-10 highest PageRank wallets in our subnetwork are:
+
+1. `0x876eabf441b2ee5b5b0554fd502a8e0600950cfa` (PR ≈ 0.0609)
+2. `0x742d35cc6634c0532925a3b844bc454e4438f44e` (Binance hot wallet, PR ≈ 0.0369)
+3. `0xdf6c10f310ef0402a5d4a35b85905cb09ae80994` (PR ≈ 0.0219)
+4. `0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45` (PR ≈ 0.0188)
+5. `0xff1f2b4adb9df6fc8eafecdcbf96a2b351680455` (PR ≈ 0.0187)
+6. `0xef1c6e67703c7bd7107eed8303fbe6ec2554bf6b` (PR ≈ 0.0177)
+7. `0x32be343b94f860124dc4fee278fdcbd38c102d88` (PR ≈ 0.0142)
+8. `0xe592427a0aece92de3edee1f18e0157c05861564` (Uniswap V3 router, PR ≈ 0.0122)
+9. `0xd8da6bf26964af9d7eed9e03e53415d37aa96045` (Vitalik Buterin, PR ≈ 0.0114)
+10. `0xab5801a7d398351b8be11c439e05c5b3259aec9b` (PR ≈ 0.0104)
+
+Many of these are known exchange / protocol / public figure wallets, which confirms that **network centrality is dominated by a small set of infrastructure nodes**.
+
+------
+
+## 5. Degree Distribution & Power-Law Testing
+
+We analyze the **degree distribution** of `G`:
+
+1. Extract total degree values `k > 0` for all nodes.
+2. Plot a log-scaled histogram:
+   - `outputs/figure_degree_distribution.png`
+3. If the [`powerlaw`](https://github.com/jeffalstott/powerlaw) Python package is installed and the sample size is sufficient, we:
+   - Fit a **discrete power-law** to the degree sequence.
+   - Estimate the exponent `α`, lower cutoff `xmin`, and KS statistic.
+   - Compare **power-law vs lognormal** using the likelihood ratio `R` and p-value.
+
+Additional figures (if computed):
+
+- `outputs/figure_powerlaw_pdf.png` – empirical PDF and fitted power-law.
+- `outputs/figure_powerlaw_ccdf.png` – empirical CCDF and fitted power-law.
+
+Numerical fitting summary (α, xmin, KS, R, p) is stored within `summary.json` under `"powerlaw"`.
+
+------
+
+## 6. Centralization of Value Flows
+
+We quantify how **financial flows are concentrated** across nodes.
+
+For each node `n`:
+
+- `value_in[n]` – total ETH received (sum of weights of incoming edges)
+- `value_out[n]` – total ETH sent (sum of weights of outgoing edges)
+- `value_net[n] = value_in[n] − value_out[n]`
+
+We compute:
+
+- **Gini coefficients:**
+  - Gini of inflows
+  - Gini of outflows
+  - Gini of |net flow|
+- **Top-10% concentration:**
+  - Share of total inflows received by the top 10% of nodes
+  - Share of total outflows sent by the top 10% of nodes
+
+For our run, we obtain:
+
+- **Gini(inflow) ≈ 1.000**, with the **top 10% of addresses receiving ~100% of total inflow**.
+- **Gini(outflow) ≈ 0.999**, with the **top 10% of addresses responsible for ~99.98% of total outflow**.
+- **Gini(|net flow|) ≈ 0.998**, indicating that net liquidity provision/absorption is also extremely concentrated.
+
+This confirms **extreme centralization** of economic activity in our Ethereum subnetwork.
+
+### 6.1 Cross-community flow
+
+To understand how value moves **between communities**, we:
+
+1. Run **greedy modularity community detection** on the undirected graph `UG`.
+2. Assign each node a community ID.
+3. For each edge in `G`, accumulate:
+   - `total_w` – total ETH transferred over all edges.
+   - `inter_w` – ETH transferred between **different** communities.
+
+The **cross-community flow share** is:
+
+```text
+cross_community_share = inter_w / total_w
+```
+
+On our run:
+
+- **Cross-community flow share ≈ 50.76%**
+
+This suggests that hubs not only concentrate value, but also act as bridges between modular clusters, with roughly half of the total value flowing across community boundaries.
+
+------
+
+## 7. Anomaly Detection on Wallets
+
+We apply an **Isolation Forest** to perform unsupervised anomaly detection on nodes, using a feature vector:
+
+- Degree, in-degree, out-degree
+- PageRank
+- k-core index
+- HITS hub & authority scores
+- Betweenness centrality
+- Value statistics:
+  - total inflow, total outflow, net flow
+
+We set `contamination = 0.02`, so approximately 2% of nodes are flagged as anomalies.
+
+On our run:
+
+- **Detected anomalous wallets:** **1,165 (~2% of all nodes)**
+
+The flagged set includes:
+
+- Highly central infrastructure addresses (e.g. `0x742d35...`, `0x876eab...`), which are **outliers in degree and flow volume**.
+- A number of lesser-known addresses (e.g. `0xcbeaec6994...`, `0xf7920b0768...`, `0xbf2179859f...`, `0x86fa049857...`, `0x3893b9422c...`), which may correspond to token contracts, aggregators, or unusual transaction patterns.
+
+**Important:** Here, “anomalous” means **network-structural outlier**, not necessarily malicious activity. The method highlights nodes whose joint features (centralities + value flows) deviate strongly from the majority.
+
+A sample of anomalies is also stored in `summary.json` under `"anomalies_sample"`.
+
+------
+
+## 8. Temporal Dynamics
+
+### 8.1 Daily activity & giant component growth
+
+From `df_all`, we extract a `date` column from `timeStamp` and compute:
+
+- Number of **transactions per day**
+- Number of **unique addresses per day** (based on `from` and `to`)
+
+We also build a cumulative graph over time:
+
+1. Initialize an empty directed graph `Gt`.
+2. For each day in chronological order:
+   - Add all edges from that day to `Gt`.
+   - Convert to undirected `Ug2`.
+   - Compute the fraction of nodes in the **giant component**.
+
+Outputs:
+
+- `outputs/figure_temporal_activity.png` – daily transactions and unique addresses.
+- `outputs/figure_giant_component_over_time.png` – giant component fraction over time.
+
+This shows how the sampled subnetwork becomes connected and how activity fluctuates over the observation window.
+
+### 8.2 Sliding-window snapshots & dynamic centralities
+
+We perform **sliding-window analysis** to study time-varying centralities.
+
+Parameters:
+
+- Window length: `WINDOW_DAYS` (default: 30 days)
+- Step size: `STEP_DAYS` (default: 7 days)
+
+For each time window `[w_start, w_end]`:
+
+1. Filter transactions whose dates fall within the window.
+2. Build a subgraph `Gw` and its undirected version `UGw`.
+3. Compute **window-level metrics**:
+   - Degree, in-degree, out-degree per node
+   - PageRank
+   - k-core index
+   - Betweenness centrality (sampled on larger graphs)
+
+We record all metrics for all nodes across windows, and save:
+
+```text
+outputs/temporal/dynamic_centrality_timeseries.csv
+```
+
+We then:
+
+- Compute average PageRank across windows for each node.
+- Select **Top-K nodes** (default: 10) by mean PageRank.
+- Plot time series for:
+  - PageRank
+  - Betweenness
+  - k-core index
+
+Figures:
+
+- `outputs/temporal/timeseries_pagerank.png`
+- `outputs/temporal/timeseries_betweenness.png`
+- `outputs/temporal/timeseries_kcore.png`
+
+** You can see how sliding-window's results on large scale data by running the script `sliding.py` **
+
+### 8.3 PageRank spike detection
+
+For each node, we examine its PageRank time series across windows:
+
+- Compute differences ΔPR between consecutive snapshots.
+
+- Define a spike when:
+
+  ```text
+  ΔPR > mean(ΔPR) + 3 * std(ΔPR)
+  ```
+
+- Record spikes (with window indices and dates) to:
+
+  ```text
+  outputs/temporal/pagerank_spikes.json
+  ```
+
+These spikes correspond to **sudden jumps in centrality**, which may indicate large transfers, token launches, or other structural events.
+
+------
+
+## 9. Temporal GNN Baseline (GConvGRU, Optional)
+
+If **PyTorch Geometric Temporal** is available, we build a simple **GConvGRU-based model** to forecast future PageRank.
+
+### 9.1 Sequence construction
+
+For each sliding window:
+
+- **Graph structure**
+  - `edge_index_t`: list of directed edges (source, target) as integer node indices.
+  - `edge_weight_t`: corresponding edge weights from `Gw`.
+- **Node features** `X_t ∈ ℝ^{N×4}`:
+  - Degree
+  - In-degree
+  - Out-degree
+  - PageRank at time `t`
+- **Targets** `y_t ∈ ℝ^N`:
+  - PageRank at time `t` (used with a one-step temporal shift).
+
+We then build a `DynamicGraphTemporalSignal` dataset:
+
+- `features[t] = X_t`
+- `edge_indices[t] = edge_index_t`
+- `edge_weights[t] = edge_weight_t`
+- `targets[t] = y_t`
+
+### 9.2 Model & training
+
+Model:
+
+- GConvGRU with:
+  - `in_channels = 4`
+  - `out_channels = 16`
+  - `K = 2` (Chebyshev polynomial degree)
+- Linear layer maps hidden state to scalar PageRank per node.
+
+Loss and optimization:
+
+- Loss: **L1 loss** between predicted and true PageRank.
+- Optimizer: Adam with `lr = 1e-3`.
+- Temporal train/validation split (e.g. first 70% of snapshots for training).
+
+On our run, the temporal GNN trains stably:
+
+- After 20 epochs, **L1 loss** is on the order of **5×10⁻⁴ – 10⁻³**:
+  - e.g. around `0.0006` (train) vs `0.0005` (validation).
+
+This suggests that, at least on this sampled subnetwork and time horizon, **future PageRank is reasonably predictable** from recent structural snapshots.
+
+Outputs:
+
+- `outputs/temporal/temporal_gnn_loss.png` – training/validation loss curves.
+- `outputs/temporal/temporal_gnn_last_snapshot_prediction.csv` – table of:
+  - `node`
+  - `y_true_pagerank`
+  - `y_pred_pagerank` (last snapshot)
+
+If the required libraries are missing or there are too few snapshots, this module is automatically skipped.
+
+### 9.3 Model & training on large-scale dataset
+
+Run the script `GNN2.py` model can show the following results.
+
+Model:
+
+- `GCRURegressor` built on **GConvGRU**:
+  - `in_channels = 4` (features: degree, in-degree, out-degree, PageRank)
+  - `out_channels = hidden` (default `hidden = 32`, configurable via `--hidden`)
+  - `K = 2` (Chebyshev polynomial degree)
+- A **Dropout** layer with probability `dropout` (default `0.2`, via `--dropout`).
+- A final **Linear** layer:
+  - Maps hidden state of size `hidden` to a **scalar PageRank** per node.
+- Forward pass (per snapshot):
+  - Input: node features `x ∈ ℝ^{N×4}`, `edge_index`, `edge_weight`.
+  - Output: `pred ∈ ℝ^N` – predicted PageRank for all nodes in that snapshot.
+
+Loss and optimization:
+
+- Before training, **features and targets are standardised** using only the training segment:
+  - `x_norm = (x - x_mean) / x_std`
+  - `y_norm = (y - y_mean) / y_std`
+- Loss: **L1 loss** (`nn.L1Loss`) between **normalised** predicted and true PageRank.
+- Optimiser: **AdamW** with:
+  - Learning rate `lr` (default `2e-3`, via `--lr`)
+  - Weight decay `weight_decay` (default `1e-4`, via `--weight_decay`)
+- Learning-rate scheduler:
+  - `ReduceLROnPlateau` on **validation loss**, `factor = 0.5`, `patience = 3`.
+- Gradient clipping:
+  - `clip_grad_norm_(model.parameters(), max_norm=2.0)` each training step.
+- Early stopping:
+  - Tracks best validation loss.
+  - Stops if no improvement > `1e-4` for `patience = 6` epochs.
+- Temporal train/validation split:
+  - Let `T` be number of snapshots in `DynamicGraphTemporalSignal`.
+  - Training indices: first `⌊0.7 T⌋` snapshots.
+  - Validation indices: remaining snapshots `[⌊0.7 T⌋, …, T-1]`.
+- Temporal supervision:
+  - Inputs: snapshots `t = 0 … T-2`
+  - Targets: **next-step PageRank** `PR(t+1)` for `t = 0 … T-2`
+  - The model learns to predict future PageRank from current graph structure and features.
+
+Training behaviour:
+
+- The script prints periodic logs every 5 epochs:
+  - Training loss, validation loss, and current learning rate.
+- Training and validation losses are recorded per epoch to support visual inspection of convergence.
+- If **aligned feature/target snapshots are fewer than 3** (`min_len < 3`), the script prints a warning:
+  - `"Too few snapshots for temporal GNN (need >=3). Exit."`
+  - and **returns without training**.
+
+Outputs:
+
+- `outputs_22wdata/temporal/temporal_gnn_loss.png`  
+  – Training/validation L1 loss curves over epochs.
+- `outputs_22wdata/temporal/temporal_gnn_val_predictions.csv`  
+  – Per-validation-snapshot predictions:
+  - `t` (validation window index)  
+  - `node`  
+  - `y_true_pagerank`  
+  - `y_pred_pagerank`
+- `outputs_22wdata/temporal/temporal_gnn_val_metrics.csv`  
+  – Window-level metrics:
+  - `t`, `mae`, `spearman_rho`
+- `outputs_22wdata/temporal/temporal_gnn_val_metrics.png`  
+  – MAE and Spearman ρ vs. validation window index.
+- `outputs_22wdata/temporal/temporal_gnn_last_val_scatter.png`  
+  – Scatter plot of true vs. predicted PageRank for the **last** validation snapshot.
+- `outputs_22wdata/temporal/temporal_gnn_last_val_topk_metrics.csv`  
+  – Top-K overlap on last validation snapshot:
+  - `K`, `precision_at_k`, `jaccard`
+- `outputs_22wdata/temporal/temporal_gnn_last_val_topk.png`  
+  – Bar chart of Precision@K and Jaccard for `K ∈ {5, 10, 20}`.
+- `outputs_22wdata/temporal/temporal_gnn_last_val_top10_bar.png`  
+  – Side-by-side bar plot of true vs. predicted PageRank for top-`--topk` nodes (default 10) in last validation snapshot.
+- `outputs_22wdata/temporal/temporal_gnn_val_timeseries_nodes.png`  
+  – Time series (over validation windows) of true vs. predicted PageRank for `--timeseries_nodes` representative high-PageRank nodes (default 3).
+- `outputs_22wdata/temporal/temporal_gnn_meta.json`  
+  – Metadata summary of the run (epochs, best validation loss, hyperparameters, file paths, number of snapshots, train/val split index).
+
+
+------
+
+## 10. Visualization & Export
+
+We produce a few key visualizations:
+
+1. **Random subgraph**
+   - Randomly sample up to 200 nodes.
+   - Plot with spring layout.
+   - Output: `outputs/figure_subgraph_random.png`.
+2. **Ego network of the top PageRank hub**
+   - Center node: wallet with highest PageRank.
+   - Node size proportional to PageRank.
+   - Directed edges with arrows.
+   - Output: `outputs/figure_hub_ego_network.png`.
+
+For downstream tools (e.g. **Gephi**), we export:
+
+- `outputs/ethereum_network.gexf` – directed graph with enriched node attributes:
+  - `degree`, `in_degree`, `out_degree`
+  - `pagerank`, `core` (k-core index)
+  - `hub`, `authority`
+  - `betweenness`
+  - `value_in`, `value_out`, `value_net`
+
+Additional CSVs:
+
+- `outputs/nodes_metrics.csv` – per-node metrics.
+- `outputs/edges_metrics.csv` – per-edge weights and counts.
+- `outputs/summary.json` – high-level summary with key metrics and file paths.
+
+------
+
+## 11. How to Run the Code
+
+### 11.1 Dependencies
+
+Core Python libraries:
+
+- `requests`
+- `pandas`
 - `numpy`
-- `networkx` （构建和分析交易网络）
-- `matplotlib` （画图）
-- `scikit-learn`（IsolationForest 异常检测）
-- `tqdm`（进度条显示）
-- `powerlaw`（可选，用于拟合幂律分布。如果没安装会自动跳过）
-- （可选）`gephi` 不是 Python 包，是一个桌面应用，我们导出的 `.gexf` 文件会在 Gephi 里打开
-- `torch torch_geometric torch_geometric_temporal` （可选，用于训练时序 GNN 预测下一时刻 PageRank）
+- `networkx`
+- `matplotlib`
+- `scikit-learn` (for IsolationForest)
+- `tqdm`
 
-### 2.2 创建虚拟环境示例（Conda）
+Optional:
+
+- `powerlaw` – rigorous power-law fitting
+- `torch`, `torch_geometric_temporal` – temporal GNN baseline
+
+### 11.2 Example environment setup
+
+Using conda (example):
 
 ```bash
-conda create -n ethnet python=3.10 -y
+conda create -n ethnet python=3.10
 conda activate ethnet
+
 pip install requests pandas numpy networkx matplotlib scikit-learn tqdm powerlaw
-pip install torch torch_geometric torch_geometric_temporal
+# Optional (for temporal GNN; versions depend on CUDA/CPU setup):
+# pip install torch torch_geometric torch_geometric_temporal
 ```
 
-如果安装 `powerlaw` 出错，可以暂时不装，它只影响幂律拟合那一步；脚本会自动忽略。
+### 11.3 Etherscan API key
 
-### 2.3 Windows 上注意
-
-- 如果你之前打开过 `ethereum_transactions_....csv` 文件（比如用 Excel 打开），再次运行脚本可能会在保存 CSV 时报 “PermissionError: file in use”。
-   解决办法：
-  - 关掉那个 CSV，
-  - 或者我们现在的脚本已经用时间戳生成新文件名（`ethereum_transactions_2025xxxx_xxxxxx.csv`），所以基本不会再撞同名。
-
-------
-
-## 3. 准备 Etherscan API Key
-
-我们使用的是 **Etherscan v2 API**。
-
-### 步骤：
-
-1. 去 [https://etherscan.io](https://etherscan.io/) 注册账号并登录。
-2. 在你的账户里创建一个 API Key。
-3. 复制这个 Key（看起来会是类似 `ABCD1234...` 的一段字符串）。
-
-### 配置到脚本里
-
-在脚本开头有一段：
-
-```python
-API_KEY = os.getenv("ETHERSCAN_API_KEY", "7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS")
-```
-
-请配置环境变量`ETHERSCAN_API_KEY`，如果未配置，则`API_KEY`的默认值为后面的`7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS`，请把 `"7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS"` 替换成你自己的真实 key.
-
-⚠️ 注意：
-
-- 如果 API_KEY 没改，Etherscan 返回的 `status` 不是 `"1"`，脚本会抓不到任何交易，整张图就会是空的。
-- 免费 key 有速率限制（大约 5 次请求/秒 + 每日请求总量限制）。我们的脚本是串行请求几十个地址，正常不会超标。如果后续扩展抓更多地址，可以在循环里加 `time.sleep(0.25)` 来限速。
-
-------
-
-## 4. 运行脚本
-
-当前完整脚本文件为`run1.py`，在conda环境里运行：
+Set your **Etherscan API key** as an environment variable:
 
 ```bash
-python run1.py
+# Linux / macOS
+export ETHERSCAN_API_KEY="YOUR_API_KEY_HERE"
+
+# Windows (cmd)
+set ETHERSCAN_API_KEY=YOUR_API_KEY_HERE
 ```
-当前完整脚本文件为run1.py，运行该文件即可得到完整运行的结果。
-GNN.py则是单独的GNN模块，run0.py是完整的运行脚本去除掉GNN模块以外的部分，可以进行单独测试，而GNN.py可以用于测试当前你的虚拟环境内能否运行GNN图神经网络来进行训练。
 
-脚本会依次完成：
+> Note: The script also contains a default key(`API_KEY = os.getenv("ETHERSCAN_API_KEY", "${default key}}")`) for convenience, but you **should override** it with your own key to respect rate limits and ensure reproducibility.
 
-1. 抓链上交易数据（Etherscan API）
-2. 合并和清洗
-3. 构建交易网络（NetworkX）
-4. 计算网络指标与中心化指标
-5. 时间演化分析
-6. 基于 IsolationForest 做异常点检测
-7. 时序滑窗计算动态指标并绘图
-8. 训练时序 GNN 预测下一时刻 PageRank（可选）
-9. 画图并导出图像/CSV/GEXF/JSON 等结果
+### 11.4 Run the script
+
+```bash
+python ethereum_network_analysis.py
+```
+
+This will:
+
+1. Fetch transactions for the seed addresses and their top neighbors.
+2. Build the transaction network and compute all metrics.
+3. Save all figures and CSV/JSON files into `outputs/` and `outputs/temporal/`.
+
+
+As for the sliding windows and GNN part, run the script below:
+
+```bash
+python sliding.py
+python GNN2.py
+```
+
+This will run the temporal dynamics and GNN baseline part, and save all figures and CSV/JSON files into `outputs_22wdata/` and `outputs_22wdata/temporal/`
 
 ------
 
-## 5. 输出文件说明
+## 12. Limitations & Future Work
 
-脚本运行结束后，将在 `outputs/` 文件夹下生成分析结果：
+- The dataset is a **local subnetwork** (around several prominent wallets), **not** the full Ethereum graph.
+- API limits and `MAX_TX` cap the maximum number of transactions per address.
+- Anomaly detection is **unsupervised**; we do not have ground truth labels for malicious or fraudulent addresses.
+- The temporal GNN is a **very simple baseline** with a small feature set and limited time horizon.
 
-### 5.1 原始交易数据（CSV）
+Possible extensions:
 
-```
-ethereum_transactions_YYYYMMDD_HHMMSS.csv
-```
-
-- 这是原始的交易明细（合并后去重）。
-- 列包括：
-  - `from`：付款地址
-  - `to`：收款地址
-  - `value`：交易金额（ETH, 已经从 wei 转换过）
-  - `timeStamp`：转账时间（UTC）
-  - `hash`：交易哈希（唯一 ID）
-  - `seed_source`：我们最初是从哪个“种子地址/邻居地址”抓到它的
-
-这是你“数据来源透明性”的证据，报告里可以附上。
+- Use full-blockchain archives or larger, more diverse seed sets.
+- Incorporate ERC-20 / ERC-721 token transfer events and contract interactions.
+- Validate anomaly detection against curated lists of known scams, mixers, or bridge exploits.
+- Use richer temporal GNN architectures (e.g. T-GAT, TGCRN) and more features (token volumes, gas usage, etc.).
 
 ------
 
-### 5.2 分析图（PNG）
+## 13. High-Level Takeaways
 
-脚本会生成多张图，常见包括：
+Overall, our empirical results show:
 
-- `outputs/figure_degree_distribution.png`
-   节点度分布（log 纵轴）。显示是不是 heavy-tailed / scale-free 风格。
-- `outputs/figure_powerlaw_fit.png`（如果安装了 powerlaw）
-   用 powerlaw 包拟合度分布，给出幂律指数 α。可以用来支持“长尾分布，说明有极少数超级枢纽”。
-- `outputs/figure_temporal_activity.png`
-   纵轴：每天交易数 / 每天活跃唯一地址数。
-   可以观察链上活动是高爆发的，而不是均匀的（典型 ICO、空投、清算日）。
-- `outputs/figure_giant_component_over_time.png`
-   x 轴是时间，y 轴是 giant component fraction（巨型连通分量占全图节点的比例）。
-   解释“以太坊资金流随着时间变得越来越凝聚，几乎所有地址都被同一批中心化枢纽连到一起”。
-- `outputs/figure_subgraph_random.png`
-   我们随机抽 ~200 个节点画出来的小子图。
-   通常会发现这些节点几乎彼此不连，体现“绝大多数地址只是叶子”，并不是互相之间转来转去。
-- `outputs/figure_hub_ego_network.png`
-   把 PageRank 最高的那个超级枢纽节点（通常是交易所热钱包/路由合约）作为中心，画它和所有一跳邻居的 ego network。
-   这图往往是一颗“放射状大太阳”：中心是巨型hub，周围是一圈一圈向它连的地址。
-   这个图极其适合放在 PPT 里当“中心化证据”。
-- `outputs/figure_powerlaw_pdf.png,  outputs/figure_powerlaw_ccdf.png`
-   含义：对度分布进行幂律拟合的 PDF/CCDF 可视化；并在日志/摘要中给出幂律参数（α、xmin）与和对数正态的似然比比较。  
-   报告用法：支撑“长尾分布→中心化/寡头现象”的统计学证据。
+- A **large, sparse**, but almost fully connected Ethereum subnetwork.
+- Strong **disassortativity**, consistent with hub-and-spoke–like infrastructure.
+- **Extreme centralization** of value flows: almost all inflows and outflows are concentrated in the top 10% of nodes.
+- A **non-trivial fraction (~51%)** of total value flowing **between communities**, suggesting that hubs bridge modular clusters.
+- Temporal patterns and a simple temporal GNN baseline indicate that **changes in centrality are structured enough to be predictably learned over time**.
 
-
-这些图基本就是你的“结果章节”。
-
-------
-
-### 5.3 网络结构（GEXF）
-
-```
-ethereum_network.gexf
-```
-
-- 这是完整的交易网络（节点=地址，边=资金流），以 GEXF (Graph Exchange XML Format) 格式保存。
-- 你可以用 **Gephi** 打开它，然后：
-  - 使用 ForceAtlas2 布局
-  - 根据 PageRank 给节点设大小
-  - 根据社群划分(Modularity)或 in-degree/out-degree 给节点上色
-  - 调整边透明度
-  - 导出高分辨率可视化图（PNG / SVG / PDF）
-
-这张 Gephi 图是展示“资金流骨干网络”的最直观方式，适合放报告封面或者最后一页。
-
-### 5.4 节点与边的指标表（CSV）
-
-```
-outputs/nodes_metrics.csv
-outputs/edges_metrics.csv
-```
-
-**nodes_metrics.csv 列示例：**
-- `address, degree, in_degree, out_degree, pagerank, core, hub, authority, betweenness, value_in, value_out, value_net`
-  - 含核心结构指标（度、PR、k-core、HITS、介数）与**价值流**指标（`value_in/out/net`）。
-
-**edges_metrics.csv 列示例：**
-- `source, target, weight, count`
-  - `weight` 为边累计 ETH，`count` 为交易次数。
-
-**用途：**
-- 可直接用于 **表格统计/回归/可视化二次分析**。
-- 可以在报告中列出 **Top-N 节点**（按 PR、介数、value_in/out 等）作为**中心化证据**或**关键枢纽识别**。
-
-### 5.5 时序滑窗产物（动态指标）
-
-> 通过 `WINDOW_DAYS` 与 `STEP_DAYS` 生成多个时间窗快照，计算**动态中心性**并输出图表与数据。
-
-**时序数据表：**  `outputs/temporal/dynamic_centrality_timeseries.csv`
-
-- 含义：**节点 × 时间** 的时序指标汇总表，包含在每个快照上计算的 PR、介数（采样）、k-core、度、入/出额、交易数等。
-
-**时序曲线图（按节点 PR 均值选取 Top-K 绘制）：**  `outputs/timeseries_pagerank.png, outputs/timeseries_betweenness.png, outputs/timeseries_kcore.png`
-
-- 含义：展示**关键节点**在不同时间窗上的指标变化轨迹，用于**发现结构地位的爬升/衰退**与**异常波动**。
-
-**PR 峰值（突变）检测：**  `outputs/pagerank_spikes.json`
-
-- 含义：用简单阈值（如 `ΔPR > μ + 3σ`）记录**可疑突增时刻**与节点列表，便于交叉核对链上事件。
-
-
-### 5.6 （可选）时序 GNN 基线产物
-
-> 若环境安装了 `torch_geometric_temporal` 等依赖且快照数量充足，脚本会训练一个 **GConvGRU** 基线模型，用于**预测下一快照 PageRank**。
-
-**训练曲线：**  `outputs/temporal_gnn_loss.png`
-
-- 含义：训练/验证损失随迭代变化，评估时序模型是否收敛、是否过拟合。
-
-**最后快照的预测对比：**  `outputs/temporal_gnn_last_snapshot_prediction.csv`
-
-- 列示例：`node, y_true_pagerank, y_pred_pagerank`  
-- 含义：对最后一个可预测快照上各节点 PR 的 **真值 vs 预测值** 对照，可直接做误差统计或绘制散点。
-
-> 注意：若依赖缺失或快照不足，本小节会**自动跳过**，不影响其它产物的生成。
-
-
-### 5.7 运行摘要（JSON）
-
-```
-outputs/summary.json
-```
-
-**内容要点：**
-- **图规模与基本统计**：节点数、边数、平均度、平均聚类系数、最大连通分量占比
-- **同配系数**：无向皮尔逊、有向 out→in
-- **中心化结果**：Gini、Top-10% 占比、跨社区流量占比、社区数量
-- **幂律拟合**（如有）：α、xmin、KS、与对数正态比较摘要
-- **时序产物路径**：时序 CSV、曲线图、峰值 JSON
-- **时序 GNN 摘要**（如启用）：训练曲线与预测文件路径
-- **Top-PR 列表与异常样本**：便于在报告/PPT 直接引用
-
-
-------
-
-## 6. 脚本主要逻辑解释（逐段解析）
-
-下面对应 `run1.py` 的核心段落。
-
-### 6.1 配置区
-
-```python
-try:
-    API_KEY = os.getenv("ETHERSCAN_API_KEY", "7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS")
-except KeyError:
-    sys.exit("Missing env var ETHERSCAN_API_KEY. Please set it before running.")
-
-seed_addresses_level1 = [
-    "0x742d35...f44e",  # Binance hot wallet
-    "0xd8dA6B...6045",  # Vitalik
-    "0xE59242...1564",  # Uniswap V3 Router
-    "0x564286...AceD",  # Tether Treasury
-]
-
-MAX_TX = 3000
-DO_SECOND_HOP = True
-```
-
-- 这些 `seed_addresses_level1` 是公开已知的高影响力地址（交易所热钱包、DeFi 路由、稳定币金库等）。
-   之所以用这种地址当“起点”，是因为它们涉及大量真实交易，我们可以获得一个有代表性的子图。
-- `DO_SECOND_HOP = True` 表示我们不仅抓这 4 个地址的交易，还会抓它们交易对手中最活跃的一批地址（top 30），进一步扩大网络规模。这就是“2-hop 采样”。
-
-### 6.2 抓交易数据
-
-```python
-def fetch_transactions_for_address(address, api_key, max_tx=MAX_TX):
-    url = (
-        "https://api.etherscan.io/v2/api"
-        f"?chainid=1&module=account&action=txlist"
-        f"&address={address}"
-        f"&startblock=0&endblock=9999999999"
-        f"&page=1&offset={max_tx}"
-        f"&sort=asc"
-        f"&apikey={api_key}"
-    )
-
-    resp = requests.get(url)
-    data = resp.json()
-
-    # 解析返回结果
-    # status == "1" 表示成功
-    # result 是交易数组，每一行是一次转账
-    ...
-```
-
-这里做了几步清洗：
-
-- 把 `value` 从 wei 转成 ETH；
-- 把 `timeStamp` 转成可读的 `datetime`;
-- 丢弃 `from` 或 `to` 为空的交易（有些内部合约调用没有正常 to 地址）；
-- 给每笔交易打上 `seed_source`，记录这笔交易是从哪条“扩展边”抓到的，方便追踪来源。
-
-### 6.3 一跳 & 二跳
-
-1. 先抓种子地址本身（1-hop）。
-2. 然后看这些交易里所有出现过的地址（from/to），统计谁出现频率最高。
-3. 取出现频率最高的 Top 30 作为“二跳邻居”，继续抓他们的交易。
-
-```python
-neighbors_all = pd.concat([df_level1["from"], df_level1["to"]], ignore_index=True)
-top_neighbors = (
-    neighbors_all.value_counts()
-    .head(30)
-    .index
-    .tolist()
-)
-```
-
-这相当于构建了一个“局部以太坊经济圈”图：
- 不是整条链，而是围绕几个关键流动性枢纽的巨大子网络。
-
-### 6.4 构建交易网络 (NetworkX)
-
-```python
-G = nx.DiGraph()
-for _, row in df_all.iterrows():
-    s, t, v = row["from"], row["to"], row["value"]
-    if s == t:
-        continue
-    if G.has_edge(s, t):
-        G[s][t]["weight"] += v
-        G[s][t]["count"] = G[s][t].get("count", 1) + 1
-    else:
-        G.add_edge(s, t, weight=v, count=1)
-```
-
-- 我们把每一笔交易看成一条有向边 `from -> to`。
-- 边的 `weight` 是累计转账金额（ETH）。
-- `count` 是交易次数。
-- 这相当于是资金流网络（谁给了谁多少钱）。
-
-NetworkX `DiGraph` 让我们之后能算 PageRank、in_degree、out_degree 等网络指标。
-
-### 6.5 静态网络分析
-
-```python
-deg_total = dict(G.degree())
-pagerank  = nx.pagerank(G, alpha=0.85)
-clustering = nx.clustering(G.to_undirected())
-```
-
-我们测：
-
-- 平均度（平均每个地址跟多少个地址有资金往来）
-- 平均聚类系数（是不是“朋友的朋友也互相转钱”？）
-- PageRank（谁是资金流里最关键的“枢纽节点”）
-- Giant component fraction（几乎所有地址是否属于同一个资金流大生态）
-
-这些是经典复杂网络指标，能支持“结构是否中心化”“系统是否被少数节点绑定在一起”等论点。
-
-### 6.6 中心化度量（Gini 系数）（扩展）
-
-```python
-def gini(x):
-    ...
-gini_coeff = gini(list(deg_total.values()))
-```
-
-我们把“谁连接了多少人”当成一种“资源/权力”，然后用 Gini 系数衡量它有多不平等。
-
-Gini ~0.51 非常高，表示极强不平等：
-
-> 绝大多数地址没什么连接度，资金全在少数超级节点之间流动。
-
-这是我们在报告里可以当作“定量证明中心化”的关键数字。
-
-1) 基础结构特征
-```python
-deg_total = dict(G.degree())
-deg_in    = dict(G.in_degree())
-deg_out   = dict(G.out_degree())
-pagerank  = nx.pagerank(G, alpha=0.85)                    # 资金流枢纽
-kcore     = nx.core_number(G.to_undirected())             # 节点“骨干层级”
-assort    = nx.degree_assortativity_coefficient(G)        # 同配性（是否“门当户对”）
-```
-
-
-2) 集中度（不平等）度量
-```python
-def gini(x):
-    x = np.sort(np.asarray(x, dtype=float))
-    if x.size == 0: return np.nan
-    n = x.size
-    return (2*np.arange(1, n+1) - n - 1).dot(x) / (n * x.sum())
-
-gini_deg   = gini(list(deg_total.values()))
-top10_share= (np.sum(sorted(deg_total.values())[-10:]) / (np.sum(list(deg_total.values())) + 1e-9))
-```
-
-3) 幂律检验（规范做法，需 powerlaw）
-
-4) 社区/团簇与 motifs
-我们测：
-
-基础结构：总度/入度/出度、PageRank、k-core、同配性
-
-集中度：Gini 系数、Top-10 占比（“少数钱包是否把流量/连接握在手里”）
-
-幂律：估计 𝛼, $x_min$ 并与 lognormal 等进行对照检验（R,p），避免“看到直线就说幂律”的偏差
-
-群落/团簇/三角形：揭示中观结构与潜在业务子生态
-
-这些指标支持你们在报告中对中心化、去中心化、异质性与中观结构的定量论证与可视化。
-
-幂律拟合与可视化（PDF/CCDF）:
-PDF：整体分布形态（是否“长尾”）
-CCDF（log-log）：幂律在大值区的线性段更清晰，避免噪声误导
-
-中心化度量（Gini 与 Top-K 占比）
-Gini ~ 0.5+ 往往意味着极强不平等（多数地址连接稀少，少数“超级节点”吸走连边/流量）
-Top-10 占比定量呈现“头部玩家”的绝对控制力
-
-### 6.7 异常检测（IsolationForest）
-
-```python
-X = np.array([
-    [deg_total[n], deg_in[n], deg_out[n], pagerank[n]]
-    for n in nodes_list
-])
-clf = IsolationForest(contamination=0.02, random_state=42)
-labels = clf.fit_predict(X)
-```
-
-我们对每个地址生成 4 个特征：
-
-- 总度（它到底接触了多少不同地址）
-- 入度、出度（是一直在收钱，还是一直在打钱）
-- PageRank（它是否是路径中转的关键）
-
-IsolationForest 会把“过于极端”的点标成异常（-1）。
-
-这些异常节点往往就是：
-
-- 交易所钱包（同时跟成千上万地址打钱/收钱）
-- DeFi 路由合约
-- 巨额分发/募资合约
-- 诈骗/钓鱼/集资类地址
-- 甚至是创始人级别钱包
-
-我们不是在做合规审查；我们是在说明：**极端结构位置 = 系统性重要性**。
-
-我们做：
-
-用滑动窗口 + 步长组织时间片，避免日级噪声
-在每个时间片上重算中心性，得到动态演化曲线
-聚焦 Top-K 节点，观察枢纽更替与事件性波动
-
-峰值检测（以 PageRank 为例）：
-定位异常窗口与可疑事件段（峰值高度/显著性可调）
-与链上事件/新闻对齐做质性解释（手工或自动化都可）
-
-
-### 6.8 Temporal GNN（GConvGRU 基线）——中文说明
-
-**目的**  
-用上一时间片的网络结构 + 边权，预测下一时间片的指标（本项目默认为 PageRank），作为**时序预测的轻量基线**，验证“结构信号是否对未来有解释力”。
-
-**输入与构造（按时间顺序）**  
-- **滑动窗口切片**：`WINDOW_DAYS`（窗宽） + `STEP_DAYS`（步长）生成时间片。  
-- **特征 `X_t`（N×F）**：对每个时间片、每个节点计算并堆叠  
-  - `degree, in_degree, out_degree, pagerank`（F=4）。  
-- **边集 `edge_index_t`（2×E）**：窗口内所有转账形成的有向边；  
-- **边权 `edge_weight_t`（E）**：可选，默认用窗口内该边累计金额；  
-- **目标 `y_t`（N）**：**下一窗口**的 PageRank（对齐为 `X[0..T-2] → y[1..T-1]`）。  
-- 使用 `DynamicGraphTemporalSignal(edge_indices, edge_weights, features, targets)` 组织为时序样本。
-
-**模型与训练**  
-- **模型**：`GConvGRU`（切比雪夫 K=2）作为时序图 RNN，后接线性层输出标量（回归）；  
-- **损失**：L1（MAE）；**划分**：前 70% 时间片训练、后 30% 验证（保持时间因果）；  
-- **设备**：CPU/GPU 自适应；**学习率**：默认 1e-3，可在脚本顶部修改。  
-
-**产出**  
-- `outputs/temporal/temporal_gnn_loss.png`：训练/验证损失曲线；  
-- `outputs/temporal/temporal_gnn_last_snapshot_prediction.csv`：最后验证时间片各节点的**预测 vs 真实**；  
-- 以上路径也汇总入 `summary.json -> temporal -> temporal_gnn`，便于复用/下游可视化。
-
-**何时认为“有效”**  
-- 验证集 L1 明显低于简单基线（如“预测=上一窗值”）；  
-- Top-K 节点预测排序与真实排序相关性较高（可额外计算 Spearman 相关）；  
-- 峰值/上升拐点附近能提前给出信号（肉眼对比时序曲线 + 误差曲线）。
-
-**常见坑与规约**  
-- **形状**：`X_t` 必须是 `(N,4)`，`y_t` 必须是 `(N,)`；  
-- **类型**：`features/edge_*` 为 `torch.Tensor(float32/long)`；`targets` 为 `numpy.ndarray(float32)`；  
-- **设备**：用 `torch.as_tensor(numpy, device=...)` 而不是对 numpy 直接 `.to(device)`；  
-- **可选边权**：`edge_weight_t` 可以为 `None`；模型前向需接收 `edge_weight` 参数；  
-- **对齐**：目标是**下一窗口**，不要把 `y_t` 和 `X_t` 放在同一时间片；  
-- **依赖缺失**：若 `torch_geometric_temporal` 或相关扩展导入失败，脚本自动跳过 GNN，其他流程不受影响。
-
-**可调参数（影响效果）**  
-- 滑窗参数：`WINDOW_DAYS / STEP_DAYS`（越大越平滑，越小越敏感）；  
-- 特征集合：在默认 4 维基础上可加入 `k-core、betweenness、余额变动、合约标识` 等；  
-- 监督目标：除 PageRank 外，也可尝试预测 `in_degree、金额流入/流出` 或二分类的“是否异常”；  
-- 模型超参：`hidden` 维度、K 阶、优化器、正则项、early stopping 等。
-
-> 定位：这是**教学/探索**用的时序图基线，目标是快速验证“结构-未来”的可学性；若需要更强性能，可换用更丰富特征、更细致标签与更强的时序图架构。
-
-
-### 6.9 时间演化分析
-
-我们按照日期滚动构建子图，记录巨型连通分量（giant component）占整个图的比例随时间怎么变。
-
-直觉上：
-
-- 如果早期网络是分散的（很多孤立团），巨型分量占比会比较低。
-- 随着时间推移，大家都开始把钱通过同一批枢纽流动，整个网络“连成一体”，巨型分量占比就逼近 1。
-
-对应的图 `figure_giant_component_over_time.png` 就是你们的“系统逐渐集中化”证据图。
-
-### 6.10 可视化输出
-
-我们做了两个特别有解释力的视角：
-
-1. `figure_subgraph_random.png`:
-   - 随机抽一批节点画出来的子图。通常是一圈一圈的孤立点/小星星，很稀疏。
-   - 说明“典型的普通地址”并没有互相强连接。
-2. `figure_hub_ego_network.png`:
-   - 取 PageRank 最高的那个地址（比如交易所热钱包），画它和所有一跳邻居。
-   - 这张图通常长得像一颗巨大的太阳/刺猬：一个超巨大中心 + 大量射线。
-   - 这是最有冲击力的“中心化骨干”图，非常适合 PPT。
-
-同时，我们还导出了：
-
-```python
-nx.write_gexf(G, "ethereum_network.gexf")
-```
-
-方便用 Gephi 生成最终极高清的网络骨架图（ForceAtlas2 + Node size = PageRank + Community colors）。
-
-------
-
-## 7. 总结
-
-> 我们抓取了约 55k 条真实 Ethereum 主网交易，构建了一个 ~21k 地址、~22k 边的资金流网络。
->  我们发现该网络的平均度仅约 2，但 PageRank 和度分布极度偏斜，Gini 系数约 0.51，巨型连通分量覆盖率几乎 100%。
->  这意味着：虽然以太坊在协议层是去中心化的，但实际的资金流高度依赖少数超级枢纽（交易所钱包、路由合约、稳定币金库）。
->  时间分析进一步显示，这种“单一骨干网络”是逐渐形成的 —— 活动在关键历史时期出现极端爆发，随后所有新地址被吸入同一个全球性巨型连通块。
->  使用 IsolationForest 的结构异常检测，我们还能自动识别这些系统性关键节点。
-
-这段基本表示：我们不仅跑了数据，还做了复杂网络分析 + 时间演化 + 异常检测 + 可视化，而且会解释结果。
+This supports the view of blockchain transaction networks as **complex socio-technical systems**, where emergent macroscopic patterns (centralization, modularity, temporal dynamics) arise from simple local rules (peer-to-peer transactions).
 
