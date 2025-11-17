@@ -1,0 +1,13 @@
+{
+  "epochs": 29,
+  "best_val": 0.012406008999096229,
+  "hidden": 32,
+  "dropout": 0.2,
+  "lr": 0.002,
+  "weight_decay": 0.0001,
+  "seed": 42,
+  "dyn_csv": "C:\\Users\\70797\\Desktop\\新国立研究生相关内容\\PC5253\\project\\Blockchain-Transactions\\outputs_22wdata\\temporal\\dynamic_centrality_timeseries.csv",
+  "tx_csv": "C:\\Users\\70797\\Desktop\\新国立研究生相关内容\\PC5253\\project\\Blockchain-Transactions\\outputs_22wdata\\ethereum_transactions_20251102_223921.csv",
+  "snapshots": 531,
+  "train_split": 371
+}

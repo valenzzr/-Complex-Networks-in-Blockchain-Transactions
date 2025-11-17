@@ -7,7 +7,7 @@
     "giant_component_fraction": 1.0
   },
   "assortativity": {
-    "undirected_degree_pearson": -0.6745146674438027,
+    "undirected_degree_pearson": -0.674514667443803,
     "directed_out_in": -0.576031801811835
   },
   "centralization_value": {

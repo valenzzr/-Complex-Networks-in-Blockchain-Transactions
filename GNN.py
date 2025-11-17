@@ -46,13 +46,13 @@ def to_tensor_2d(x):
 # ----------------- CLI -----------------
 def parse_args():
     ap = argparse.ArgumentParser(description="Temporal GNN runner (GConvGRU)")
-    ap.add_argument("--dyn_csv", default="outputs/temporal/dynamic_centrality_timeseries.csv",
+    ap.add_argument("--dyn_csv", default="outputs_22wdata/temporal/dynamic_centrality_timeseries.csv",
                     help="Path to dynamic centrality time-series CSV")
     ap.add_argument("--tx_csv", default=None,
                     help="Path to ethereum_transactions CSV; if None, pick latest in outputs/")
-    ap.add_argument("--out_dir", default="outputs/temporal",
+    ap.add_argument("--out_dir", default="outputs_22wdata/temporal",
                     help="Directory to save GNN outputs")
-    ap.add_argument("--epochs", type=int, default=20)
+    ap.add_argument("--epochs", type=int, default=50)
     ap.add_argument("--hidden", type=int, default=16)
     ap.add_argument("--lr", type=float, default=1e-3)
     return ap.parse_args()
@@ -75,7 +75,7 @@ def main():
 
     # Load transactions CSV (latest if not provided)
     if args.tx_csv is None:
-        tx_csv = latest_csv("outputs/ethereum_transactions_*.csv")
+        tx_csv = latest_csv("outputs_22wdata/ethereum_transactions_*.csv")
         if tx_csv is None:
             raise FileNotFoundError("No ethereum_transactions_*.csv found in outputs/.")
     else:

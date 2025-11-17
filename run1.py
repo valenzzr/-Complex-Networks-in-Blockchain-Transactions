@@ -73,10 +73,10 @@ os.makedirs(OUTDIR, exist_ok=True)
 TEMP_DIR = os.path.join(OUTDIR, "temporal")
 os.makedirs(TEMP_DIR, exist_ok=True)
 
-WINDOW_DAYS = 30            # 滑动窗口大小（天）
-STEP_DAYS = 7               # 步长（天）
-TOPK_PLOT = 10              # 时序图中展示的Top-K节点（以全局PR均值排序）
-BETWEENNESS_SAMPLE_K = 400  # 在大图上对每个快照近似计算介数（None=精确；推荐采样以提速）
+WINDOW_DAYS = 30            # sliding window size (days)
+STEP_DAYS = 7               # step size (days)
+TOPK_PLOT = 10              # top-k nodes to plot in dynamic centrality time series
+BETWEENNESS_SAMPLE_K = 400  # k for betweenness in temporal snapshots
 
 
 # =========================
@@ -490,64 +490,68 @@ plt.savefig(os.path.join(OUTDIR, "figure_giant_component_over_time.png"), dpi=30
 
 
 # =========================
-# 7.1 Sliding-window snapshots & dynamic centralities
+# 7.1 Sliding-window snapshots & dynamic centralities  (refined, EN comments)
 # =========================
 
 print("\n=== [Temporal] Sliding-window snapshots & dynamic centralities ===")
 
-# Prepare window grid
+# 1) Build fixed-step date windows (closed interval [ws, we])
+df_all["date"] = df_all["timeStamp"].dt.date
+dates_sorted = sorted(df_all["date"].dropna().unique())
+windows = []
 if len(dates_sorted) > 0:
-    start_date = dates_sorted[0]
-    end_date = dates_sorted[-1]
-    windows = []
-    cur = datetime.combine(start_date, datetime.min.time())
-    end_dt = datetime.combine(end_date, datetime.min.time())
+    cur = datetime.combine(dates_sorted[0], datetime.min.time())
+    end_dt = datetime.combine(dates_sorted[-1], datetime.min.time())
     while cur <= end_dt:
-        w_start = cur.date()
-        w_end = (cur + timedelta(days=WINDOW_DAYS - 1)).date()
-        windows.append((w_start, w_end))
+        ws = cur.date()
+        we = (cur + timedelta(days=WINDOW_DAYS - 1)).date()
+        windows.append((ws, we))
         cur += timedelta(days=STEP_DAYS)
-else:
-    windows = []
 
-# Containers for time series
-records = []          # node, date_end, PR, betweenness, kcore, deg, in_deg, out_deg, tx_count
-topk_candidates = set([n for n, _ in top_pr])  # 初始：全局PR前列
+# 2) Build per-window graphs and compute centralities (PR/k-core/betweenness/degree)
+records = []
 snap_idx = 0
 for (ws, we) in windows:
-    snap_idx += 1
     mask = (df_all["date"] >= ws) & (df_all["date"] <= we)
-    df_win = df_all.loc[mask, ["from","to","value"]]
+    df_win = df_all.loc[mask, ["from", "to", "value"]]
     if df_win.empty:
         continue
+
+    snap_idx += 1
     Gw = build_graph_from_edges(df_win)
+    if Gw.number_of_nodes() == 0:
+        continue
     UGw = Gw.to_undirected()
 
-    # core / degree / PR / betweenness (sampled)
+    # ---- basic degrees
     deg_w  = dict(Gw.degree())
     in_w   = dict(Gw.in_degree())
     out_w  = dict(Gw.out_degree())
-    pr_w   = nx.pagerank(Gw, alpha=0.85) if Gw.number_of_nodes() else {}
+
+    # ---- PageRank (normalize within snapshot for cross-window comparability)
+    pr_raw = nx.pagerank(Gw, alpha=0.85) if Gw.number_of_nodes() else {}
+    s = sum(pr_raw.values()) or 1.0
+    pr_w = {k: v / s for k, v in pr_raw.items()}
+
+    # ---- k-core
     try:
         core_w = nx.core_number(UGw) if UGw.number_of_nodes() else {}
     except Exception:
         core_w = {}
-    if Gw.number_of_nodes() <= BETWEENNESS_MAX_NODES:
-        try:
-            btw_w = nx.betweenness_centrality(
-                Gw,
-                k=BETWEENNESS_SAMPLE_K,
-                normalized=True,
-                weight=None,
-                endpoints=False,
-                seed=0
-            )
-        except Exception:
-            btw_w = {n: float("nan") for n in Gw.nodes()}
-    else:
-        btw_w = {n: float("nan") for n in Gw.nodes()}
 
-    # collect rows
+    # ---- betweenness (on undirected graph, sampling for stability/speed)
+    try:
+        if UGw.number_of_nodes() <= BETWEENNESS_MAX_NODES:
+            k_sample = BETWEENNESS_SAMPLE_K  # e.g., 400; tune as needed
+            btw_w = nx.betweenness_centrality(
+                UGw, k=k_sample, normalized=True, weight=None, endpoints=False, seed=0
+            )
+        else:
+            btw_w = {n: 0.0 for n in UGw.nodes()}
+    except Exception:
+        btw_w = {n: 0.0 for n in UGw.nodes()}
+
+    # ---- record per-node time-series metrics
     for n in Gw.nodes():
         records.append({
             "node": n,
@@ -555,110 +559,108 @@ for (ws, we) in windows:
             "window_end": we,
             "snapshot_index": snap_idx,
             "pagerank": pr_w.get(n, 0.0),
-            "betweenness": btw_w.get(n, 0.0),
-            "kcore": core_w.get(n, 0),
-            "degree": deg_w.get(n, 0),
-            "in_degree": in_w.get(n, 0),
-            "out_degree": out_w.get(n, 0),
-            "tx_count": int(sum(1 for _ in Gw.edges(n)))
+            "betweenness": float(btw_w.get(n, 0.0)),
+            "kcore": int(core_w.get(n, 0)),
+            "degree": int(deg_w.get(n, 0)),
+            "in_degree": int(in_w.get(n, 0)),
+            "out_degree": int(out_w.get(n, 0)),
         })
 
-    topk_candidates.update([n for n, _ in sorted(pr_w.items(), key=lambda x: x[1], reverse=True)[:TOPK_PLOT]])
-
-# output dynamic centrality timeseries
+# 3) Export & plot (pick top-K nodes by mean PR to ensure continuous curves)
 if records:
     df_dyn = pd.DataFrame(records)
     dyn_csv = os.path.join(TEMP_DIR, "dynamic_centrality_timeseries.csv")
     df_dyn.to_csv(dyn_csv, index=False)
 
-    # choose focus nodes by mean PR
     mean_pr = df_dyn.groupby("node")["pagerank"].mean().sort_values(ascending=False)
     focus_nodes = list(mean_pr.head(TOPK_PLOT).index)
 
-    # draw time series plots
-    for metric in ["pagerank", "betweenness", "kcore"]:
-        plt.figure(figsize=(11,6))
+    def _plot_metric(metric, ylabel=None):
+        plt.figure(figsize=(11, 6))
         for n in focus_nodes:
             sub = df_dyn[df_dyn["node"] == n].sort_values("window_end")
-            plt.plot(sub["window_end"], sub[metric], label=n[:8]+"…")
+            # use window end date on the x-axis for temporal consistency
+            plt.plot(sub["window_end"], sub[metric], label=n[:8] + "…")
         plt.title(f"Top-{TOPK_PLOT} nodes: {metric} over sliding windows")
-        plt.xlabel("Window end date"); plt.ylabel(metric)
+        plt.xlabel("Window end date")
+        plt.ylabel(ylabel or metric)
         if metric == "pagerank":
             plt.legend(ncol=2, fontsize=8, frameon=False)
         plt.tight_layout()
         plt.savefig(os.path.join(TEMP_DIR, f"timeseries_{metric}.png"), dpi=300, bbox_inches="tight")
         plt.close()
 
-    # easy spike detection on PR, save to JSON
+    _plot_metric("pagerank", "pagerank (per-snapshot normalized)")
+    _plot_metric("betweenness", "betweenness (UG, sampled)")
+    _plot_metric("kcore", "k-core index")
+
+    # 4) simple PR spike detection (3σ on first-order differences for focus nodes)
     spikes = []
-    for n in df_dyn["node"].unique():
+    for n in focus_nodes:
         sub = df_dyn[df_dyn["node"] == n].sort_values("snapshot_index")
         x = sub["pagerank"].values
         if len(x) >= 5:
             dif = np.diff(x)
-            thr = np.nanmean(dif) + 3*np.nanstd(dif)
+            thr = np.nanmean(dif) + 3 * np.nanstd(dif)
             for i, d in enumerate(dif, start=1):
                 if d > thr:
                     spikes.append({
-                        "node": n, "from_index": int(sub.iloc[i-1]["snapshot_index"]),
+                        "node": n,
+                        "from_index": int(sub.iloc[i - 1]["snapshot_index"]),
                         "to_index": int(sub.iloc[i]["snapshot_index"]),
-                        "from_end": str(sub.iloc[i-1]["window_end"]),
+                        "from_end": str(sub.iloc[i - 1]["window_end"]),
                         "to_end": str(sub.iloc[i]["window_end"]),
-                        "delta_pr": float(d)
+                        "delta_pr": float(d),
                     })
     if spikes:
         save_json(spikes, os.path.join(TEMP_DIR, "pagerank_spikes.json"))
 
-
-
 # =========================
-# 7.2 Temporal GNN baseline (GConvGRU)
+# 7.2 Temporal GNN baseline (GConvGRU, refined, EN comments)
 # =========================
 
 print("\n=== [Temporal] Temporal GNN baseline (optional) ===")
 if not HAS_PGT:
     print("PyTorch Geometric Temporal not available; skip temporal GNN demo.")
-    print("To enable: pip install torch torch_geometric torch_geometric_temporal (env-specific).")
 else:
-
     if not records:
         print("No temporal snapshots available; skip temporal GNN.")
     else:
+        # 1) read time-series features exported above
         df_dyn = pd.read_csv(os.path.join(TEMP_DIR, "dynamic_centrality_timeseries.csv"))
         df_dyn["node"] = df_dyn["node"].astype(str)
 
-        # sequence construction
         snaps = sorted(df_dyn["snapshot_index"].unique())
         nodes_all = sorted(df_dyn["node"].unique())
-        node2idx = {n:i for i,n in enumerate(nodes_all)}
+        node2idx = {n: i for i, n in enumerate(nodes_all)}
         N = len(nodes_all)
 
-        edge_indices = []
-        edge_weights = []   # every snapshot's edge weights
-        features = []
-        targets  = []
+        edge_indices, edge_weights, features, targets = [], [], [], []
 
-        for (ws, we, idx) in df_dyn.groupby(["window_start","window_end","snapshot_index"]).groups.keys():
+        # 2) build (edge_index, edge_weight, X_t, y_t) per snapshot
+        for (ws, we, idx) in df_dyn.groupby(["window_start", "window_end", "snapshot_index"]).groups.keys():
             idx = int(idx)
             mask = (df_all["date"] >= pd.to_datetime(ws).date()) & (df_all["date"] <= pd.to_datetime(we).date())
-            df_win = df_all.loc[mask, ["from","to","value"]]
+            df_win = df_all.loc[mask, ["from", "to", "value"]]
             if df_win.empty:
                 continue
-            Gw = build_graph_from_edges(df_win)
 
-            # --- edge_index (2, E) & edge_weight (E,)
+            Gw = build_graph_from_edges(df_win)
+            if Gw.number_of_edges() == 0:
+                continue
+
+            # --- edges
             edges, weights = [], []
             for u, v, data in Gw.edges(data=True):
                 if (u in node2idx) and (v in node2idx):
                     edges.append((node2idx[u], node2idx[v]))
-                    # use 'weight' attribute as edge weight; default to 1.0
                     weights.append(float(data.get("weight", 1.0)))
             if not edges:
                 continue
-            edge_index_t = torch.tensor(edges, dtype=torch.long).t().contiguous()
-            edge_weight_t = torch.tensor(weights, dtype=torch.float32)  # NEW
+            ei_t = torch.tensor(edges, dtype=torch.long).t().contiguous()
+            ew_t = torch.tensor(weights, dtype=torch.float32)
 
-            # --- X_t: (N, 4) torch.float32
+            # --- node features: [degree, in_degree, out_degree, pagerank]
             sub = df_dyn[df_dyn["snapshot_index"] == idx].set_index("node")
             x = np.zeros((N, 4), dtype=np.float32)
             for n in nodes_all:
@@ -669,124 +671,130 @@ else:
                     x[node2idx[n], 3] = sub.loc[n, "pagerank"]
             X_t = torch.tensor(x, dtype=torch.float32)
 
+            # --- labels: current snapshot pagerank (you may shift for next-step prediction)
+            y_vec = np.zeros((N,), dtype=np.float32)
+            for n in nodes_all:
+                if n in sub.index:
+                    y_vec[node2idx[n]] = float(sub.loc[n, "pagerank"])
+
             features.append(X_t)
-            edge_indices.append(edge_index_t)
-            edge_weights.append(edge_weight_t)  # NEW
+            edge_indices.append(ei_t)
+            edge_weights.append(ew_t)
+            targets.append(y_vec)
 
-        # y_t uses pagerank at t
-        # align features[0..T-2] → targets[1..T-1]
-        if len(features) < 3:
-            print("Too few snapshots for temporal GNN; need >=3.")
+        # need enough snapshots
+        if len(features) < 6:
+            print(f"Too few snapshots for temporal GNN (got {len(features)}). Need >=6.")
         else:
-            # --- targets: list of (N,) numpy
-            pr_by_snap = []
-            for idx in sorted(df_dyn["snapshot_index"].unique()):
-                sub = df_dyn[df_dyn["snapshot_index"] == idx].set_index("node")
-                y = np.zeros((N,), dtype=np.float32)  # 1D 更稳妥
-                for n in nodes_all:
-                    if n in sub.index:
-                        y[node2idx[n]] = float(sub.loc[n, "pagerank"])
-                pr_by_snap.append(y)
+            # 3) chronological split
+            T = len(features)
+            split = int(0.7 * T)
 
-            # length alignment
-            # --- sequence length T
-            min_len = min(len(features), len(pr_by_snap))
-            features    = features[:min_len-1]
-            edge_indices = edge_indices[:min_len-1]
-            edge_weights = edge_weights[:min_len-1]
-            targets     = pr_by_snap[1:min_len]
+            # normalization stats on training segment
+            X_train_stack = torch.stack(features[:split], dim=0)        # (T1, N, 4)
+            y_train_stack = torch.tensor(np.stack(targets[:split]), dtype=torch.float32)  # (T1, N)
 
-            # === Dataset ready ===
-            dataset = DynamicGraphTemporalSignal(
-                edge_indices=edge_indices,
-                edge_weights=edge_weights,   
-                features=features,
-                targets=targets              # numpy
-            )
+            x_mean = X_train_stack.mean(dim=(0, 1), keepdim=True)  # (1,1,4)
+            x_std  = X_train_stack.std(dim=(0, 1), keepdim=True).clamp_min(1e-6)
+            y_mean = y_train_stack.mean()
+            y_std  = y_train_stack.std().clamp_min(1e-6)
 
-            # define simple GConvGRU-based regressor
+            def norm_x(x):  # x: (N,4)
+                return (x - x_mean.squeeze(0)) / x_std.squeeze(0)
+
+            def norm_y(y_np):  # y: (N,)
+                y = torch.tensor(y_np, dtype=torch.float32)
+                return (y - y_mean) / y_std
+
+            def denorm_y(y_t):
+                return y_t * y_std + y_mean
+
+            # 4) model definition
             class GCRURegressor(nn.Module):
-                def __init__(self, in_feat=4, hidden=16, out_feat=1):
+                def __init__(self, in_feat=4, hidden=32, out_feat=1, dropout=0.2):
                     super().__init__()
                     self.rnn = GConvGRU(in_channels=in_feat, out_channels=hidden, K=2)
+                    self.drop = nn.Dropout(dropout)
                     self.lin = nn.Linear(hidden, out_feat)
+
                 def forward(self, x, edge_index, edge_weight=None):
-                    # x: (N,F)
-                    h = self.rnn(x, edge_index, edge_weight)  # (N, hidden)
-                    out = self.lin(h).squeeze(-1)             # (N,)
+                    h = self.rnn(x, edge_index, edge_weight)   # (N, hidden)
+                    h = self.drop(h)
+                    out = self.lin(h).squeeze(-1)              # (N,)
                     return out
 
             device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
             model = GCRURegressor().to(device)
-            optim = torch.optim.Adam(model.parameters(), lr=1e-3)
+            optim = torch.optim.Adam(model.parameters(), lr=2e-3, weight_decay=1e-4)
             loss_fn = nn.L1Loss()
 
-            # easy train/val split
-            T = len(dataset.features)
-            split = int(0.7 * T)
+            best_val, patience, bad = float("inf"), 6, 0
+            train_hist, val_hist = [], []
 
             def step_loop(start, end, train=True):
                 model.train(mode=train)
-                total = 0.0; count = 0
+                total, count = 0.0, 0
                 for t in range(start, end):
-                    x = dataset.features[t].to(device)  # node features
-                    ei = dataset.edge_indices[t].to(device)  # edge_index 
-                    ew = dataset.edge_weights[t].to(device)  # edge_weight 
-                    y = torch.tensor(dataset.targets[t], dtype=torch.float32).to(device)  # targets
+                    x = norm_x(features[t]).to(device)
+                    ei = edge_indices[t].to(device)
+                    ew = edge_weights[t].to(device)
+                    y = norm_y(targets[t]).to(device)
 
-                    # forward + loss
-                    pred = model(x, ei, ew)  # tensor (N,)
+                    pred = model(x, ei, ew)
                     loss = loss_fn(pred, y)
-                    
+
                     if train:
                         optim.zero_grad()
                         loss.backward()
+                        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=2.0)
                         optim.step()
-                    
+
                     total += float(loss.item())
                     count += 1
-                
                 return total / max(1, count)
 
-            EPOCHS = 20
-            train_hist, val_hist = [], []
-            for ep in range(1, EPOCHS+1):
-                train_loss = step_loop(0, split, train=True)
-                val_loss   = step_loop(split, T, train=False)
-                train_hist.append(train_loss)
-                val_hist.append(val_loss)
-                
-                if ep % 5 == 0:
-                    print(f"[TemporalGNN] Epoch {ep:02d} | train {train_loss:.4f} | val {val_loss:.4f}")
+            EPOCHS = 50
+            for ep in range(1, EPOCHS + 1):
+                tr = step_loop(0, split, train=True)
+                va = step_loop(split, T, train=False)
+                train_hist.append(tr); val_hist.append(va)
 
-            # save loss curve
-            plt.figure(figsize=(7,4))
+                if va < best_val - 1e-4:
+                    best_val, bad = va, 0
+                else:
+                    bad += 1
+                if ep % 5 == 0:
+                    print(f"[TemporalGNN] Epoch {ep:02d} | train {tr:.4f} | val {va:.4f}")
+                if bad >= patience:
+                    print(f"[TemporalGNN] Early stop at epoch {ep} (best val {best_val:.4f})")
+                    break
+
+            # 5) save loss curves
+            plt.figure(figsize=(7, 4))
             plt.plot(train_hist, label="train")
             plt.plot(val_hist, label="val")
             plt.title("Temporal GNN (GConvGRU) L1-loss")
-            plt.xlabel("Epoch")
-            plt.ylabel("L1")
-            plt.legend()
-            plt.tight_layout()
+            plt.xlabel("Epoch"); plt.ylabel("L1 (normalized)")
+            plt.legend(); plt.tight_layout()
             plt.savefig(os.path.join(TEMP_DIR, "temporal_gnn_loss.png"), dpi=300, bbox_inches="tight")
             plt.close()
 
-            # export the last snapshot prediction
-            x = dataset.features[-1].to(device)
-            ei = dataset.edge_indices[-1].to(device)
-            ew = dataset.edge_weights[-1].to(device)
-            y = torch.tensor(dataset.targets[-1], dtype=torch.float32).to(device)
+            # 6) export prediction for the last validation snapshot (denormalized)
+            x = norm_x(features[-1]).to(device)
+            ei = edge_indices[-1].to(device)
+            ew = edge_weights[-1].to(device)
+            y_true = torch.tensor(targets[-1], dtype=torch.float32)
 
             with torch.no_grad():
-                yhat = model(x, ei, ew).cpu().numpy()
+                y_hat = denorm_y(model(x, ei, ew).cpu()).numpy()
 
             df_pred = pd.DataFrame({
                 "node": nodes_all,
-                "y_true_pagerank": y.cpu().numpy(),
-                "y_pred_pagerank": yhat
+                "y_true_pagerank": y_true.numpy(),
+                "y_pred_pagerank": y_hat
             }).sort_values("y_true_pagerank", ascending=False)
-
             df_pred.to_csv(os.path.join(TEMP_DIR, "temporal_gnn_last_snapshot_prediction.csv"), index=False)
+
 
 
 
