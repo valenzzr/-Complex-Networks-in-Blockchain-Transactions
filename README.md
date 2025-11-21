@@ -15,7 +15,7 @@ Script  `ethereum_network_analysis.py` encompasses the entire process, from data
 
 For Script `ethereum_network_analysis.py`, it starts with data acquisition. However, since our data volume is extremely large, we have also provided a pre-acquired dataset(`ethereum_transactions_20251102_223921.csv`). If you only want to analyze our data, you can modify our script by commenting out the code that uses the API to obtain data and replacing it with code to directly read the existing dataset.
 
-Or if you just want to see the output after the code runs, we have also uploaded the output results in the terminal to the repository. See in the `ethereum_network_analysis_terminal_execution_result.md`
+Or if you just want to see the output in the format of text without any pictures after the code runs, we have also uploaded the output results in the terminal to the repository. See it in the `ethereum_network_analysis_terminal_execution_result.md`
 
 ## 1. Project Overview
 
