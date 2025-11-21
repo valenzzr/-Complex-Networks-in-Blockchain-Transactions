@@ -13,9 +13,9 @@ We provide three running scripts(`ethereum_network_analysis.py`, `sliding.py`, `
 
 Script  `ethereum_network_analysis.py` encompasses the entire process, from data acquisition to analysis and conclusion. Script `sliding.py` includes the sliding window, and Script `GNN2.py`involves the relevant analysis using GNN. Running these scripts directly requires environment configuration. In the following part of the document, we have described how to run these scripts.
 
-For Script `ethereum_network_analysis.py`, it starts with data acquisition. However, since our data volume is extremely large, we have also provided a pre-acquired dataset. If you only want to analyze our data, you can modify our script by commenting out the code that uses the API to obtain data and replacing it with code to directly read the existing dataset.
+For Script `ethereum_network_analysis.py`, it starts with data acquisition. However, since our data volume is extremely large, we have also provided a pre-acquired dataset(`ethereum_transactions_20251102_223921.csv`). If you only want to analyze our data, you can modify our script by commenting out the code that uses the API to obtain data and replacing it with code to directly read the existing dataset.
 
-Or if you just want to see the output after the code runs, we have also uploaded the output results in the terminal to the repository.
+Or if you just want to see the output after the code runs, we have also uploaded the output results in the terminal to the repository. See in the `ethereum_network_analysis_terminal_execution_result.md`
 
 ## 1. Project Overview
 
