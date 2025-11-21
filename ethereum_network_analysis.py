@@ -46,8 +46,9 @@ except Exception:
 # =========================
 
 # Strongly require env var for key (fail fast)
+# Please set your API key!!!
 try:
-    API_KEY = os.getenv("ETHERSCAN_API_KEY", "7E3QBKVNRYBITR1IYWG4XK3VQ21DQNE3PS")
+    API_KEY = os.getenv("ETHERSCAN_API_KEY", "${default_key}")
 except KeyError:
     sys.exit("Missing env var ETHERSCAN_API_KEY. Please set it before running.")
 

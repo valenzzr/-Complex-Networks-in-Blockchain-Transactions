@@ -5,6 +5,16 @@ Topic: **Complex Networks in Blockchain Transactions**
 
 ---
 
+# ATTENTION
+
+***Before runnig this project, please read this document. This is very important!!!***
+
+We provide three running scripts(`ethereum_network_analysis.py`, `sliding.py`, `GNN2.py`). 
+
+Script  `ethereum_network_analysis.py` encompasses the entire process, from data acquisition to analysis and conclusion. Script `sliding.py` includes the sliding window, and Script `GNN2.py`involves the relevant analysis using GNN. Running these scripts directly requires environment configuration. In the following part of the document, we have described how to run these scripts.
+
+For Script `ethereum_network_analysis.py`, it starts with data acquisition. However, since our data volume is extremely large, we have also provided a pre-acquired dataset. If you only want to analyze our data, you can modify our script by commenting out the code that uses the API to obtain data and replacing it with code to directly read the existing dataset.
+
 ## 1. Project Overview
 
 This project studies **Ethereum transaction networks** as a real-world example of a complex system.
@@ -581,7 +591,17 @@ export ETHERSCAN_API_KEY="YOUR_API_KEY_HERE"
 set ETHERSCAN_API_KEY=YOUR_API_KEY_HERE
 ```
 
-> Note: The script also contains a default key(`API_KEY = os.getenv("ETHERSCAN_API_KEY", "${default key}}")`) for convenience, but you **should override** it with your own key to respect rate limits and ensure reproducibility.
+> Note: The script also contains a default key(`API_KEY = os.getenv("ETHERSCAN_API_KEY", "${default_key}")`) for convenience, but you **should override** it with your own key to respect rate limits and ensure reproducibility.
+>
+> Alternatively, if you don't want to set a key, you can modify our script to change the data retrieval interface to reading the existing data. We have also provided the existing data for your reference.
+
+```python
+# Strongly require env var for key (fail fast)
+try:
+    API_KEY = os.getenv("ETHERSCAN_API_KEY", "${default_key}")
+except KeyError:
+    sys.exit("Missing env var ETHERSCAN_API_KEY. Please set it before running.")
+```
 
 ### 11.4 Run the script
 
