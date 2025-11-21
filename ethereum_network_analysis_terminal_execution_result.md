@@ -1,6 +1,6 @@
-除去加载数据过程，剩下输出如下：
+Excluding the process of loading data, the remaining output is as follows:
 
-有的输出多次重复出现是由于vscode终端显示导致的，不是bug
+Some outputs being repeatedly displayed multiple times is caused by the display of the VSCode terminal, not a bug.
 
 ```
 Total unique transactions collected: 250876

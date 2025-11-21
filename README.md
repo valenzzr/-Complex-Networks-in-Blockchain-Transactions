@@ -15,6 +15,8 @@ Script  `ethereum_network_analysis.py` encompasses the entire process, from data
 
 For Script `ethereum_network_analysis.py`, it starts with data acquisition. However, since our data volume is extremely large, we have also provided a pre-acquired dataset. If you only want to analyze our data, you can modify our script by commenting out the code that uses the API to obtain data and replacing it with code to directly read the existing dataset.
 
+Or if you just want to see the output after the code runs, we have also uploaded the output results in the terminal to the repository.
+
 ## 1. Project Overview
 
 This project studies **Ethereum transaction networks** as a real-world example of a complex system.
